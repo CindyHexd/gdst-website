@@ -1,5 +1,6 @@
 ---
 import type { Content } from '../i18n/types'
+import { withBase } from '../utils/withBase'
 
 interface Props {
   t: Content
@@ -19,7 +20,7 @@ const year = new Date().getFullYear()
     </div>
     <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-400" aria-label={t.ui.footerNav}>
       {t.footerLinks.map((link) => (
-        <a href={link.href} class="hover:text-white">{link.label}</a>
+        <a href={withBase(link.href)} class="hover:text-white">{link.label}</a>
       ))}
     </nav>
   </div>

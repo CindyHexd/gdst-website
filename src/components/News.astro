@@ -1,5 +1,6 @@
 ---
 import type { Content } from '../i18n/types'
+import { withBase } from '../utils/withBase'
 
 interface Props {
   t: Content
@@ -29,7 +30,7 @@ const sectionHeading = heading ?? t.sections.news.heading
             </div>
             <h3 class="mt-2 text-lg font-semibold text-white">
               {item.href ? (
-                <a href={item.href} class="hover:text-brand-300">{item.title}</a>
+                <a href={withBase(item.href)} class="hover:text-brand-300">{item.title}</a>
               ) : (
                 item.title
               )}
@@ -41,7 +42,7 @@ const sectionHeading = heading ?? t.sections.news.heading
     </ul>
 
     {limit && (
-      <a href="/news/" class="mt-8 inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
+      <a href={withBase('/news/')} class="mt-8 inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
         {t.ui.viewMore}
       </a>
     )}

@@ -1,5 +1,6 @@
 ---
 import type { Content } from '../i18n/types'
+import { withBase } from '../utils/withBase'
 
 interface Props {
   t: Content
@@ -10,7 +11,7 @@ const { t } = Astro.props
 
 <div class="lang-switch" role="group" aria-label={t.ui.langSwitchLabel}>
   <a
-    href="/"
+    href={withBase('/')}
     class:list={['lang-switch__btn', { 'lang-switch__btn--active': t.locale === 'zh' }]}
     lang="zh-CN"
     hreflang="zh-CN"
@@ -19,7 +20,7 @@ const { t } = Astro.props
     中文
   </a>
   <a
-    href="/en/"
+    href={withBase('/en/')}
     class:list={['lang-switch__btn', { 'lang-switch__btn--active': t.locale === 'en' }]}
     lang="en"
     hreflang="en"

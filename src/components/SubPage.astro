@@ -1,5 +1,6 @@
 ---
 import type { Content } from '../i18n/types'
+import { withBase } from '../utils/withBase'
 import Layout from '../layouts/Layout.astro'
 import Header from './Header.astro'
 import Footer from './Footer.astro'
@@ -22,7 +23,7 @@ const { t, label, title, intro, backHref, backLabel } = Astro.props
     <section class="border-b border-white/8 bg-slate-900/40 py-14 sm:py-20">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         {backHref && backLabel && (
-          <a href={backHref} class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300">
+          <a href={withBase(backHref)} class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300">
             <span aria-hidden="true">←</span>
             {backLabel}
           </a>

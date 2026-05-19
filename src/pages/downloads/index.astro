@@ -1,6 +1,7 @@
 ---
 import SubPage from '../../components/SubPage.astro'
 import { getContent, getAllProducts } from '../../i18n'
+import { withBase } from '../../utils/withBase'
 
 const t = getContent('zh')
 const { helpCenter: h } = t
@@ -18,11 +19,11 @@ const allProducts = getAllProducts(t)
               <li class="card flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <h3 class="font-semibold text-white">
-                    <a href={p.href} class="hover:text-brand-300">{p.name}</a>
+                    <a href={withBase(p.href)} class="hover:text-brand-300">{p.name}</a>
                   </h3>
                   <p class="mt-1 text-sm text-slate-400">{t.ui.preparing}</p>
                 </div>
-                <a href={p.href} class="text-sm font-semibold text-brand-400 hover:text-brand-300">
+                <a href={withBase(p.href)} class="text-sm font-semibold text-brand-400 hover:text-brand-300">
                   查看产品
                 </a>
               </li>

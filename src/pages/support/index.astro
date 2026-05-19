@@ -1,6 +1,7 @@
 ---
 import SubPage from '../../components/SubPage.astro'
 import { getContent } from '../../i18n'
+import { withBase } from '../../utils/withBase'
 
 const t = getContent('zh')
 const { helpCenter: h } = t
@@ -19,7 +20,7 @@ const sections = [
         {
           sections.map((section) => (
             <li>
-              <a href={section.href} class="card block h-full hover:border-brand-500/40">
+              <a href={withBase(section.href)} class="card block h-full hover:border-brand-500/40">
                 <h2 class="font-semibold text-white">{section.title}</h2>
                 <p class="mt-2 text-sm leading-relaxed text-slate-400">{section.description}</p>
               </a>

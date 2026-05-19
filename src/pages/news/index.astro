@@ -1,6 +1,7 @@
 ---
 import SubPage from '../../components/SubPage.astro'
 import { getContent } from '../../i18n'
+import { withBase } from '../../utils/withBase'
 
 const t = getContent('zh')
 ---
@@ -17,7 +18,7 @@ const t = getContent('zh')
                 <time class="text-slate-500">{item.date}</time>
               </div>
               <h2 class="mt-2 text-xl font-semibold text-white">
-                <a href={item.href} class="hover:text-brand-300">{item.title}</a>
+                <a href={withBase(item.href)} class="hover:text-brand-300">{item.title}</a>
               </h2>
               <p class="mt-2 text-sm leading-relaxed text-slate-400">{item.excerpt}</p>
             </li>
