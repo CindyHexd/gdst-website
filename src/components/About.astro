@@ -1,0 +1,41 @@
+---
+import type { Content } from '../i18n/types'
+
+interface Props {
+  t: Content
+}
+
+const { t } = Astro.props
+const { sections, about } = t
+---
+
+<section id="about" class="py-16 sm:py-24">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <p class="section-label">{sections.about.label}</p>
+    <h2 class="mt-3 text-2xl font-bold text-white sm:text-3xl lg:text-4xl">{sections.about.heading}</h2>
+
+    <div class="mt-10 grid gap-10 lg:grid-cols-2 lg:gap-14">
+      <div class="space-y-4 text-slate-400 leading-relaxed">
+        {about.paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+
+      <aside class="card">
+        <h3 class="text-lg font-semibold text-white">{about.asideTitle}</h3>
+        <ul class="mt-4 space-y-3 text-sm text-slate-400">
+          {
+            about.bullets.map((item) => (
+              <li class="flex gap-3">
+                <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400" aria-hidden="true"></span>
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-6 rounded-xl bg-slate-950/60 p-4 font-mono text-xs leading-relaxed text-brand-300/90">
+          <span class="text-slate-500">{t.ui.missionPrefix}</span>
+          {about.mission}
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>

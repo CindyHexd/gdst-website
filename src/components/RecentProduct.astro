@@ -1,0 +1,55 @@
+---
+import type { Content } from '../i18n/types'
+
+interface Props {
+  t: Content
+}
+
+const { t } = Astro.props
+const product = t.products.find((p) => p.href === '/products/allseis-1chr/') ?? null
+---
+
+{
+  product && (
+    <section id="recent-products" class="border-t border-white/8 py-16 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="section-label">{t.sections.recentProducts.label}</p>
+        <h2 class="mt-3 text-2xl font-bold text-white sm:text-3xl">{t.sections.recentProducts.heading}</h2>
+
+        <article class="card mt-10 flex flex-col overflow-hidden p-0 lg:flex-row lg:items-center">
+          {product.image && (
+            <div class="flex shrink-0 items-center justify-center bg-slate-950/40 px-4 py-4 lg:w-[36%] lg:py-5">
+              <img
+                src={product.image}
+                alt=""
+                loading="lazy"
+                class="h-28 w-auto max-w-full object-contain sm:h-32 lg:h-36"
+              />
+            </div>
+          )}
+          <div class="flex flex-1 flex-col p-5 sm:p-6 lg:py-6 lg:pl-7 lg:pr-8">
+            <h3 class="text-xl font-bold text-white sm:text-2xl">
+              {product.href ? (
+                <a href={product.href} class="hover:text-brand-300">{product.name}</a>
+              ) : (
+                product.name
+              )}
+            </h3>
+            <p class="mt-2 text-sm text-brand-400">{product.subtitle}</p>
+            <p class="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base">{product.description}</p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {product.highlights.map((h) => (
+                <li class="tag">{h}</li>
+              ))}
+            </ul>
+            {product.href && (
+              <a href={product.href} class="mt-4 inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
+                {t.ui.learnMore}
+              </a>
+            )}
+          </div>
+        </article>
+      </div>
+    </section>
+  )
+}

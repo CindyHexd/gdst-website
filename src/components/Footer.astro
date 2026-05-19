@@ -1,0 +1,30 @@
+---
+import type { Content } from '../i18n/types'
+
+interface Props {
+  t: Content
+}
+
+const { t } = Astro.props
+const year = new Date().getFullYear()
+---
+
+<footer class="border-t border-white/8 py-10">
+  <div class="mx-auto flex max-w-6xl flex-col gap-8 px-4 sm:px-6 md:flex-row md:items-start md:justify-between">
+    <div>
+      <p class="font-semibold text-white">{t.company.name}</p>
+      <p class="mt-1 text-sm text-slate-500">
+        {t.company.nameEn} · {t.ui.founded} {t.company.founded}
+      </p>
+    </div>
+    <nav class="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-400" aria-label={t.ui.footerNav}>
+      {t.footerLinks.map((link) => (
+        <a href={link.href} class="hover:text-white">{link.label}</a>
+      ))}
+    </nav>
+  </div>
+  <p class="mx-auto mt-8 max-w-6xl px-4 text-center text-xs leading-relaxed text-slate-600 sm:px-6 md:text-left">
+    {t.legal.publicSecurity} 版权所有© {t.company.name} {t.legal.icp}
+    <span class="sr-only"> {year} {t.ui.rights}</span>
+  </p>
+</footer>

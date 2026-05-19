@@ -1,0 +1,30 @@
+---
+import type { Content } from '../i18n/types'
+
+interface Props {
+  t: Content
+}
+
+const { t } = Astro.props
+---
+
+<div class="lang-switch" role="group" aria-label={t.ui.langSwitchLabel}>
+  <a
+    href="/"
+    class:list={['lang-switch__btn', { 'lang-switch__btn--active': t.locale === 'zh' }]}
+    lang="zh-CN"
+    hreflang="zh-CN"
+    aria-current={t.locale === 'zh' ? 'page' : undefined}
+  >
+    中文
+  </a>
+  <a
+    href="/en/"
+    class:list={['lang-switch__btn', { 'lang-switch__btn--active': t.locale === 'en' }]}
+    lang="en"
+    hreflang="en"
+    aria-current={t.locale === 'en' ? 'page' : undefined}
+  >
+    EN
+  </a>
+</div>

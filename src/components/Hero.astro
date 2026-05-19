@@ -1,0 +1,81 @@
+---
+import type { Content } from '../i18n/types'
+import heroLocal from '../assets/hero.png'
+
+interface Props {
+  t: Content
+}
+
+const { t } = Astro.props
+const { company, hero } = t
+const slides = hero.slides.map((slide, index) => ({
+  subtitle: slide.subtitle,
+  src: index === 0 ? heroLocal.src : slide.image,
+  alt: index === 0 ? company.shortName : '',
+}))
+---
+
+<section class="hero-banner border-b border-white/8" aria-label={company.nameEn}>
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+    <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(280px,420px)] lg:gap-12">
+      <div class="hero-banner__copy">
+        <h1 class="hero-banner__title text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">{hero.title}</h1>
+        <p class="hero-banner__subtitle section-label mt-5 min-h-[4rem] max-w-2xl sm:min-h-[3.25rem]">
+          {slides[0]?.subtitle}
+        </p>
+      </div>
+
+      <div class="hero-gallery relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/8 bg-slate-50 shadow-lg">
+        {
+          slides.map((slide, index) => (
+            <img
+              src={slide.src}
+              alt={slide.alt}
+              class="hero-gallery__slide absolute inset-0 h-full w-full object-contain p-6"
+              data-slide={index}
+              data-subtitle={slide.subtitle}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initHeroBanner() {
+    const banner = document.querySelector('.hero-banner')
+    if (!banner) return
+
+    const imageSlides = [...banner.querySelectorAll('.hero-gallery__slide')]
+    const subtitleEl = banner.querySelector('.hero-banner__subtitle')
+    const total = imageSlides.length
+    if (total === 0) return
+
+    let current = 0
+
+    function show(index) {
+      imageSlides.forEach((el, i) => {
+        el.classList.toggle('is-active', i === index)
+      })
+      const subtitle = imageSlides[index]?.getAttribute('data-subtitle')
+      if (subtitleEl && subtitle) {
+        subtitleEl.textContent = subtitle
+      }
+    }
+
+    show(0)
+
+    if (total > 1) {
+      setInterval(() => {
+        current = (current + 1) % total
+        show(current)
+      }, 5000)
+    }
+  }
+
+  initHeroBanner()
+  document.addEventListener('astro:page-load', initHeroBanner)
+</script>

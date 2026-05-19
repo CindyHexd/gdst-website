@@ -1,0 +1,36 @@
+---
+import type { Locale } from '../i18n/types'
+import { getContent } from '../i18n'
+import Layout from '../layouts/Layout.astro'
+import Header from './Header.astro'
+import Hero from './Hero.astro'
+import Stats from './Stats.astro'
+import MajorProduct from './MajorProduct.astro'
+import RecentProduct from './RecentProduct.astro'
+import News from './News.astro'
+import Footer from './Footer.astro'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getContent(locale)
+---
+
+<Layout t={t}>
+  <Header t={t} />
+  <main id="main">
+    <Hero t={t} />
+    <Stats t={t} />
+    <MajorProduct t={t} />
+    <RecentProduct t={t} />
+    <News
+      t={t}
+      limit={t.homepageNewsLimit}
+      label={t.sections.recentNews.label}
+      heading={t.sections.recentNews.heading}
+    />
+  </main>
+  <Footer t={t} />
+</Layout>

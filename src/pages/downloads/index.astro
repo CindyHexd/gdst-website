@@ -1,0 +1,71 @@
+---
+import SubPage from '../../components/SubPage.astro'
+import { getContent, getAllProducts } from '../../i18n'
+
+const t = getContent('zh')
+const { helpCenter: h } = t
+const allProducts = getAllProducts(t)
+---
+
+<SubPage t={t} label="DOWNLOADS" title={h.downloadsTitle} intro={h.downloadsIntro} backHref="/support/" backLabel={t.ui.backToHelp}>
+  <section class="py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl space-y-14 px-4 sm:px-6">
+      <div id="manuals">
+        <h2 class="text-xl font-bold text-white">{h.manualsTitle}</h2>
+        <ul class="mt-6 space-y-3">
+          {
+            allProducts.map((p) => (
+              <li class="card flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 class="font-semibold text-white">
+                    <a href={p.href} class="hover:text-brand-300">{p.name}</a>
+                  </h3>
+                  <p class="mt-1 text-sm text-slate-400">{t.ui.preparing}</p>
+                </div>
+                <a href={p.href} class="text-sm font-semibold text-brand-400 hover:text-brand-300">
+                  查看产品
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div id="guides">
+        <h2 class="text-xl font-bold text-white">{h.guidesTitle}</h2>
+        <ul class="mt-6 grid gap-4 md:grid-cols-2">
+          {
+            h.guides.map((item) => (
+              <li class="card">
+                <h3 class="font-semibold text-white">{item.title}</h3>
+                <p class="mt-2 text-sm text-slate-400">{item.description}</p>
+                <p class="mt-3 text-xs text-slate-500">{t.ui.preparing}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div id="software">
+        <h2 class="text-xl font-bold text-white">{h.softwareTitle}</h2>
+        <ul class="mt-6 grid gap-4 md:grid-cols-2">
+          {
+            h.software.map((item) => (
+              <li class="card">
+                <h3 class="font-semibold text-white">{item.title}</h3>
+                <p class="mt-2 text-sm text-slate-400">{item.description}</p>
+                {
+                  item.detail ? (
+                    <p class="mt-3 text-sm leading-relaxed text-slate-400">{item.detail}</p>
+                  ) : (
+                    <p class="mt-3 text-xs text-slate-500">{t.ui.preparing}</p>
+                  )
+                }
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+</SubPage>

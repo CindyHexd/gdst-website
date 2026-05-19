@@ -1,0 +1,108 @@
+---
+import SubPage from '../../components/SubPage.astro'
+import { getContent } from '../../i18n'
+
+const t = getContent('zh')
+const a = t.aboutPage
+---
+
+<SubPage t={t} label="ABOUT US" title="关于我们" intro={a.intro}>
+  <section class="py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl space-y-16 px-4 sm:px-6">
+      <div id="honors">
+        <h2 class="text-2xl font-bold text-white">{a.honorsTitle}</h2>
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <div class="card">
+            <h3 class="text-lg font-semibold text-white">{a.honorsSubtitle}</h3>
+            <ul class="mt-4 space-y-2 text-sm text-slate-400">
+              {a.honors.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="text-lg font-semibold text-white">{a.qualificationsSubtitle}</h3>
+            <ul class="mt-4 space-y-2 text-sm text-slate-400">
+              {a.qualifications.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+          <div class="card">
+            <h3 class="text-lg font-semibold text-white">{a.ipSubtitle}</h3>
+            <ul class="mt-4 space-y-2 text-sm text-slate-400">
+              {a.intellectualProperty.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact">
+        <h2 class="text-2xl font-bold text-white">{a.contactTitle}</h2>
+        <ul class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {
+            a.offices.map((office) => (
+              <li class="card">
+                <h3 class="font-semibold text-white">{office.name}</h3>
+                <div class="mt-3 space-y-1 text-sm leading-relaxed text-slate-400">
+                  {
+                    Array.isArray(office.address) ? (
+                      office.address.map((line) => <p>{line}</p>)
+                    ) : (
+                      <p>{office.address}</p>
+                    )
+                  }
+                </div>
+                <p class="mt-3 text-sm">
+                  <a
+                    href={`tel:${office.phone.replace(/\s/g, '')}`}
+                    class="text-brand-400 hover:text-brand-300">{office.phone}</a>
+                </p>
+                <p class="mt-2 text-sm">
+                  <a href={`mailto:${office.email}`} class="text-brand-400 hover:text-brand-300">{office.email}</a>
+                </p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div id="careers">
+        <h2 class="text-2xl font-bold text-white">{a.careersTitle}</h2>
+        <h3 class="mt-8 text-lg font-semibold text-white">{a.openPositionsTitle}</h3>
+        <ul class="mt-4 grid gap-6 lg:grid-cols-2">
+          {
+            a.openPositions.map((job) => (
+              <li class="card">
+                <h4 class="text-lg font-semibold text-white">{job.title}</h4>
+                <dl class="mt-3 space-y-2 text-sm">
+                  <div class="flex flex-wrap gap-x-2">
+                    <dt class="text-slate-500">{a.jobHeadcountLabel}</dt>
+                    <dd class="text-slate-300">{job.headcount}</dd>
+                  </div>
+                  <div class="flex flex-wrap gap-x-2">
+                    <dt class="text-slate-500">{a.jobSalaryLabel}</dt>
+                    <dd class="text-slate-300">{job.salary}</dd>
+                  </div>
+                </dl>
+                {
+                  job.specialNote ? (
+                    <div class="mt-4 text-sm">
+                      <p class="font-medium text-slate-400">{a.jobSpecialNoteLabel}</p>
+                      <p class="mt-1 leading-relaxed text-slate-400">{job.specialNote}</p>
+                    </div>
+                  ) : null
+                }
+                <div class="mt-4 text-sm">
+                  <p class="font-medium text-slate-400">{a.jobRequirementsLabel}</p>
+                  <ol class="mt-2 list-decimal space-y-2 pl-5 leading-relaxed text-slate-400">
+                    {job.requirements.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ol>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-6 text-sm leading-relaxed text-slate-400">{a.careersEmailNote}</p>
+      </div>
+    </div>
+  </section>
+</SubPage>
