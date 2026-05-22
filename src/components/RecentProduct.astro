@@ -12,12 +12,12 @@ const product = t.products.find((p) => p.href === '/products/allseis-1chr/') ?? 
 
 {
   product && (
-    <section id="recent-products" class="border-t border-white/8 py-16 sm:py-24">
+    <section id="recent-products" class="border-t border-white/8 py-10 sm:py-12">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <p class="section-label">{t.sections.recentProducts.label}</p>
         <h2 class="mt-3 text-2xl font-bold text-white sm:text-3xl">{t.sections.recentProducts.heading}</h2>
 
-        <article class="card mt-10 flex flex-col overflow-hidden p-0 lg:flex-row lg:items-center">
+        <article class="card mt-8 flex flex-col overflow-hidden p-0 lg:flex-row lg:items-center">
           {product.image && (
             <div class="flex shrink-0 items-center justify-center bg-slate-950/40 px-4 py-4 lg:w-[36%] lg:py-5">
               <img

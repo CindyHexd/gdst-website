@@ -1,0 +1,27 @@
+---
+import type { Content } from '../i18n/types'
+
+interface Props {
+  t: Content
+}
+
+const { t } = Astro.props
+const { solution, sections } = t
+---
+
+<section id="solution" class="border-y border-white/8 py-10 sm:py-12">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <p class="section-label">{sections.solution.label}</p>
+    <h2 class="mt-3 text-2xl font-bold text-white sm:text-3xl">{sections.solution.heading}</h2>
+
+    <ul class="solution-grid mt-8 grid grid-cols-2 gap-0.5 bg-white sm:grid-cols-4">
+      {
+        solution.items.map((item) => (
+          <li class="solution-grid__item flex min-h-[5.5rem] items-center justify-center px-3 py-5 text-center text-sm font-medium sm:min-h-[6.5rem] sm:py-6 sm:text-base">
+            {item}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

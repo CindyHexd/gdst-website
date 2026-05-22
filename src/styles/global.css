@@ -233,6 +233,11 @@ a.bg-brand-600,
   }
 }
 
+.solution-grid__item {
+  background-color: var(--color-brand-600);
+  color: #ffffff;
+}
+
 .hero-gallery__slide {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;

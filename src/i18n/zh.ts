@@ -31,7 +31,6 @@ export const zh: Content = {
     mobileNav: '移动端导航',
     menu: '菜单',
     cta: '商务合作',
-    footerNav: '页脚导航',
     rights: '保留所有权利。',
     founded: '成立于',
     missionPrefix: '使命 · ',
@@ -71,31 +70,19 @@ export const zh: Content = {
     slides: [
       {
         subtitle: '面向能源勘探领域的探测装备自主化领导者',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/49068950.png',
+        image: '/landscapes/namibia.jpg',
       },
       {
         subtitle: '面向工业与智慧城市领域的智能装备制造商和大数据服务商',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/42128135.png',
+        image: '/landscapes/smart.jpg',
       },
       {
         subtitle: '面向城市地下空间一体化领域的解决方案提供商',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27446291.png',
+        image: '/landscapes/shanghai-urban.jpg',
       },
       {
         subtitle: '面向地学大数据领域的智慧科技领跑者',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27047828.png',
-      },
-      {
-        subtitle: '智能传感器与宽频检波器自主研发制造商',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/55920300.png',
-      },
-      {
-        subtitle: '节点式地震采集与无缆自主化野外部署服务商',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/52917172.png',
-      },
-      {
-        subtitle: '预防性维护、工程灾害与城市次表层监测解决方案',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/55951257.png',
+        image: '/landscapes/aerial-view.jpg',
       },
     ],
   },
@@ -107,7 +94,21 @@ export const zh: Content = {
     { value: '50+', label: '自有知识产权' },
   ],
 
+  solution: {
+    items: [
+      '能源/矿产高精度勘探',
+      '城市地下空间高精度勘探',
+      '水力压裂/矿震监测',
+      '工程灾害监测预警',
+      '工业预测性维护监测',
+      '天然气管线泄露监测',
+      '滑坡监测',
+      '油藏监测',
+    ],
+  },
+
   sections: {
+    solution: { label: 'SOLUTION', heading: '解决方案' },
     majorProducts: { label: 'MAJOR PRODUCTS', heading: '主要产品' },
     recentProducts: { label: 'RECENT PRODUCTS', heading: '近期产品' },
     news: { label: 'NEWS', heading: '新闻' },
@@ -118,7 +119,7 @@ export const zh: Content = {
 
   business: {
     title: '业务板块',
-    intro:
+    intro:  
       '围绕智能传感、地震采集、预防性维护、数据处理与分析、城市次表层研究五大方向，提供从装备研发到数据服务的完整能力。',
     segments: [
       {
@@ -461,14 +462,6 @@ export const zh: Content = {
     careersEmailNote:
       '请发送简历至 service@geodeepsensing.com，邮件标题注明「应聘岗位-姓名」。',
   },
-
-  footerLinks: [
-    { label: '业务板块', href: '/business/' },
-    { label: '帮助', href: '/support/' },
-    { label: '资料下载', href: '/downloads/' },
-    { label: '关于我们', href: '/about/' },
-    { label: '加入我们', href: '/about/#careers' },
-  ],
 
   legal: {
     publicSecurity: '京公网安备11010802038108号',

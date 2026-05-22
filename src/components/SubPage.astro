@@ -20,7 +20,7 @@ const { t, label, title, intro, backHref, backLabel } = Astro.props
 <Layout t={t}>
   <Header t={t} />
   <main id="main" class="min-h-screen">
-    <section class="border-b border-white/8 bg-slate-900/40 py-14 sm:py-20">
+    <section class="border-b border-white/8 bg-slate-900/40 py-10 sm:py-12">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         {backHref && backLabel && (
           <a href={withBase(backHref)} class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300">

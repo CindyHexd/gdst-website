@@ -31,7 +31,6 @@ export const en: Content = {
     mobileNav: 'Mobile navigation',
     menu: 'Menu',
     cta: 'Contact us',
-    footerNav: 'Footer navigation',
     rights: 'All rights reserved.',
     founded: 'Est.',
     missionPrefix: 'Mission · ',
@@ -71,31 +70,19 @@ export const en: Content = {
     slides: [
       {
         subtitle: 'Leader in autonomous exploration equipment for energy exploration',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/49068950.png',
+        image: '/landscapes/namibia.jpg',
       },
       {
         subtitle: 'Intelligent equipment manufacturer and big-data service provider for industry and smart cities',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/42128135.png',
+        image: '/landscapes/smart.jpg',
       },
       {
         subtitle: 'Solution provider for integrated urban subsurface space',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27446291.png',
+        image: '/landscapes/shanghai-urban.jpg',
       },
       {
         subtitle: 'Smart technology frontrunner in geoscience big data',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27047828.png',
-      },
-      {
-        subtitle: 'R&D manufacturer of intelligent sensors and wideband geophones',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/55920300.png',
-      },
-      {
-        subtitle: 'Nodal seismic acquisition and cable-free field deployment',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/52917172.png',
-      },
-      {
-        subtitle: 'Predictive maintenance, engineering hazards, and urban subsurface monitoring',
-        image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/55951257.png',
+        image: '/landscapes/aerial-view.jpg',
       },
     ],
   },
@@ -107,7 +94,21 @@ export const en: Content = {
     { value: '50+', label: 'Proprietary IP assets' },
   ],
 
+  solution: {
+    items: [
+      'High-precision energy & mineral exploration',
+      'High-precision urban subsurface exploration',
+      'Hydraulic fracturing & mine seismic monitoring',
+      'Engineering disaster monitoring & early warning',
+      'Industrial predictive maintenance monitoring',
+      'Natural gas pipeline leak monitoring',
+      'Landslide monitoring',
+      'Reservoir monitoring',
+    ],
+  },
+
   sections: {
+    solution: { label: 'SOLUTION', heading: 'Solutions' },
     majorProducts: { label: 'PRODUCTS', heading: 'Major products' },
     recentProducts: { label: 'PRODUCTS', heading: 'Recent products' },
     news: { label: 'NEWS', heading: 'News' },
@@ -469,14 +470,6 @@ export const en: Content = {
     ],
     careersEmailNote: 'Send your resume to service@geodeepsensing.com with the subject “Position – Your Name”.',
   },
-
-  footerLinks: [
-    { label: 'Business segments', href: '/business/' },
-    { label: 'Help', href: '/support/' },
-    { label: 'Downloads', href: '/downloads/' },
-    { label: 'About', href: '/about/' },
-    { label: 'Careers', href: '/about/#careers' },
-  ],
 
   legal: {
     publicSecurity: 'Beijing public security record 11010802038108',

@@ -36,7 +36,6 @@ export interface Content {
     mobileNav: string
     menu: string
     cta: string
-    footerNav: string
     rights: string
     founded: string
     missionPrefix: string
@@ -70,7 +69,12 @@ export interface Content {
 
   stats: { value: string; label: string }[]
 
+  solution: {
+    items: string[]
+  }
+
   sections: {
+    solution: { label: string; heading: string }
     majorProducts: { label: string; heading: string }
     recentProducts: { label: string; heading: string }
     news: { label: string; heading: string }
@@ -158,7 +162,6 @@ export interface Content {
     careersEmailNote: string
   }
 
-  footerLinks: { label: string; href: string }[]
   legal: {
     publicSecurity: string
     icp: string
