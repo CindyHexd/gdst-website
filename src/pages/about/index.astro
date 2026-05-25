@@ -1,6 +1,7 @@
 ---
 import SubPage from '../../components/SubPage.astro'
 import { getContent } from '../../i18n'
+import { withBase } from '../../utils/withBase'
 
 const t = getContent('zh')
 const a = t.aboutPage
@@ -11,21 +12,38 @@ const a = t.aboutPage
     <div class="mx-auto max-w-6xl space-y-12 px-4 sm:px-6">
       <div id="honors">
         <h2 class="text-2xl font-bold text-white">{a.honorsTitle}</h2>
-        <div class="mt-8 grid gap-6 lg:grid-cols-3">
-          <div class="card">
-            <h3 class="text-lg font-semibold text-white">{a.honorsSubtitle}</h3>
-            <ul class="mt-4 space-y-2 text-sm text-slate-400">
-              {a.honors.map((item) => <li>{item}</li>)}
-            </ul>
-          </div>
+        <div class="mt-8 flex flex-col gap-6">
           <div class="card">
             <h3 class="text-lg font-semibold text-white">{a.qualificationsSubtitle}</h3>
-            <ul class="mt-4 space-y-2 text-sm text-slate-400">
-              {a.qualifications.map((item) => <li>{item}</li>)}
+            <ul class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              {
+                a.qualifications.map((item) => (
+                  <li>
+                    <img
+                      src={withBase(item.src)}
+                      alt={item.alt}
+                      class="w-full rounded-lg object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </li>
+                ))
+              }
             </ul>
           </div>
           <div class="card">
             <h3 class="text-lg font-semibold text-white">{a.ipSubtitle}</h3>
+            {
+              a.ipImage && (
+                <img
+                  src={withBase(a.ipImage)}
+                  alt={a.ipSubtitle}
+                  class="mt-4 w-full rounded-lg object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )
+            }
             <ul class="mt-4 space-y-2 text-sm text-slate-400">
               {a.intellectualProperty.map((item) => <li>{item}</li>)}
             </ul>

@@ -1,0 +1,33 @@
+---
+interface Row {
+  label: string
+  value: string
+}
+
+interface Props {
+  title?: string
+  rows: Row[]
+}
+
+const { title, rows } = Astro.props
+---
+
+{
+  title && (
+    <h3 class="mb-2 text-sm font-semibold text-slate-800">{title}</h3>
+  )
+}
+<div class="spec-table-wrap overflow-x-auto rounded-lg border border-slate-200">
+  <table class="spec-table w-full min-w-[280px]">
+    <tbody>
+      {
+        rows.map((row) => (
+          <tr>
+            <th scope="row">{row.label}</th>
+            <td>{row.value}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

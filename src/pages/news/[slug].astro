@@ -1,5 +1,6 @@
 ---
 import SubPage from '../../components/SubPage.astro'
+import NewsBody from '../../components/NewsBody.astro'
 import { getContent } from '../../i18n'
 
 const t = getContent('zh')
@@ -13,18 +14,18 @@ export function getStaticPaths() {
 }
 
 const { item } = Astro.props
+const paragraphs = item.body ?? [t.ui.newsDetailPlaceholder]
 ---
 
-<SubPage t={t} label={item.date} title={item.title} intro={item.excerpt}>
+<SubPage t={t} label={item.date} tags={item.tags} title={item.title} intro={item.excerpt}>
   <section class="py-10 sm:py-12">
-    <article class="mx-auto max-w-3xl px-4 text-slate-300 sm:px-6">
-      <p class="leading-relaxed">
-        {item.excerpt}
-      </p>
-      <p class="mt-5 leading-relaxed text-slate-400">
-        本页面为本地站点新闻详情页，用于承载原首页新闻中心条目。后续可继续补充活动图片、会议议程、客户交流纪要与媒体资料。
-      </p>
-      <a href="/news/" class="mt-8 inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">返回新闻中心</a>
-    </article>
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <article class="space-y-5 leading-relaxed text-slate-300">
+        <NewsBody blocks={paragraphs} />
+        <a href="/news/" class="inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
+          {t.ui.backToNews}
+        </a>
+      </article>
+    </div>
   </section>
 </SubPage>

@@ -1,11 +1,12 @@
 ---
 import SubPage from '../../components/SubPage.astro'
 import { getContent } from '../../i18n'
+import { withBase } from '../../utils/withBase'
 
 const t = getContent('zh')
 ---
 
-<SubPage t={t} label="CASES" title="客户案例" intro="典型应用覆盖能源矿产勘探、城市地下空间精细探测、工程监测与智慧城市场景。">
+<SubPage t={t} label="CASES" title="客户案例" intro="">
   <section class="py-10 sm:py-12">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <ul class="divide-y divide-white/8">
@@ -13,11 +14,7 @@ const t = getContent('zh')
           t.cases.map((item) => (
             <li class="py-4 first:pt-0 last:pb-0">
               <h2 class="text-lg font-semibold text-white">
-                {item.href ? (
-                  <a href={item.href} class="hover:text-brand-300">{item.title}</a>
-                ) : (
-                  item.title
-                )}
+                <a href={withBase(item.href)} class="hover:text-brand-300">{item.title}</a>
               </h2>
               <p class="mt-2 text-sm leading-relaxed text-slate-400">{item.excerpt}</p>
             </li>

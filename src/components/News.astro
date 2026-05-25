@@ -25,7 +25,9 @@ const sectionHeading = heading ?? t.sections.news.heading
         items.map((item) => (
           <li class="py-4 first:pt-0 last:pb-0">
             <div class="flex flex-wrap items-center gap-2 text-sm">
-              <span class="tag">{item.tag}</span>
+              {item.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
               <time class="text-slate-500">{item.date}</time>
             </div>
             <h3 class="mt-2 text-lg font-semibold text-white">

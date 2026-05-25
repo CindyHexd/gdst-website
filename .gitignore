@@ -20,8 +20,5 @@ pnpm-debug.log*
 # IDE
 .astro/
 
-# Large local asset libraries (keep on disk; reference via /images/ when ready for the site)
-public/product-pic-1/
-public/product-pic-2/
-public/certificates/
-public/landscapes/
+# Large local asset libraries (keep on disk; served from public-media root paths)
+unused-media/

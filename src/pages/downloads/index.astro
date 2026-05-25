@@ -1,11 +1,21 @@
 ---
 import SubPage from '../../components/SubPage.astro'
+import { productManualDownloadName, productManualPath } from '../../data/productManuals'
 import { getContent, getAllProducts } from '../../i18n'
 import { withBase } from '../../utils/withBase'
 
 const t = getContent('zh')
 const { helpCenter: h } = t
-const allProducts = getAllProducts(t)
+const allProducts = getAllProducts(t).map((p) => {
+  const slug = p.href.split('/').filter(Boolean).at(-1) ?? ''
+  const manualPath = productManualPath(slug)
+  return {
+    ...p,
+    slug,
+    pdfUrl: manualPath ? withBase(manualPath) : undefined,
+    pdfFilename: productManualDownloadName(slug),
+  }
+})
 ---
 
 <SubPage t={t} label="DOWNLOADS" title={h.downloadsTitle} intro={h.downloadsIntro} backHref="/support/" backLabel={t.ui.backToHelp}>
@@ -16,16 +26,26 @@ const allProducts = getAllProducts(t)
         <ul class="mt-6 space-y-3">
           {
             allProducts.map((p) => (
-              <li class="card flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                <div>
+              <li class="card flex items-center justify-between gap-4">
+                <div class="min-w-0 flex-1">
                   <h3 class="font-semibold text-white">
                     <a href={withBase(p.href)} class="hover:text-brand-300">{p.name}</a>
                   </h3>
-                  <p class="mt-1 text-sm text-slate-400">{t.ui.preparing}</p>
+                  {!p.pdfUrl && <p class="mt-1 text-sm text-slate-400">{t.ui.preparing}</p>}
                 </div>
-                <a href={withBase(p.href)} class="text-sm font-semibold text-brand-400 hover:text-brand-300">
-                  查看产品
-                </a>
+                {
+                  p.pdfUrl ? (
+                    <a
+                      href={p.pdfUrl}
+                      download={p.pdfFilename}
+                      class="shrink-0 whitespace-nowrap text-sm font-semibold text-brand-400 hover:text-brand-300"
+                    >
+                      {t.ui.download}
+                    </a>
+                  ) : (
+                    <span class="shrink-0 whitespace-nowrap text-sm text-slate-500">{t.ui.download}</span>
+                  )
+                }
               </li>
             ))
           }

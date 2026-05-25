@@ -36,9 +36,17 @@ export const en: Content = {
     missionPrefix: 'Mission · ',
     viewMore: 'View more news',
     learnMore: 'Learn more',
+    download: 'Download',
     backToBusiness: 'Back to business segments',
+    backToProducts: 'Back to products',
     backToHelp: 'Back to help',
+    backToNews: 'Back to news',
+    backToCases: 'Back to cases',
     preparing: 'Documents are being prepared. Contact sales or technical support for the latest versions.',
+    newsDetailPlaceholder:
+      'This is a placeholder news detail page. Add photos, agendas, meeting notes, and media assets when ready.',
+    caseDetailPlaceholder:
+      'Case study details coming soon. Add project background, technical approach, outcomes, and images here.',
   },
 
   company: {
@@ -58,11 +66,27 @@ export const en: Content = {
 
   navLinks: [
     { href: '/en/', label: 'Home' },
-    { href: '/business/', label: 'Business' },
+    { href: '/products/', label: 'Products' },
     { href: '/cases/', label: 'Cases' },
     { href: '/news/', label: 'News' },
-    { href: '/support/', label: 'Help' },
-    { href: '/about/', label: 'About' },
+    {
+      href: '/support/',
+      label: 'Help',
+      children: [
+        { href: '/support/faq/', label: 'FAQ' },
+        { href: '/support/legal/', label: 'Legal notice' },
+        { href: '/downloads/', label: 'Downloads' },
+      ],
+    },
+    {
+      href: '/about/',
+      label: 'About',
+      children: [
+        { href: '/about/#honors', label: 'Honors & qualifications' },
+        { href: '/about/#contact', label: 'Contact us' },
+        { href: '/about/#careers', label: 'Join us' },
+      ],
+    },
   ],
 
   hero: {
@@ -70,19 +94,19 @@ export const en: Content = {
     slides: [
       {
         subtitle: 'Leader in autonomous exploration equipment for energy exploration',
-        image: '/landscapes/namibia.jpg',
+        image: '/bg/namibia.jpg',
       },
       {
         subtitle: 'Intelligent equipment manufacturer and big-data service provider for industry and smart cities',
-        image: '/landscapes/smart.jpg',
+        image: '/bg/smart.jpg',
       },
       {
         subtitle: 'Solution provider for integrated urban subsurface space',
-        image: '/landscapes/shanghai-urban.jpg',
+        image: '/bg/shanghai-urban.jpg',
       },
       {
         subtitle: 'Smart technology frontrunner in geoscience big data',
-        image: '/landscapes/aerial-view.jpg',
+        image: '/bg/aerial-view.jpg',
       },
     ],
   },
@@ -110,7 +134,6 @@ export const en: Content = {
   sections: {
     solution: { label: 'SOLUTION', heading: 'Solutions' },
     majorProducts: { label: 'PRODUCTS', heading: 'Major products' },
-    recentProducts: { label: 'PRODUCTS', heading: 'Recent products' },
     news: { label: 'NEWS', heading: 'News' },
     recentNews: { label: 'NEWS', heading: 'Recent news' },
   },
@@ -157,6 +180,50 @@ export const en: Content = {
     ],
   },
 
+  productCenter: {
+    title: 'Products',
+    intro:
+      'ALLSEIS nodal seismic systems and wideband geophones for land and marine acquisition, with DualSync™, RapidScan™, iFlyScan™, and SeisData Management (SDM) software.',
+    platformTitle: 'Core platforms',
+    platformRows: [
+      { label: 'DualSync™', value: 'GNSS timing with μs-level node synchronization' },
+      { label: 'RapidScan™', value: 'BLE field QC — ~20 m ground, >100 m air' },
+      { label: 'iFlyScan™', value: 'UAV patrol for large-array management' },
+      { label: 'SDM', value: 'SEG-D / SEG-Y / Mini-SEED / SAC and QC workflows' },
+    ],
+    categories: [
+      {
+        id: 'seismic',
+        title: 'Seismic acquisition',
+        description:
+          'Cable-free single-, three-, and four-component nodal systems for high-density energy and urban subsurface projects.',
+        abbreviations: [
+          'LF = Low Frequency',
+          'C = Component',
+          'HR = High Resolution',
+        ],
+      },
+      {
+        id: 'sensors',
+        title: 'Intelligent sensors',
+        description:
+          'Active force-feedback wideband geophones for nodes or external strings, land and marine applications.',
+      },
+    ],
+    lineupTitle: 'Nodal model comparison',
+    lineupHeaders: ['Model', 'Channels', 'ADC', 'Min. interval', 'Full-scale DR', 'Typical life'],
+    lineupRows: [
+      ['ALLSEIS-1C', '1C', '24-bit', '0.5 ms', '145 dB', '28–33 days'],
+      ['ALLSEIS-1CHR', '1C', '32-bit', '0.25 ms', '150 dB', '>35 days'],
+      ['ALLSEIS-3C', '3C', '3×24-bit', '0.5 ms', '125 dB', '28–33 days'],
+      ['ALLSEIS-4CLF', '4C', '4×24-bit', '0.5 ms', '—', '33 days'],
+      ['I-Nodal-2', '1C', '32-bit', '0.25 ms', '148 dB', '>30 days'],
+    ],
+    specTitle: 'Specifications',
+    applicationsTitle: 'Applications',
+    highlightsTitle: 'Highlights',
+  },
+
   products: [
     {
       name: 'ALLSEIS-1C Nodal Seismic Acquisition System',
@@ -196,10 +263,10 @@ export const en: Content = {
     },
     {
       name: 'ALLSEIS-1CHR Nodal Seismic Acquisition System',
-      subtitle: 'High-resolution nodal seismic acquisition',
+      subtitle: 'Domestic-chip high-dynamic-range nodal system',
       description:
-        'Nodal equipment for high-precision seismic acquisition, with autonomous control, portable deployment, and multi-scenario use.',
-      highlights: ['High-resolution', 'Nodal', 'Autonomous'],
+        '32-bit acquisition with 0.25 ms sampling and 150 dB full-scale dynamic range; continuous GNSS for deep burial and RFID asset tracking.',
+      highlights: ['Domestic chip', '0.25 ms sampling', '150 dB DR'],
       href: '/products/allseis-1chr/',
       image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/52917172.png',
     },
@@ -220,28 +287,35 @@ export const en: Content = {
 
   cases: [
     {
-      title: 'Deep oil, gas and mineral nodal acquisition project',
-      excerpt: 'ALLSEIS nodal systems enabled high-density cable-free deployment in complex exploration areas.',
+      title: 'Fugu County 3D seismic survey',
+      excerpt:
+        'CNOOC operation using 30,000 ALLSEIS-1C nodes — 301 km² loess plateau survey completed in 21 days.',
+      href: '/cases/fugu-3d/',
     },
     {
       title: 'Urban subsurface fine-mapping project',
       excerpt: 'Three-component acquisition and frequency imaging supported planning and subsurface safety.',
+      href: '/cases/urban-subsurface/',
     },
     {
       title: 'Engineering hazard and mining seismic monitoring',
       excerpt: 'Continuous monitoring and analytics for landslides, mining tremors, and fracturing scenarios.',
+      href: '/cases/hazard-mining-monitoring/',
     },
     {
       title: 'Natural gas pipeline leak monitoring',
       excerpt: 'Wideband sensing and analytics for along-pipeline anomaly detection and early warning.',
+      href: '/cases/pipeline-leak-monitoring/',
     },
     {
       title: 'Industrial predictive maintenance',
       excerpt: 'Vibration monitoring and fault prediction for critical equipment and infrastructure.',
+      href: '/cases/predictive-maintenance/',
     },
     {
       title: 'Hydraulic fracturing and reservoir monitoring',
       excerpt: 'Microseismic monitoring and reservoir dynamics for refined oil and gas development.',
+      href: '/cases/fracturing-reservoir/',
     },
   ],
 
@@ -250,44 +324,8 @@ export const en: Content = {
       date: '2024-07-27',
       title: 'GeoDeep Sensing joined the 2024 Engineering Geophysics Academic Conference',
       excerpt: 'The company exchanged engineering geophysics technology applications with industry partners.',
-      tag: 'News',
-      href: '/news/engineering-geophysics-2024/',
-    },
-    {
-      date: '2024-06-12',
-      title: 'GeoDeep Sensing returned to the 85th EAGE Annual Conference',
-      excerpt: 'GeoDeep Sensing presented self-developed products and solutions to the international industry.',
-      tag: 'News',
-      href: '/news/eage-85/',
-    },
-    {
-      date: '2024-09-12',
-      title: 'Chairman Lv Yongjun joined Shanxi Geophysical Survey Institute technical training',
-      excerpt: 'GeoDeep Sensing exchanged ideas on intelligent geophysical technology and equipment.',
-      tag: 'News',
-      href: '/news/shanxi-training/',
-    },
-    {
-      date: '2024-08-06',
-      title: 'Hebei Coalfield Geological Bureau geophysical team visited GeoDeep Sensing',
-      excerpt: 'The visiting team discussed geophysical equipment and applications with GeoDeep Sensing.',
-      tag: 'News',
-      href: '/news/hebei-visit/',
-    },
-    {
-      date: '2023-05-27',
-      title: '2023 China International Oil & Gas Exploration Technology Conference',
-      excerpt:
-        'GeoDeep Sensing joined the conference in Beijing with autonomous seismic acquisition and exploration equipment.',
-      tag: 'News',
-      href: '/news/oil-gas-exploration-2023/',
-    },
-    {
-      date: '2022-04-29',
-      title: 'I-Nodal-V2 cable-free seismic acquisition system finalized for pilot production',
-      excerpt: 'I-Nodal-V2 completed product finalization and scaled trial production.',
-      tag: 'News',
-      href: '/news/i-nodal-v2-production/',
+      tags: ['Exhibition', 'Hangzhou'],
+      href: '/news/geophys-academic-2025/',
     },
   ],
 
@@ -385,20 +423,18 @@ export const en: Content = {
     intro:
       'Founded in 2020, Beijing GeoDeep Sensing Technology Co., Ltd. draws on research institutes including the Institute of Geology and Geophysics, Chinese Academy of Sciences, and the School of Earth and Space Sciences, Peking University. We focus on intelligent sensing R&D and manufacturing, multi-dimensional multi-source data acquisition and processing, and big-data decision support for energy and mineral resources, industrial predictive maintenance, and smart cities. We develop proprietary smart sensors, data-acquisition nodes, and application systems, and deliver value-added services across data acquisition, storage, analytics, visualization, and applications. Guided by integrity in practice and unity of knowledge and action, we help customers advance digital innovation and domestic core exploration equipment—contributing to localized deep-resource detection capabilities for land, sea, and space.',
     honorsTitle: 'Honors & qualifications',
-    honorsSubtitle: 'Honors',
-    honors: [
-      'Zhongguancun High-tech Enterprise',
-      'Beijing “Specialized and Sophisticated” SME',
-      'Outstanding tenant at CAS Zhihui Workshop',
-      'Regular exhibitor at EAGE and other international events',
-    ],
     qualificationsSubtitle: 'Qualifications',
     qualifications: [
-      'Quality management system certification',
-      'Intellectual property management certification',
-      'Industry testing qualifications (ongoing)',
+      { src: '/certificates/HICs.jpeg', alt: 'HICs' },
+      { src: '/certificates/北京中科中关村高新证书至2027.jpg', alt: 'Zhongguancun High-Tech Enterprise Certificate (Beijing)' },
+      { src: '/certificates/地球物理学会科学进步二等奖-25年10月.jpg', alt: 'Second Prize for Scientific Progress, Geophysical Society' },
+      { src: '/certificates/江苏瞪羚企业.jpg', alt: 'Jiangsu Gazelle Enterprise' },
+      { src: '/certificates/苏州专精特新证书2027.jpg', alt: 'Suzhou Specialized and Innovative Enterprise Certificate' },
+      { src: '/certificates/苏州博士后创新实践基地.jpg', alt: 'Suzhou Postdoctoral Innovation Practice Base' },
+      { src: '/certificates/苏州高新至2026.png', alt: 'Suzhou High-Tech Enterprise Certificate' },
     ],
     ipSubtitle: 'Intellectual property',
+    ipImage: '/certificates/知识产权叠放.png',
     intellectualProperty: [
       '50+ proprietary IP assets',
       'Patents on nodal seismic acquisition systems',

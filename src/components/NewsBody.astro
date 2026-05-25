@@ -1,0 +1,30 @@
+---
+import type { NewsBodyBlock } from '../i18n/types'
+import { withBase } from '../utils/withBase'
+
+interface Props {
+  blocks: NewsBodyBlock[]
+}
+
+const { blocks } = Astro.props
+---
+
+{
+  blocks.map((block) => (
+    <p>
+      {typeof block === 'string' ? (
+        block
+      ) : (
+        block.parts.map((part) =>
+          part.type === 'text' ? (
+            part.value
+          ) : (
+            <a href={withBase(part.href)} class="font-semibold text-brand-400 hover:text-brand-300">
+              {part.label}
+            </a>
+          ),
+        )
+      )}
+    </p>
+  ))
+}

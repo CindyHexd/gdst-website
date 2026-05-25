@@ -6,6 +6,7 @@ const isGithubPages = process.env.GITHUB_PAGES === 'true'
 export default defineConfig({
   site: isGithubPages ? 'https://cindyhexd.github.io' : 'https://www.geodeepsensing.com',
   base: isGithubPages ? '/gdst-website' : undefined,
+  publicDir: 'public-media',
   output: 'static',
   compressHTML: true,
   redirects: {
@@ -15,7 +16,7 @@ export default defineConfig({
     '/careers': '/about/#careers',
     '/technical-support': '/support/',
     '/cloud': '/downloads/',
-    '/products': '/business/',
+    '/business': '/products/',
   },
   vite: {
     plugins: [tailwindcss()],

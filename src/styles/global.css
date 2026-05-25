@@ -88,6 +88,10 @@ body {
   border-color: color-mix(in srgb, var(--color-brand-500) 38%, #dbe7f3);
 }
 
+.card-static:hover {
+  border-color: #dbe7f3;
+}
+
 .tag {
   @apply inline-block rounded-full px-2.5 py-0.5 text-xs font-medium;
   background: #e8f2ff;
@@ -245,6 +249,54 @@ a.bg-brand-600,
 
 .hero-gallery__slide.is-active {
   opacity: 1;
+}
+
+.spec-table {
+  font-size: 0.8125rem;
+  line-height: 1.35;
+}
+
+.spec-table th,
+.spec-table td {
+  padding: 0.3rem 0.5rem;
+  vertical-align: top;
+}
+
+.spec-table tbody th[scope='row'] {
+  width: 36%;
+  font-weight: 500;
+  color: #475569;
+  white-space: nowrap;
+  padding-right: 0.75rem;
+}
+
+.spec-table tbody td {
+  color: #334155;
+}
+
+.spec-table tbody tr + tr {
+  border-top: 1px solid #e2e8f0;
+}
+
+.spec-table--comparison thead th,
+.spec-table--comparison tbody th,
+.spec-table--comparison tbody td {
+  white-space: nowrap;
+}
+
+.spec-table--comparison thead th {
+  font-weight: 600;
+  color: #0f5f9f;
+  background: #f0f7ff;
+  border-bottom: 1px solid #dbe7f3;
+}
+
+.spec-table--comparison thead th:first-child {
+  text-align: center;
+}
+
+.spec-table--comparison tbody th[scope='row'] {
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: reduce) {

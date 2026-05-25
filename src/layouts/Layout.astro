@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import type { Content } from '../i18n/types'
+import { withBase } from '../utils/withBase'
 
 interface Props {
   t: Content
@@ -18,6 +19,8 @@ const enUrl = '/en/'
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={t.meta.description} />
     <meta name="theme-color" content="#020617" />
+    <link rel="icon" href={withBase('/logo-sq.png')} type="image/png" />
+    <link rel="apple-touch-icon" href={withBase('/logo-sq.png')} />
     <link rel="alternate" hreflang="zh-CN" href={zhUrl} />
     <link rel="alternate" hreflang="en" href={enUrl} />
     <link rel="alternate" hreflang="x-default" href={zhUrl} />

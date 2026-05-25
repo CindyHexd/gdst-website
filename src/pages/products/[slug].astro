@@ -1,27 +1,21 @@
 ---
 import SubPage from '../../components/SubPage.astro'
+import ComparisonTable from '../../components/ComparisonTable.astro'
+import SpecTable from '../../components/SpecTable.astro'
+import { getProductDetailExtras } from '../../data/productSpecs'
 import { getContent } from '../../i18n'
-
-const t = getContent('zh')
-const detailProducts = [
-  ...t.products,
-  ...t.secondaryProducts.map((p) => ({
-    ...p,
-    subtitle: '宽频检波器',
-    description: '面向地震采集、工程勘察与长期监测场景的有源力反馈式宽频传感器。',
-    highlights: ['有源力反馈', '宽频响应', '长期稳定'],
-  })),
-]
 
 export function getStaticPaths() {
   const t = getContent('zh')
   const detailProducts = [
     ...t.products,
     ...t.secondaryProducts.map((p) => ({
-      ...p,
-      subtitle: '宽频检波器',
-      description: '面向地震采集、工程勘察与长期监测场景的有源力反馈式宽频传感器。',
+      name: p.name,
+      subtitle: t.productCenter.categories.find((c) => c.id === 'sensors')?.title ?? '',
+      description: '',
       highlights: ['有源力反馈', '宽频响应', '长期稳定'],
+      href: p.href,
+      image: p.image,
     })),
   ]
 
@@ -32,6 +26,10 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props
+const t = getContent('zh')
+const pc = t.productCenter
+const slug = product.href?.split('/').filter(Boolean).at(-1) ?? ''
+const extras = getProductDetailExtras('zh', slug)
 ---
 
 <SubPage
@@ -39,29 +37,67 @@ const { product } = Astro.props
   label="PRODUCT DETAIL"
   title={product.name}
   intro={product.subtitle}
-  backHref="/business/"
-  backLabel={t.ui.backToBusiness}
+  backHref="/products/"
+  backLabel={t.ui.backToProducts}
 >
   <section class="py-10 sm:py-12">
-    <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1fr)_360px]">
-      <article class="space-y-6">
-        <p class="text-lg leading-relaxed text-slate-300">{product.description}</p>
-        <div>
-          <h2 class="text-xl font-semibold text-white">核心特点</h2>
-          <ul class="mt-4 grid gap-3 sm:grid-cols-3">
-            {product.highlights.map((item) => <li class="rounded-xl border border-white/8 bg-white/[0.03] px-4 py-3 text-sm text-slate-300">{item}</li>)}
-          </ul>
-        </div>
-        <div>
-          <h2 class="text-xl font-semibold text-white">应用方向</h2>
-          <p class="mt-3 leading-relaxed text-slate-400">
-            可用于能源与矿产高精度勘探、城市地下空间探测、工程灾害监测预警、工业预测性维护等场景，并可与中科深源地学数据处理能力组合形成完整解决方案。
-          </p>
-        </div>
-      </article>
-      <aside class="card">
-        {product.image && <img src={product.image} alt="" class="h-64 w-full object-contain" />}
-      </aside>
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <article class="space-y-8">
+          {product.description && (
+            <p class="text-base leading-relaxed text-slate-400">{product.description}</p>
+          )}
+
+          {product.highlights.length > 0 && (
+            <div>
+              <h2 class="text-lg font-semibold text-white">{pc.highlightsTitle}</h2>
+              <ul class="mt-3 flex flex-wrap gap-2">
+                {
+                  product.highlights.map((item) => (
+                    <li class="tag">{item}</li>
+                  ))
+                }
+              </ul>
+            </div>
+          )}
+
+          {extras && (
+            <>
+              <div>
+                <h2 class="text-lg font-semibold text-white">{pc.applicationsTitle}</h2>
+                <p class="mt-3 text-sm leading-relaxed text-slate-400">{extras.applications}</p>
+              </div>
+
+              <div class="space-y-5">
+                <h2 class="text-lg font-semibold text-white">{pc.specTitle}</h2>
+                {
+                  extras.specSections.map((section) => (
+                    <SpecTable title={section.title} rows={section.rows} />
+                  ))
+                }
+              </div>
+
+              {
+                extras.comparison && (
+                  <div>
+                    <ComparisonTable
+                      title={extras.comparison.title}
+                      headers={extras.comparison.headers}
+                      rows={extras.comparison.rows}
+                    />
+                  </div>
+                )
+              }
+            </>
+          )}
+        </article>
+
+        <aside class="card lg:sticky lg:top-24 lg:self-start">
+          {product.image && (
+            <img src={product.image} alt="" class="w-full object-contain" loading="lazy" decoding="async" />
+          )}
+        </aside>
+      </div>
     </div>
   </section>
 </SubPage>

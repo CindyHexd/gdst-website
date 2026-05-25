@@ -1,5 +1,12 @@
 export type Locale = 'zh' | 'en'
 
+export type NewsBodyPart =
+  | { type: 'text'; value: string }
+  | { type: 'link'; label: string; href: string }
+
+/** 纯文本段落，或带内联链接的段落 */
+export type NewsBodyBlock = string | { parts: NewsBodyPart[] }
+
 export interface NavLinkChild {
   href: string
   label: string
@@ -41,9 +48,15 @@ export interface Content {
     missionPrefix: string
     viewMore: string
     learnMore: string
+    download: string
     backToBusiness: string
+    backToProducts: string
     backToHelp: string
+    backToNews: string
+    backToCases: string
     preparing: string
+    newsDetailPlaceholder: string
+    caseDetailPlaceholder: string
   }
 
   company: {
@@ -76,7 +89,6 @@ export interface Content {
   sections: {
     solution: { label: string; heading: string }
     majorProducts: { label: string; heading: string }
-    recentProducts: { label: string; heading: string }
     news: { label: string; heading: string }
     recentNews: { label: string; heading: string }
   }
@@ -87,6 +99,25 @@ export interface Content {
     title: string
     intro: string
     segments: BusinessSegment[]
+  }
+
+  productCenter: {
+    title: string
+    intro: string
+    platformTitle: string
+    platformRows: { label: string; value: string }[]
+    categories: {
+      id: string
+      title: string
+      description: string
+      abbreviations?: string[]
+    }[]
+    lineupTitle: string
+    lineupHeaders: string[]
+    lineupRows: string[][]
+    specTitle: string
+    applicationsTitle: string
+    highlightsTitle: string
   }
 
   products: {
@@ -107,15 +138,18 @@ export interface Content {
   cases: {
     title: string
     excerpt: string
-    href?: string
+    href: string
+    body?: NewsBodyBlock[]
   }[]
 
   news: {
     date: string
     title: string
     excerpt: string
-    tag: string
+    tags: string[]
     href?: string
+    /** 详情页正文，每项一段；不写则用 newsDetailPlaceholder */
+    body?: NewsBodyBlock[]
   }[]
 
   helpCenter: {
@@ -138,11 +172,10 @@ export interface Content {
   aboutPage: {
     intro: string
     honorsTitle: string
-    honorsSubtitle: string
-    honors: string[]
     qualificationsSubtitle: string
-    qualifications: string[]
+    qualifications: { src: string; alt: string }[]
     ipSubtitle: string
+    ipImage?: string
     intellectualProperty: string[]
     contactTitle: string
     offices: { name: string; address: string | string[]; phone: string; email: string }[]

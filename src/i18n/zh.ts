@@ -10,7 +10,7 @@ const seismicLinks = [
   { href: '/products/allseis-3c/', label: 'ALLSEIS-3C 三分量地震采集站' },
   { href: '/products/allseis-4clf/', label: 'ALLSEIS-4CLF 四分量短周期地震计' },
   { href: '/products/i-nodal/', label: 'I-Nodal 节点式全内置地震采集系统' },
-  { href: '/products/allseis-1chr/', label: 'ALLSEIS-1C HR 节点式地震采集系统' },
+  { href: '/products/allseis-1chr/', label: 'ALLSEIS-1CHR 节点式地震采集系统' },
 ]
 
 export const zh: Content = {
@@ -36,9 +36,16 @@ export const zh: Content = {
     missionPrefix: '使命 · ',
     viewMore: '查看更多新闻',
     learnMore: '了解产品详情',
+    download: '下载',
     backToBusiness: '返回业务板块',
+    backToProducts: '返回产品中心',
     backToHelp: '返回帮助',
-    preparing: '资料准备中，可通过商务合作或技术支持获取最新版本。',
+    backToNews: '返回新闻中心',
+    backToCases: '返回客户案例',
+    preparing: '资料准备中。',
+    newsDetailPlaceholder:
+      '本页面为本地站点新闻详情页，用于承载原首页新闻中心条目。后续可继续补充活动图片、会议议程、客户交流纪要与媒体资料。',
+    caseDetailPlaceholder: '案例详情内容待补充，可在此添加项目背景、技术方案、实施效果与相关图片。',
   },
 
   company: {
@@ -58,11 +65,27 @@ export const zh: Content = {
 
   navLinks: [
     { href: '/', label: '首页' },
-    { href: '/business/', label: '业务板块' },
+    { href: '/products/', label: '产品中心' },
     { href: '/cases/', label: '客户案例' },
     { href: '/news/', label: '新闻' },
-    { href: '/support/', label: '帮助' },
-    { href: '/about/', label: '关于我们' },
+    {
+      href: '/support/',
+      label: '帮助',
+      children: [
+        { href: '/support/faq/', label: '常见问题' },
+        { href: '/support/legal/', label: '法律声明' },
+        { href: '/downloads/', label: '资料下载' },
+      ],
+    },
+    {
+      href: '/about/',
+      label: '关于我们',
+      children: [
+        { href: '/about/#honors', label: '荣誉资质' },
+        { href: '/about/#contact', label: '联系我们' },
+        { href: '/about/#careers', label: '加入我们' },
+      ],
+    },
   ],
 
   hero: {
@@ -70,19 +93,19 @@ export const zh: Content = {
     slides: [
       {
         subtitle: '面向能源勘探领域的探测装备自主化领导者',
-        image: '/landscapes/namibia.jpg',
+        image: '/bg/namibia.jpg',
       },
       {
         subtitle: '面向工业与智慧城市领域的智能装备制造商和大数据服务商',
-        image: '/landscapes/smart.jpg',
+        image: '/bg/smart.jpg',
       },
       {
         subtitle: '面向城市地下空间一体化领域的解决方案提供商',
-        image: '/landscapes/shanghai-urban.jpg',
+        image: '/bg/shanghai-urban.jpg',
       },
       {
         subtitle: '面向地学大数据领域的智慧科技领跑者',
-        image: '/landscapes/aerial-view.jpg',
+        image: '/bg/aerial-view.jpg',
       },
     ],
   },
@@ -110,7 +133,6 @@ export const zh: Content = {
   sections: {
     solution: { label: 'SOLUTION', heading: '解决方案' },
     majorProducts: { label: 'MAJOR PRODUCTS', heading: '主要产品' },
-    recentProducts: { label: 'RECENT PRODUCTS', heading: '近期产品' },
     news: { label: 'NEWS', heading: '新闻' },
     recentNews: { label: 'RECENT NEWS', heading: '近期新闻' },
   },
@@ -157,51 +179,112 @@ export const zh: Content = {
     ],
   },
 
+  productCenter: {
+    title: '产品中心',
+    intro:
+      '',
+    platformTitle: '核心技术',
+    platformRows: [
+      { label: 'DualSync™', value: 'Intermittent GNSS clock synchronization strategy and configurable GNSS continuous mode' },
+      { label: 'RapidScan™', value: '' },
+      { label: 'iFlyScan™', value: '' },
+      { label: 'SDM 软件', value: '' },
+    ],
+    categories: [
+      {
+        id: 'seismic',
+        title: '地震采集',
+        description: '',
+        abbreviations: [
+          'LF = Low Frequency（低频）',
+          'C = Component（分量）',
+          'HR = High Resolution（高分辨率）',
+        ],
+      },
+      {
+        id: 'sensors',
+        title: '智能传感器',
+        description:
+          '有源力反馈式宽频检波器，可内置或外接于节点系统，面向陆地与海洋地震采集及工程监测。',
+      },
+      {
+        id: 'maintenance',
+        title: '预防性维护',
+        description:
+          '为工业装备与关键基础设施提供振动监测、状态评估与故障预判，降低非计划停机风险，提升运维效率。',
+      },
+      {
+        id: 'data',
+        title: '数据处理与分析',
+        description:
+          '提供地震与电磁法数据处理、质控、成像与解释服务，结合地学大数据平台实现存储、计算与成果输出一体化。',
+      },
+      {
+        id: 'urban',
+        title: '城市次表层研究',
+        description:
+          '面向 0–500 米城市地下空间精细探测，支撑城市规划、地质灾害调查、管线定位与地下空间安全利用。',
+      },
+    ],
+    lineupTitle: '节点型号对比',
+    lineupHeaders: ['型号', '通道', 'ADC', '最小采样', '满量程 DR', '典型续航'],
+    lineupRows: [
+      ['ALLSEIS-1C', '单分量', '24 bit', '0.5 ms', '145 dB', '28–33 天'],
+      ['ALLSEIS-1CHR', '单分量', '32 bit', '0.25 ms', '150 dB', '>35 天'],
+      ['ALLSEIS-3C', '三分量', '3×24 bit', '0.5 ms', '125 dB', '28–33 天'],
+      ['ALLSEIS-4CLF', '四分量', '4×24 bit', '0.5 ms', '—', '33 天'],
+      ['I-Nodal-2', '单分量', '32 bit', '0.25 ms', '148 dB', '>30 天'],
+    ],
+    specTitle: '技术参数',
+    applicationsTitle: '应用方向',
+    highlightsTitle: '核心特点',
+  },
+
   products: [
     {
-      name: 'ALLSEIS-1C节点式地震采集系统',
-      subtitle: '单分量节点式地震采集系统',
+      name: 'ALLSEIS-1C 节点式地震采集系统',
+      subtitle: '',
       description:
         '面向能源、矿产与工程勘探的节点式地震采集装备，支持高密度、大规模野外部署。',
       highlights: ['节点式采集', '高密度部署', '能源勘探'],
       href: '/products/allseis-1c/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/49068950.png',
+      image: '/public-media/product/1C/ALLSEIS-1C 正水平.png',
     },
     {
       name: 'ALLSEIS-3C 三分量地震采集站',
-      subtitle: '三分量地震采集站',
+      subtitle: '',
       description:
         '三分量一体化采集装备，服务城市地下空间精细勘探、复杂区域地质构造调查与监测。',
       highlights: ['三分量', '一体化采集', '地下空间'],
       href: '/products/allseis-3c/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27446291.png',
+      image: '/public-media/product/3C/ALLSEIS-3C - CMYK.png',
     },
     {
       name: 'ALLSEIS-4CLF 四分量短周期地震计',
-      subtitle: '四分量短周期地震计',
+      subtitle: '',
       description:
         '适用于地震监测、工程监测与多场景智能传感应用的四分量短周期地震计。',
       highlights: ['四分量', '短周期', '智能传感'],
       href: '/products/allseis-4clf/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27047828.png',
+      image: '/public-media/product/4CLF/3C-4CLF-20240625-4CLF三脚尾椎正 拷贝.png',
     },
     {
-      name: 'I-Nodal节点式全内置地震采集系统',
-      subtitle: '节点式全内置地震采集系统',
+      name: 'I-Nodal-2 节点式全内置地震采集系统',
+      subtitle: '',
       description:
         '地震勘探无缆自主采集系统，单道独立、无需缆连，适合大规模高密度部署。',
       highlights: ['无缆自主采集', '全内置', '规模化应用'],
       href: '/products/i-nodal/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/42128135.png',
+      image: '/public-media/product/I-Nodal/I-Nodal V2_DSC_3559.png',
     },
     {
-      name: 'ALLSEIS-1C HR 节点式地震采集系统',
-      subtitle: '高分辨率节点式地震采集系统',
+      name: 'ALLSEIS-1CHR 节点式地震采集系统',
+      subtitle: '',
       description:
-        '面向高精度地震采集需求的节点式装备，延续自主可控、便携部署与多场景应用能力。',
-      highlights: ['高分辨率', '节点式', '自主可控'],
+        '采用国产核心芯片，支持 0.25 ms 采样与 150 dB 满量程动态范围，支持深埋连续 GNSS 授时与 RFID 资产管理。',
+      highlights: ['国产芯片', '0.25 ms 采样', '150 dB 动态范围'],
       href: '/products/allseis-1chr/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/52917172.png',
+      image: '/public-media/product/1CHR/1C单锥橙色上盖蓝色标签1-前 拷贝.png',
     },
   ],
 
@@ -220,92 +303,68 @@ export const zh: Content = {
 
   cases: [
     {
-      title: '深层油气与矿产勘探节点采集项目',
-      excerpt: '采用 ALLSEIS 节点式采集系统，实现高密度无缆部署，显著提升复杂探区数据采集效率。',
-    },
-    {
-      title: '城市地下空间精细探测工程',
-      excerpt: '结合三分量采集与频率成像技术，为城市规划与地下空间安全利用提供高分辨率成果。',
-    },
-    {
-      title: '工程灾害与矿震监测预警',
-      excerpt: '面向滑坡、矿震、压裂等场景，提供持续监测、实时传输与数据分析服务。',
-    },
-    {
-      title: '天然气管线泄漏监测',
-      excerpt: '利用宽频传感与智能分析，实现管线沿线异常识别与预警响应。',
-    },
-    {
-      title: '工业预测性维护监测',
-      excerpt: '为关键设备与基础设施提供振动监测与故障预判能力。',
-    },
-    {
-      title: '水力压裂与油藏监测',
-      excerpt: '支撑压裂过程微震监测与油藏动态分析，服务油气开发精细管理。',
+      title: '府谷县三维勘探项目',
+      excerpt: '中海油运营项目，采用 30000 道 ALLSEIS-1C 节点设备，21 天完成 301 km² 黄土塬复杂工区三维地震采集。',
+      href: '/cases/fugu-3d/',
+      body: [
+        '项目位于中国西北部府谷县，为典型黄土塬地貌，工区面积约 301 km²，植被繁茂，海拔 984–1386 m，相对高差 402 m。勘探设计总炮数 21,818 炮，检波点 47,692 个，道距 40 m。',
+        {
+          parts: [
+            {
+              type: 'text',
+              value:
+                '应用设备：',
+            },
+            { type: 'link', label: 'ALLSEIS-1C', href: '/products/allseis-1c/' },
+            {
+              type: 'text',
+              value:
+                ' 30,000 道；标准数据下载柜 4 台、标准充电柜 25 台、下载服务器 2 台、SDM 服务器 1 台、BoomBox-III 21 部、无人机 1 架。',
+            },
+          ],
+        },
+        '施工效率：现场人员 65 人；日均布设道数约 2,500、日均回收道数约 2,500、日均无人机巡线道数约 3,000；日均原始数据下载量 9 TB；日均炮数 1,066；项目周期 21 天；废道率低于 0.3%。',
+        '2023 年 5 月 20 日至 6 月 8 日完成全部采集，单日炮数逐步攀升，6 月 7 日达到峰值 2,046 炮，整体施工效率与数据质量满足项目要求。',
+      ],
     },
   ],
 
   news: [
     {
-      date: '2024-07-27',
-      title: '中科深源参与工程地球物理专业委员会2024年学术年会',
-      excerpt: '公司参与工程地球物理专业委员会学术年会，与行业伙伴交流工程地球物理技术应用。',
-      tag: '新闻',
-      href: '/news/engineering-geophysics-2024/',
-    },
-    {
-      date: '2024-06-12',
-      title: '中科深源再度亮相第85届EAGE年会',
-      excerpt: '中科深源再度亮相 EAGE 年会，面向国际行业展示自主研发产品与解决方案。',
-      tag: '新闻',
-      href: '/news/eage-85/',
-    },
-    {
-      date: '2024-09-12',
-      title: '中科深源董事长吕永军受邀参加山西省物测院第十一期新技术新方法培训',
-      excerpt: '中科深源围绕智能地球物理技术与装备开展交流，推动新技术新方法应用。',
-      tag: '新闻',
-      href: '/news/shanxi-training/',
-    },
-    {
-      date: '2024-08-06',
-      title: '河北省煤田地质局物测地质队一行到访中科深源参观交流',
-      excerpt: '河北省煤田地质局物测地质队一行到访中科深源，就地球物理装备与应用展开交流。',
-      tag: '新闻',
-      href: '/news/hebei-visit/',
-    },
-    {
-      date: '2023-05-27',
-      title: '2023年中国国际油气勘探技术年会——中科深源与您相约北京',
-      excerpt: '中科深源参加中国国际油气勘探技术年会，展示自主化地震采集与探测装备能力。',
-      tag: '新闻',
-      href: '/news/oil-gas-exploration-2023/',
-    },
-    {
-      date: '2022-04-29',
-      title: 'I-Nodal-V2 地震无缆自主采集系统完成产品定型与规模化试生产',
-      excerpt: 'I-Nodal-V2 地震无缆自主采集系统完成产品定型与规模化试生产。',
-      tag: '新闻',
-      href: '/news/i-nodal-v2-production/',
+      date: '2025-04-21',
+      title: '中科深源参展第三届中国石油物探学术年会',
+      excerpt: '',
+      tags: ['展会回顾', '杭州'],
+      href: '/news/geophys-academic-2025/',
+      body: [
+        '来自能源企业、科研院所、高校等160多家单位的1000余位专家学者齐聚一堂，以“创新精准、高效、智能、绿色物探技术，发展高难领域油气勘探开发新质生产力”为主题，展示了我国物探技术的最新成果，探讨了行业的未来发展方向。',
+        {
+          parts: [
+            {
+              type: 'text',
+              value:
+                '中科深源总经理吕永军、技术总监何川带队，在此次年会中展示了我司自主研发的ALLSEIS系列国产化地震勘探采集装备产品。在中美关税战的大背景下，我司研制的国内首款全国产芯片',
+            },
+            { type: 'link', label: 'ALLSEIS-1CHR', href: '/products/allseis-1chr/' },
+            { type: 'text', value: '型节点仪器获得了众多与会专家和代表的广泛关注。' },
+          ],
+        },
+        '中科深源始终致力于国产化地震勘探采集装备的研发，为能源勘探行业提供先进、高效、易用的产品和解决方案。凭借2019~2023五年间30余万道节点的生产交付总量及近百个万道以上大规模三维地震采集项目施工经历，ALLSEIS系列地震采集节点以其行业领先的性能指标及性价比优势得到了客户的一致好评。公司将继续加强创新力度，以领先的技术和优质的服务，为中国乃至全球的物探事业做出更大的贡献。'
+      ]
     },
   ],
 
   helpCenter: {
-    hubIntro: '常见问题、法律声明与资料下载，帮助您快速了解产品与获取支持。',
-    faqIntro: '产品选型、技术支持与资料获取等常见问题解答。',
+    hubIntro: '',
+    faqIntro: '',
     legalIntro: '请您知悉并同意本网站如下所述的使用规则，所有规则适用于所有访问本网站的用户或浏览者，北京中科深源科技有限公司保留随时修改这些规则的权利。如访问本网站请遵循以下规则。如果您不同意下列所示的任何规则，请停止使用本网站。对不遵守本规则或其他违法、恶意使用本网站内容者，北京中科深源科技有限公司保留追究其法律责任的权利。',
-    downloadsIntro: '产品手册、操作指南与配套软件资料集中下载。',
+    downloadsIntro: '产品手册、操作指南与配套软件下载途径。',
     faqTitle: '常见问题',
     faq: [
       {
-        question: '问题1',
+        question: '问题1（待添加）',
         answer:
           '答案1',
-      },
-      {
-        question: '问题2',
-        answer:
-          '答案2',
       },
     ],
     legalTitle: '法律声明',
@@ -357,60 +416,61 @@ export const zh: Content = {
     guidesTitle: '操作指南',
     softwareTitle: '配套软件',
     guides: [
-      { title: 'ALLSEIS 节点式采集系统野外部署指南', description: '涵盖站点布设、质控检查与常见故障排查。' },
-      { title: 'I-Nodal 无缆采集系统快速上手', description: '面向首次部署用户的配置与启动流程说明。' },
-      { title: '宽频检波器安装与维护手册', description: '检波器耦合、标定与长期维护注意事项。' },
+      { title: '指南1（待添加）', 
+        description: '指南1描述。'
+      },
     ],
     software: [
       {
-        title: 'In-field QC App.',
-        description: 'ALLSEIS-1C现场质控软件，安卓手机版',
+        title: 'SeisDataManagement (SDM)',
+        description: '',
         detail:
-          '收集的野外节点信息包括采样参数、存储状态、供电、温度、倾斜、环境噪声等。可以通过SDM软件访问并生成图形/表格报告，从而进一步优化整个采集周期的施工效率。',
+          '主要功能包括：节点脚本配置、节点功能及性能诊断、节点部署和回收管理、地震数据下载整理及合并、炮集与接收集创建、可控震源关联与叠加、输出格式 SEG-Y 或 SEG-D、有缆/无缆设备混合采集数据合并、地震道产率计算、地震数据质量控制、图表报告生成。建议 SDM 服务器配置全固态硬盘 RAID 阵列，以实现高吞吐量的数据处理。',
+      },
+      {
+        title: 'In-field QC App.',
+        description: 'ALLSEIS-1C安卓手机版现场质控软件',
+        detail:
+          '这一手持QC质控工具可在人工、车辆或无人机进行节点布设和回收时实现导航和路径引导、节点工作状态查询、修改配置信息及实时地震波检验。In-field QC App.搜集的野外节点信息，包括采样参数、存储状态、供电、温度、倾斜、环境噪声等，可以通过SDM软件访问并生成图形/表格报告，从而进一步优化整个采集周期的施工效率。',
       },
     ],
   },
 
   aboutPage: {
     intro:
-      '北京中科深源科技有限公司成立于2020年，公司依托中国科学院地质与地球物理研究所、北京大学地球与空间科学学院等科研院所的技术力量，致力于能源与矿产资源、工业预测性维护、智慧城市领域的智能传感设备研发制造、多维多源数据采集与处理、大数据决策支持等服务。中科深源研发和制造具有自主知识产权的多类型智能传感器、数据采集节点设备与应用系统，并据此提供大数据获取与处理、存储与管理、分析与挖掘、展现和应用等增值服务。公司秉承求真务实 知行合一的宗旨，协助客户以数字化科技创新及关键探测装备自主化的方式，积极参与资源与环境领域关键核心卡脖子技术与装备的研发及产业化，为实现深部资源探测核心装备国产化上天、入地、下海贡献力量。',
-    honorsTitle: '荣誉资质',
-    honorsSubtitle: '荣誉',
-    honors: [
-      '中关村高新技术企业',
-      '北京市“专精特新”中小企业',
-      '中科智汇工场优秀入驻企业',
-      '多次亮相 EAGE 等国际行业展会',
-    ],
+      '北京中科深源科技有限公司成立于2020年，公司依托中国科学院地质与地球物理研究所、北京大学地球与空间科学学院等科研院所的技术力量，致力于能源与矿产资源、工业预测性维护、智慧城市领域的智能传感设备研发制造、多维多源数据采集与处理、大数据决策支持等服务。中科深源研发和制造具有自主知识产权的多类型智能传感器、数据采集节点设备与应用系统，并据此提供大数据获取与处理、存储与管理、分析与挖掘、展现和应用等增值服务。公司秉承求真、务实、知行合一的宗旨，协助客户以数字化科技创新及关键探测装备自主化的方式，积极参与资源与环境领域关键核心卡脖子技术与装备的研发及产业化，为实现深部资源探测核心装备国产化上天、入地、下海贡献力量。' ,    
+      honorsTitle: '荣誉资质',
     qualificationsSubtitle: '资质',
     qualifications: [
-      '质量管理体系认证',
-      '知识产权管理体系认证',
-      '相关行业检测与试验资质（持续完善中）',
+      { src: '/certificates/HICs.jpeg', alt: 'HICs' },
+      { src: '/certificates/北京中科中关村高新证书至2027.jpg', alt: '北京中科中关村高新证书' },
+      { src: '/certificates/地球物理学会科学进步二等奖-25年10月.jpg', alt: '地球物理学会科学进步二等奖' },
+      { src: '/certificates/江苏瞪羚企业.jpg', alt: '江苏瞪羚企业' },
+      { src: '/certificates/苏州专精特新证书2027.jpg', alt: '苏州专精特新证书' },
+      { src: '/certificates/苏州博士后创新实践基地.jpg', alt: '苏州博士后创新实践基地' },
+      { src: '/certificates/苏州高新至2026.png', alt: '苏州高新技术企业证书' },
     ],
     ipSubtitle: '知识产权',
     intellectualProperty: [
-      '50+ 项自有知识产权',
-      '节点式地震采集系统相关发明专利',
-      '宽频检波器与信号处理技术专利',
-      '地学大数据平台软件著作权',
+      '50项授权及申请中知识产权，其中发明专利11项、实用新型专利9项，外观专利5项，软件著作权24项。',
     ],
+    ipImage: '/certificates/知识产权叠放.png',
     contactTitle: '联系我们',
     offices: [
       {
-        name: '北京｜中国',
+        name: '北京，中国',
         address: '北京市海淀区西三旗金隅智造工场 N1-308',
         phone: '+86 010-8345 8087',
         email: 'service@geodeepsensing.com',
       },
       {
-        name: '苏州｜中国',
+        name: '苏州，中国',
         address: '苏州市高新区锦锋路158号16栋102室',
         phone: '+86 0512-6878 6291',
         email: 'service@geodeepsensing.com',
       },
       {
-        name: '伦敦｜英国',
+        name: '伦敦，英国',
         address: '4th Floor, Silverstream House, 45 Fitzroy Street, Fitzrovia, London W1T 6EB, UK',
         phone: '+44 7975 829 456',
         email: 'sales@geodeepsensing.com',
@@ -437,12 +497,12 @@ export const zh: Content = {
         specialNote:
           '如有 3 年以上硬件开发经验，具备独立硬件项目开发、设计、调试能力，扎实的模拟与数字电路基础，熟练掌握嵌入式处理器及外围电路设计，具备常见硬件接口电路设计调试经验，薪资可至 20K。',
         requirements: [
-          '电子、自控或计算机专业本科或以上学历；',
-          '熟悉数字电路、模拟电路的设计开发流程，熟练使用相关设计软件及工具，能根据逻辑设计说明书完成原理图和 PCB 设计；',
-          '能编写调试程序，测试或协助测试开发的硬件设备，确保按设计要求正常运行；',
-          '熟练阅读和理解英文技术文献；',
-          '具备良好的道德品质和团队合作精神，极强的敬业精神；',
-          '具备良好的学习新知识、新能力。',
+          '电子、自控或计算机专业本科或以上学历',
+          '熟悉数字电路、模拟电路的设计开发流程，熟练使用相关设计软件及工具，能根据逻辑设计说明书完成原理图和 PCB 设计',
+          '能编写调试程序，测试或协助测试开发的硬件设备，确保按设计要求正常运行',
+          '熟练阅读和理解英文技术文献',
+          '具备良好的道德品质和团队合作精神，极强的敬业精神',
+          '具备良好的学习能力',
         ],
       },
       {
@@ -450,12 +510,12 @@ export const zh: Content = {
         headcount: '2-3人',
         salary: '8K-10K',
         requirements: [
-          '电子、自控或计算机专业本科或以上学历；',
-          '具有 2～3 年工作经验；',
-          '熟悉 ARM/51 等嵌入式微处理器的设计开发流程，熟练使用相关设计软件及工具，能进行相应底层驱动开发；',
-          '熟练阅读和理解英文技术文献；',
-          '具备良好的道德品质和团队合作精神，极强的敬业精神；',
-          '具备良好的学习新知识、新能力。',
+          '电子、自控或计算机专业本科或以上学历',
+          '具有 2～3 年工作经验',
+          '熟悉 ARM/51 等嵌入式微处理器的设计开发流程，熟练使用相关设计软件及工具，能进行相应底层驱动开发',
+          '熟练阅读和理解英文技术文献',
+          '具备良好的道德品质和团队合作精神，极强的敬业精神',
+          '具备良好的学习能力',
         ],
       },
     ],
