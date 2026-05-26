@@ -1,21 +1,19 @@
 ---
 import SubPage from '../../components/SubPage.astro'
-import { productManualDownloadName, productManualPath } from '../../data/productManuals'
-import { getContent, getAllProducts } from '../../i18n'
+import {
+  assertDownloadsCatalogComplete,
+  downloadFileUrl,
+  downloadSaveAs,
+  downloadsCatalog,
+} from '../../data/downloadsCatalog'
+import { getContent } from '../../i18n'
 import { withBase } from '../../utils/withBase'
+
+assertDownloadsCatalogComplete()
 
 const t = getContent('zh')
 const { helpCenter: h } = t
-const allProducts = getAllProducts(t).map((p) => {
-  const slug = p.href.split('/').filter(Boolean).at(-1) ?? ''
-  const manualPath = productManualPath(slug)
-  return {
-    ...p,
-    slug,
-    pdfUrl: manualPath ? withBase(manualPath) : undefined,
-    pdfFilename: productManualDownloadName(slug),
-  }
-})
+const isZh = t.locale === 'zh'
 ---
 
 <SubPage t={t} label="DOWNLOADS" title={h.downloadsTitle} intro={h.downloadsIntro} backHref="/support/" backLabel={t.ui.backToHelp}>
@@ -25,27 +23,37 @@ const allProducts = getAllProducts(t).map((p) => {
         <h2 class="text-xl font-bold text-white">{h.manualsTitle}</h2>
         <ul class="mt-6 space-y-3">
           {
-            allProducts.map((p) => (
-              <li class="card flex items-center justify-between gap-4">
-                <div class="min-w-0 flex-1">
-                  <h3 class="font-semibold text-white">
-                    <a href={withBase(p.href)} class="hover:text-brand-300">{p.name}</a>
-                  </h3>
-                  {!p.pdfUrl && <p class="mt-1 text-sm text-slate-400">{t.ui.preparing}</p>}
+            downloadsCatalog.map((item) => (
+              <li class="card flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <h3 class="min-w-0 font-semibold text-white">{isZh ? item.titleZh : item.titleEn}</h3>
+                <div class="download-actions grid shrink-0 grid-cols-2 gap-x-6 sm:gap-x-8">
+                  <div class="min-w-[4.5rem] text-right">
+                    {
+                      item.cn ? (
+                        <a
+                          href={downloadFileUrl(item.cn, withBase)}
+                          download={downloadSaveAs(item, 'cn')}
+                          class="whitespace-nowrap text-sm font-semibold text-brand-400 hover:text-brand-300"
+                        >
+                          {t.ui.downloadZh}
+                        </a>
+                      ) : null
+                    }
+                  </div>
+                  <div class="min-w-[4.5rem] text-right">
+                    {
+                      item.en ? (
+                        <a
+                          href={downloadFileUrl(item.en, withBase)}
+                          download={downloadSaveAs(item, 'en')}
+                          class="whitespace-nowrap text-sm font-semibold text-brand-400 hover:text-brand-300"
+                        >
+                          {t.ui.downloadEn}
+                        </a>
+                      ) : null
+                    }
+                  </div>
                 </div>
-                {
-                  p.pdfUrl ? (
-                    <a
-                      href={p.pdfUrl}
-                      download={p.pdfFilename}
-                      class="shrink-0 whitespace-nowrap text-sm font-semibold text-brand-400 hover:text-brand-300"
-                    >
-                      {t.ui.download}
-                    </a>
-                  ) : (
-                    <span class="shrink-0 whitespace-nowrap text-sm text-slate-500">{t.ui.download}</span>
-                  )
-                }
               </li>
             ))
           }

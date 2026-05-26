@@ -1,3 +1,4 @@
+import { getCatalogProducts } from '../data/productCatalog'
 import type { Content, Locale } from './types'
 import { zh } from './zh'
 import { en } from './en'
@@ -19,8 +20,9 @@ export function getLocalePath(locale: Locale): string {
 }
 
 export function getAllProducts(t: Content) {
-  return [
-    ...t.products.map((p) => ({ name: p.name, href: p.href!, image: p.image })),
-    ...t.secondaryProducts.map((p) => ({ name: p.name, href: p.href, image: p.image })),
-  ]
+  return getCatalogProducts(t.locale).map((p) => ({
+    name: p.name,
+    href: p.href,
+    image: p.image,
+  }))
 }

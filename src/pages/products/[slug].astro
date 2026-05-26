@@ -1,26 +1,16 @@
 ---
 import SubPage from '../../components/SubPage.astro'
-import ComparisonTable from '../../components/ComparisonTable.astro'
-import SpecTable from '../../components/SpecTable.astro'
-import { getProductDetailExtras } from '../../data/productSpecs'
+import ProductPdfBody from '../../components/ProductPdfBody.astro'
+import { getCatalogProductBySlug, getCatalogProducts } from '../../data/productCatalog'
+import { downloadFileUrl, downloadSaveAs, getDownloadItemBySlug } from '../../data/downloadsCatalog'
+import { getProductPdf } from '../../data/productPdf'
 import { getContent } from '../../i18n'
+import { withBase } from '../../utils/withBase'
 
 export function getStaticPaths() {
   const t = getContent('zh')
-  const detailProducts = [
-    ...t.products,
-    ...t.secondaryProducts.map((p) => ({
-      name: p.name,
-      subtitle: t.productCenter.categories.find((c) => c.id === 'sensors')?.title ?? '',
-      description: '',
-      highlights: ['有源力反馈', '宽频响应', '长期稳定'],
-      href: p.href,
-      image: p.image,
-    })),
-  ]
-
-  return detailProducts.map((product) => ({
-    params: { slug: product.href?.split('/').filter(Boolean).at(-1) },
+  return getCatalogProducts('zh').map((product) => ({
+    params: { slug: product.slug },
     props: { product },
   }))
 }
@@ -28,15 +18,15 @@ export function getStaticPaths() {
 const { product } = Astro.props
 const t = getContent('zh')
 const pc = t.productCenter
-const slug = product.href?.split('/').filter(Boolean).at(-1) ?? ''
-const extras = getProductDetailExtras('zh', slug)
+const pdf = getProductPdf(product.slug)
+const downloads = getDownloadItemBySlug(product.slug)
 ---
 
 <SubPage
   t={t}
   label="PRODUCT DETAIL"
   title={product.name}
-  intro={product.subtitle}
+  intro=""
   backHref="/products/"
   backLabel={t.ui.backToProducts}
 >
@@ -44,58 +34,57 @@ const extras = getProductDetailExtras('zh', slug)
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
       <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
         <article class="space-y-8">
-          {product.description && (
-            <p class="text-base leading-relaxed text-slate-400">{product.description}</p>
-          )}
+          {
+            pdf ? (
+              <ProductPdfBody pages={pdf.pages} />
+            ) : (
+              <p class="text-sm text-slate-400">{t.ui.preparing}</p>
+            )
+          }
 
-          {product.highlights.length > 0 && (
-            <div>
-              <h2 class="text-lg font-semibold text-white">{pc.highlightsTitle}</h2>
-              <ul class="mt-3 flex flex-wrap gap-2">
-                {
-                  product.highlights.map((item) => (
-                    <li class="tag">{item}</li>
-                  ))
-                }
-              </ul>
-            </div>
-          )}
-
-          {extras && (
-            <>
-              <div>
-                <h2 class="text-lg font-semibold text-white">{pc.applicationsTitle}</h2>
-                <p class="mt-3 text-sm leading-relaxed text-slate-400">{extras.applications}</p>
-              </div>
-
-              <div class="space-y-5">
-                <h2 class="text-lg font-semibold text-white">{pc.specTitle}</h2>
-                {
-                  extras.specSections.map((section) => (
-                    <SpecTable title={section.title} rows={section.rows} />
-                  ))
-                }
-              </div>
-
-              {
-                extras.comparison && (
-                  <div>
-                    <ComparisonTable
-                      title={extras.comparison.title}
-                      headers={extras.comparison.headers}
-                      rows={extras.comparison.rows}
-                    />
+          {
+            downloads && (downloads.cn || downloads.en) && (
+              <div class="border-t border-slate-800 pt-8">
+                <h2 class="text-lg font-semibold text-white">{t.helpCenter.manualsTitle}</h2>
+                <div class="download-actions mt-4 grid max-w-xs grid-cols-2 gap-x-6">
+                  <div class="text-right">
+                    {
+                      downloads.cn && (
+                        <a
+                          href={downloadFileUrl(downloads.cn, withBase)}
+                          download={downloadSaveAs(downloads, 'cn')}
+                          class="text-sm font-semibold text-brand-400 hover:text-brand-300"
+                        >
+                          {t.ui.downloadZh}
+                        </a>
+                      )
+                    }
                   </div>
-                )
-              }
-            </>
-          )}
+                  <div class="text-right">
+                    {
+                      downloads.en && (
+                        <a
+                          href={downloadFileUrl(downloads.en, withBase)}
+                          download={downloadSaveAs(downloads, 'en')}
+                          class="text-sm font-semibold text-brand-400 hover:text-brand-300"
+                        >
+                          {t.ui.downloadEn}
+                        </a>
+                      )
+                    }
+                  </div>
+                </div>
+              </div>
+            )
+          }
         </article>
 
         <aside class="card lg:sticky lg:top-24 lg:self-start">
-          {product.image && (
-            <img src={product.image} alt="" class="w-full object-contain" loading="lazy" decoding="async" />
-          )}
+          {
+            product.image && (
+              <img src={product.image} alt="" class="w-full object-contain" loading="lazy" decoding="async" />
+            )
+          }
         </aside>
       </div>
     </div>

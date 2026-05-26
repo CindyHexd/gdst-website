@@ -17,6 +17,8 @@ export default defineConfig({
     '/technical-support': '/support/',
     '/cloud': '/downloads/',
     '/business': '/products/',
+    '/products/125hz-land-geophone/': '/products/1hz-land-geophone/',
+    '/products/allseis-ob4c/': '/products/allseis-ob4clf/',
   },
   vite: {
     plugins: [tailwindcss()],

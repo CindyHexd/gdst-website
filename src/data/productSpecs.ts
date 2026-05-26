@@ -74,7 +74,7 @@ const zh: Record<string, ProductDetailExtras> = {
     ],
     comparison: {
       title: '与 ALLSEIS-1C Neo 对比',
-      headers: ['参数', '1CHR', '1C Neo'],
+      headers: ['参数', '1C HR', '1C Neo'],
       rows: [
         ['最小采样间隔', '0.25 ms', '0.5 ms'],
         ['满量程动态范围', '150 dB', '142 dB'],
@@ -268,7 +268,7 @@ const en: Record<string, ProductDetailExtras> = {
     ],
     comparison: {
       title: 'vs. ALLSEIS-1C Neo',
-      headers: ['Parameter', '1CHR', '1C Neo'],
+      headers: ['Parameter', '1C HR', '1C Neo'],
       rows: [
         ['Min. sample interval', '0.25 ms', '0.5 ms'],
         ['Full-scale DR', '150 dB', '142 dB'],

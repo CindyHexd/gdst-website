@@ -1,16 +1,22 @@
 import type { Content } from './types'
 
 const sensorLinks = [
+  { href: '/products/1hz-land-geophone/', label: '1 Hz 有源力反馈式宽频陆地检波器' },
   { href: '/products/2hz-wideband-geophone/', label: '2Hz 有源力反馈式全向宽频检波器' },
-  { href: '/products/125hz-land-geophone/', label: '1.25Hz 有源力反馈式宽频陆地检波器' },
 ]
 
 const seismicLinks = [
-  { href: '/products/allseis-1c/', label: 'ALLSEIS-1C 节点式地震采集系统' },
-  { href: '/products/allseis-3c/', label: 'ALLSEIS-3C 三分量地震采集站' },
-  { href: '/products/allseis-4clf/', label: 'ALLSEIS-4CLF 四分量短周期地震计' },
-  { href: '/products/i-nodal/', label: 'I-Nodal 节点式全内置地震采集系统' },
-  { href: '/products/allseis-1chr/', label: 'ALLSEIS-1CHR 节点式地震采集系统' },
+  { href: '/products/allseis-1c/', label: 'ALLSEIS-1C' },
+  { href: '/products/allseis-1chr/', label: 'ALLSEIS-1C HR' },
+  { href: '/products/allseis-1c-neo/', label: 'ALLSEIS-1C Neo' },
+  { href: '/products/allseis-1c-neo-hr/', label: 'ALLSEIS-1C Neo HR' },
+  { href: '/products/allseis-1clf/', label: 'ALLSEIS-1C LF' },
+  { href: '/products/allseis-3c/', label: 'ALLSEIS-3C' },
+  { href: '/products/allseis-3clf/', label: 'ALLSEIS-3C LF' },
+  { href: '/products/allseis-4clf/', label: 'ALLSEIS-4C LF' },
+  { href: '/products/allseis-ob2c/', label: 'ALLSEIS-OB2C' },
+  { href: '/products/allseis-ob4clf/', label: 'ALLSEIS-OB4C LF' },
+  { href: '/products/i-nodal/', label: 'I-Nodal-2 节点式全内置地震采集系统' },
 ]
 
 export const zh: Content = {
@@ -37,6 +43,8 @@ export const zh: Content = {
     viewMore: '查看更多新闻',
     learnMore: '了解产品详情',
     download: '下载',
+    downloadZh: '中文版',
+    downloadEn: '英文版',
     backToBusiness: '返回业务板块',
     backToProducts: '返回产品中心',
     backToHelp: '返回帮助',
@@ -65,7 +73,17 @@ export const zh: Content = {
 
   navLinks: [
     { href: '/', label: '首页' },
-    { href: '/products/', label: '产品中心' },
+    {
+      href: '/products/',
+      label: '产品中心',
+      children: [
+        { href: '/products/#seismic', label: '地震采集' },
+        { href: '/products/#sensors', label: '智能传感器' },
+        { href: '/products/#maintenance', label: '预防性维护' },
+        { href: '/products/#data', label: '数据处理与分析' },
+        { href: '/products/#urban', label: '城市次表层研究' },
+      ],
+    },
     { href: '/cases/', label: '客户案例' },
     { href: '/news/', label: '新闻' },
     {
@@ -226,15 +244,6 @@ export const zh: Content = {
           '面向 0–500 米城市地下空间精细探测，支撑城市规划、地质灾害调查、管线定位与地下空间安全利用。',
       },
     ],
-    lineupTitle: '节点型号对比',
-    lineupHeaders: ['型号', '通道', 'ADC', '最小采样', '满量程 DR', '典型续航'],
-    lineupRows: [
-      ['ALLSEIS-1C', '单分量', '24 bit', '0.5 ms', '145 dB', '28–33 天'],
-      ['ALLSEIS-1CHR', '单分量', '32 bit', '0.25 ms', '150 dB', '>35 天'],
-      ['ALLSEIS-3C', '三分量', '3×24 bit', '0.5 ms', '125 dB', '28–33 天'],
-      ['ALLSEIS-4CLF', '四分量', '4×24 bit', '0.5 ms', '—', '33 天'],
-      ['I-Nodal-2', '单分量', '32 bit', '0.25 ms', '148 dB', '>30 天'],
-    ],
     specTitle: '技术参数',
     applicationsTitle: '应用方向',
     highlightsTitle: '核心特点',
@@ -260,7 +269,7 @@ export const zh: Content = {
       image: '/public-media/product/3C/ALLSEIS-3C - CMYK.png',
     },
     {
-      name: 'ALLSEIS-4CLF 四分量短周期地震计',
+      name: 'ALLSEIS-4C LF 四分量短周期地震计',
       subtitle: '',
       description:
         '适用于地震监测、工程监测与多场景智能传感应用的四分量短周期地震计。',
@@ -278,7 +287,7 @@ export const zh: Content = {
       image: '/public-media/product/I-Nodal/I-Nodal V2_DSC_3559.png',
     },
     {
-      name: 'ALLSEIS-1CHR 节点式地震采集系统',
+      name: 'ALLSEIS-1C HR 节点式地震采集系统',
       subtitle: '',
       description:
         '采用国产核心芯片，支持 0.25 ms 采样与 150 dB 满量程动态范围，支持深埋连续 GNSS 授时与 RFID 资产管理。',
@@ -345,7 +354,7 @@ export const zh: Content = {
               value:
                 '中科深源总经理吕永军、技术总监何川带队，在此次年会中展示了我司自主研发的ALLSEIS系列国产化地震勘探采集装备产品。在中美关税战的大背景下，我司研制的国内首款全国产芯片',
             },
-            { type: 'link', label: 'ALLSEIS-1CHR', href: '/products/allseis-1chr/' },
+            { type: 'link', label: 'ALLSEIS-1C HR', href: '/products/allseis-1chr/' },
             { type: 'text', value: '型节点仪器获得了众多与会专家和代表的广泛关注。' },
           ],
         },

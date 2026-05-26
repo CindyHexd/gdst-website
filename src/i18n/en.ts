@@ -8,9 +8,9 @@ const sensorLinks = [
 const seismicLinks = [
   { href: '/products/allseis-1c/', label: 'ALLSEIS-1C Nodal System' },
   { href: '/products/allseis-3c/', label: 'ALLSEIS-3C Three-component Station' },
-  { href: '/products/allseis-4clf/', label: 'ALLSEIS-4CLF Seismometer' },
+  { href: '/products/allseis-4clf/', label: 'ALLSEIS-4C LF Seismometer' },
   { href: '/products/i-nodal/', label: 'I-Nodal All-in-one System' },
-  { href: '/products/allseis-1chr/', label: 'ALLSEIS-1CHR Nodal System' },
+  { href: '/products/allseis-1chr/', label: 'ALLSEIS-1C HR Nodal System' },
 ]
 
 export const en: Content = {
@@ -37,6 +37,8 @@ export const en: Content = {
     viewMore: 'View more news',
     learnMore: 'Learn more',
     download: 'Download',
+    downloadZh: '中文',
+    downloadEn: 'English',
     backToBusiness: 'Back to business segments',
     backToProducts: 'Back to products',
     backToHelp: 'Back to help',
@@ -66,7 +68,17 @@ export const en: Content = {
 
   navLinks: [
     { href: '/en/', label: 'Home' },
-    { href: '/products/', label: 'Products' },
+    {
+      href: '/products/',
+      label: 'Products',
+      children: [
+        { href: '/products/#seismic', label: 'Seismic acquisition' },
+        { href: '/products/#sensors', label: 'Intelligent sensors' },
+        { href: '/products/#maintenance', label: 'Predictive maintenance' },
+        { href: '/products/#data', label: 'Data processing & analysis' },
+        { href: '/products/#urban', label: 'Urban subsurface investigation' },
+      ],
+    },
     { href: '/cases/', label: 'Cases' },
     { href: '/news/', label: 'News' },
     {
@@ -209,15 +221,24 @@ export const en: Content = {
         description:
           'Active force-feedback wideband geophones for nodes or external strings, land and marine applications.',
       },
-    ],
-    lineupTitle: 'Nodal model comparison',
-    lineupHeaders: ['Model', 'Channels', 'ADC', 'Min. interval', 'Full-scale DR', 'Typical life'],
-    lineupRows: [
-      ['ALLSEIS-1C', '1C', '24-bit', '0.5 ms', '145 dB', '28–33 days'],
-      ['ALLSEIS-1CHR', '1C', '32-bit', '0.25 ms', '150 dB', '>35 days'],
-      ['ALLSEIS-3C', '3C', '3×24-bit', '0.5 ms', '125 dB', '28–33 days'],
-      ['ALLSEIS-4CLF', '4C', '4×24-bit', '0.5 ms', '—', '33 days'],
-      ['I-Nodal-2', '1C', '32-bit', '0.25 ms', '148 dB', '>30 days'],
+      {
+        id: 'maintenance',
+        title: 'Predictive maintenance',
+        description:
+          'Vibration monitoring, condition assessment, and fault prediction for industrial equipment and critical infrastructure.',
+      },
+      {
+        id: 'data',
+        title: 'Data processing & analysis',
+        description:
+          'Seismic and EM processing, QC, imaging, and interpretation integrated with our geoscience cloud platform.',
+      },
+      {
+        id: 'urban',
+        title: 'Urban subsurface investigation',
+        description:
+          'Fine mapping of urban subsurface structure from 0–500 m for planning, hazard assessment, and safe subsurface use.',
+      },
     ],
     specTitle: 'Specifications',
     applicationsTitle: 'Applications',
@@ -244,7 +265,7 @@ export const en: Content = {
       image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27446291.png',
     },
     {
-      name: 'ALLSEIS-4CLF Four-component Short-period Seismometer',
+      name: 'ALLSEIS-4C LF Four-component Short-period Seismometer',
       subtitle: 'Four-component short-period seismometer',
       description:
         'Four-component short-period seismometer for seismic monitoring, engineering monitoring, and intelligent sensing scenarios.',
@@ -262,7 +283,7 @@ export const en: Content = {
       image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/42128135.png',
     },
     {
-      name: 'ALLSEIS-1CHR Nodal Seismic Acquisition System',
+      name: 'ALLSEIS-1C HR Nodal Seismic Acquisition System',
       subtitle: 'Domestic-chip high-dynamic-range nodal system',
       description:
         '32-bit acquisition with 0.25 ms sampling and 150 dB full-scale dynamic range; continuous GNSS for deep burial and RFID asset tracking.',

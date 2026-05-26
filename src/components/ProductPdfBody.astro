@@ -1,0 +1,18 @@
+---
+import { stripPdfFooter } from '../utils/pdfContent'
+
+interface Props {
+  pages: string[]
+}
+
+const { pages } = Astro.props
+const cleanedPages = pages.map(stripPdfFooter).filter((p) => p.length > 0)
+---
+
+<div class="space-y-8">
+  {
+    cleanedPages.map((pageText) => (
+      <pre class="pdf-verbatim whitespace-pre-wrap font-sans text-sm leading-relaxed text-slate-400">{pageText}</pre>
+    ))
+  }
+</div>

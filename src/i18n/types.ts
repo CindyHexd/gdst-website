@@ -49,6 +49,8 @@ export interface Content {
     viewMore: string
     learnMore: string
     download: string
+    downloadZh: string
+    downloadEn: string
     backToBusiness: string
     backToProducts: string
     backToHelp: string
@@ -112,9 +114,6 @@ export interface Content {
       description: string
       abbreviations?: string[]
     }[]
-    lineupTitle: string
-    lineupHeaders: string[]
-    lineupRows: string[][]
     specTitle: string
     applicationsTitle: string
     highlightsTitle: string
