@@ -1,0 +1,39 @@
+---
+import SubPage from '../../components/SubPage.astro'
+import { getContent } from '../../i18n'
+import type { Locale } from '../../i18n/types'
+import { localeHref } from '../../utils/localeHref'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getContent(locale)
+const { helpCenter: h } = t
+
+const sections = [
+  { href: '/support/faq/', title: h.faqTitle, description: h.faqIntro },
+  { href: '/support/legal/', title: h.legalTitle, description: h.legalIntro },
+  { href: '/downloads/', title: h.downloadsTitle, description: h.downloadsIntro },
+]
+---
+
+<SubPage t={t} title={t.ui.helpHubTitle} intro={h.hubIntro}>
+  <section class="py-10 sm:py-12">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <ul class="grid gap-4 sm:grid-cols-3">
+        {
+          sections.map((section) => (
+            <li>
+              <a href={localeHref(section.href, locale)} class="card block h-full hover:border-brand-500/40">
+                <h2 class="font-semibold text-white">{section.title}</h2>
+                <p class="mt-2 text-sm leading-relaxed text-slate-400">{section.description}</p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</SubPage>

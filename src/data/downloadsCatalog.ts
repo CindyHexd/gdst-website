@@ -14,6 +14,8 @@ export interface DownloadItem {
   downloadAsCn?: string
   /** Suggested filename when user saves the EN PDF (defaults to `en`) */
   downloadAsEn?: string
+  /** Listed on /downloads/ only — not in product center or /products/ routes */
+  downloadsOnly?: boolean
 }
 
 const DOWNLOADS_DIR = path.join(process.cwd(), 'public-media', 'downloads')
@@ -41,6 +43,16 @@ export const downloadsCatalog: DownloadItem[] = [
     downloadAsEn: 'ALLSEIS-1C_HR_EN.pdf',
   },
   {
+    id: 'allseis-1c-and-1chr',
+    titleZh: 'ALLSEIS-1C & ALLSEIS-1C HR 宣传册',
+    titleEn: 'ALLSEIS-1C & ALLSEIS-1C HR brochure',
+    cn: 'ALLSEIS-1C宣传_CN-20250411-21x28.5.pdf',
+    en: 'ALLSEIS-1C宣传_EN Ver. 3.1 20250411 21x28.5.pdf',
+    downloadAsCn: 'ALLSEIS-1C宣传_CN.pdf',
+    downloadAsEn: 'ALLSEIS-1C宣传_EN.pdf',
+    downloadsOnly: true,
+  },
+  {
     id: 'allseis-1c-neo',
     slug: 'allseis-1c-neo',
     titleZh: 'ALLSEIS-1C Neo',
@@ -59,6 +71,14 @@ export const downloadsCatalog: DownloadItem[] = [
     en: 'ALLSEIS-1CNeoHR_EN_20260408.pdf',
     downloadAsCn: 'ALLSEIS-1C_Neo_HR_CN.pdf',
     downloadAsEn: 'ALLSEIS-1C_Neo_HR_EN.pdf',
+  },
+  {
+    id: 'allseis-1c-neo-and-neo-hr-brochure',
+    titleZh: 'ALLSEIS-1C Neo & ALLSEIS-1C Neo HR 宣传册',
+    titleEn: 'ALLSEIS-1C Neo & ALLSEIS-1C Neo HR Brochure',
+    en: 'ALLSEIS-1CNeo宣传_EN Ver. 3.1 20250801 21x28.5.pdf',
+    downloadAsEn: 'ALLSEIS-1CNeo宣传_EN.pdf',
+    downloadsOnly: true,
   },
   {
     id: 'allseis-1clf',

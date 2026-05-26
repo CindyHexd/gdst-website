@@ -1,0 +1,42 @@
+---
+import SubPage from '../../components/SubPage.astro'
+import { getContent } from '../../i18n'
+import type { Locale } from '../../i18n/types'
+import { localeHref } from '../../utils/localeHref'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getContent(locale)
+---
+
+<SubPage t={t} title={t.sections.news.heading} intro={t.ui.newsHubIntro}>
+  <section class="py-10 sm:py-12">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <ul class="divide-y divide-white/8">
+        {
+          t.news.map((item) => (
+            <li class="py-4 first:pt-0 last:pb-0">
+              <div class="flex flex-wrap items-center gap-2 text-sm">
+                {item.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+                <time class="text-slate-500">{item.date}</time>
+              </div>
+              <h2 class="mt-2 text-xl font-semibold text-white">
+                {item.href ? (
+                  <a href={localeHref(item.href, locale)} class="hover:text-brand-300">{item.title}</a>
+                ) : (
+                  item.title
+                )}
+              </h2>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">{item.excerpt}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</SubPage>

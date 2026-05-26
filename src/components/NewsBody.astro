@@ -1,30 +1,54 @@
 ---
-import type { NewsBodyBlock } from '../i18n/types'
-import { withBase } from '../utils/withBase'
+import type { Locale, NewsBodyBlock } from '../i18n/types'
+import { localeHref } from '../utils/localeHref'
 
 interface Props {
   blocks: NewsBodyBlock[]
+  locale: Locale
 }
 
-const { blocks } = Astro.props
+const { blocks, locale } = Astro.props
 ---
 
 {
-  blocks.map((block) => (
-    <p>
-      {typeof block === 'string' ? (
-        block
-      ) : (
-        block.parts.map((part) =>
+  blocks.map((block) =>
+    typeof block === 'string' ? (
+      <p>{block}</p>
+    ) : 'parts' in block ? (
+      <p>
+        {block.parts.map((part) =>
           part.type === 'text' ? (
             part.value
           ) : (
-            <a href={withBase(part.href)} class="font-semibold text-brand-400 hover:text-brand-300">
+            <a href={localeHref(part.href, locale)} class="font-semibold text-brand-400 hover:text-brand-300">
               {part.label}
             </a>
           ),
-        )
-      )}
-    </p>
-  ))
+        )}
+      </p>
+    ) : (
+      <div>
+        <p class="font-medium text-slate-300">{block.heading}</p>
+        <ul class="mt-2 list-disc space-y-1 pl-5 text-slate-300">
+          {block.bullets.map((item) => (
+            <li>
+              {typeof item === 'string' ? (
+                item
+              ) : (
+                item.parts.map((part) =>
+                  part.type === 'text' ? (
+                    part.value
+                  ) : (
+                    <a href={localeHref(part.href, locale)} class="font-semibold text-brand-400 hover:text-brand-300">
+                      {part.label}
+                    </a>
+                  ),
+                )
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ),
+  )
 }

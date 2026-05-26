@@ -1,24 +1,21 @@
 ---
 import type { Content } from '../i18n/types'
-import { withBase } from '../utils/withBase'
+import { localeHref } from '../utils/localeHref'
 
 interface Props {
   t: Content
   limit?: number
-  label?: string
   heading?: string
 }
 
-const { t, limit, label, heading } = Astro.props
+const { t, limit, heading } = Astro.props
 const items = limit ? t.news.slice(0, limit) : t.news
-const sectionLabel = label ?? t.sections.news.label
 const sectionHeading = heading ?? t.sections.news.heading
 ---
 
 <section id="news" class="border-t border-white/8 py-10 sm:py-12">
   <div class="mx-auto max-w-6xl px-4 sm:px-6">
-    <p class="section-label">{sectionLabel}</p>
-    <h2 class="mt-3 text-2xl font-bold text-white sm:text-3xl">{sectionHeading}</h2>
+    <h2 class="text-2xl font-bold text-white sm:text-3xl">{sectionHeading}</h2>
 
     <ul class="mt-8 divide-y divide-white/8">
       {
@@ -32,7 +29,7 @@ const sectionHeading = heading ?? t.sections.news.heading
             </div>
             <h3 class="mt-2 text-lg font-semibold text-white">
               {item.href ? (
-                <a href={withBase(item.href)} class="hover:text-brand-300">{item.title}</a>
+                <a href={localeHref(item.href!, t.locale)} class="hover:text-brand-300">{item.title}</a>
               ) : (
                 item.title
               )}
@@ -44,7 +41,7 @@ const sectionHeading = heading ?? t.sections.news.heading
     </ul>
 
     {limit && (
-      <a href={withBase('/news/')} class="mt-8 inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
+      <a href={localeHref('/news/', t.locale)} class="mt-8 inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
         {t.ui.viewMore}
       </a>
     )}

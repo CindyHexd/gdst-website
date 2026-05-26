@@ -1,0 +1,88 @@
+---
+import SubPage from '../../components/SubPage.astro'
+import ProductPdfBody from '../../components/ProductPdfBody.astro'
+import type { CatalogProduct } from '../../data/productCatalog'
+import { downloadFileUrl, downloadSaveAs, getDownloadItemBySlug } from '../../data/downloadsCatalog'
+import { getProductPdf } from '../../data/productPdf'
+import { getContent } from '../../i18n'
+import type { Locale } from '../../i18n/types'
+import { withBase } from '../../utils/withBase'
+
+interface Props {
+  locale: Locale
+  product: CatalogProduct
+}
+
+const { locale, product } = Astro.props
+const t = getContent(locale)
+const pdf = getProductPdf(product.slug)
+const downloads = getDownloadItemBySlug(product.slug)
+---
+
+<SubPage
+  t={t}
+  title={product.name}
+  intro=""
+  backHref="/products/"
+  backLabel={t.ui.backToProducts}
+>
+  <section class="py-10 sm:py-12">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <article class="space-y-8">
+          {
+            pdf ? (
+              <ProductPdfBody pages={pdf.pages} />
+            ) : (
+              <p class="text-sm text-slate-400">{t.ui.preparing}</p>
+            )
+          }
+
+          {
+            downloads && (downloads.cn || downloads.en) && (
+              <div class="border-t border-slate-800 pt-8">
+                <h2 class="text-lg font-semibold text-white">{t.helpCenter.manualsTitle}</h2>
+                <div class="download-actions mt-4 grid max-w-xs grid-cols-2 gap-x-6">
+                  <div class="text-right">
+                    {
+                      downloads.cn && (
+                        <a
+                          href={downloadFileUrl(downloads.cn, withBase)}
+                          download={downloadSaveAs(downloads, 'cn')}
+                          class="text-sm font-semibold text-brand-400 hover:text-brand-300"
+                        >
+                          {t.ui.downloadZh}
+                        </a>
+                      )
+                    }
+                  </div>
+                  <div class="text-right">
+                    {
+                      downloads.en && (
+                        <a
+                          href={downloadFileUrl(downloads.en, withBase)}
+                          download={downloadSaveAs(downloads, 'en')}
+                          class="text-sm font-semibold text-brand-400 hover:text-brand-300"
+                        >
+                          {t.ui.downloadEn}
+                        </a>
+                      )
+                    }
+                  </div>
+                </div>
+              </div>
+            )
+          }
+        </article>
+
+        <aside class="card lg:sticky lg:top-24 lg:self-start">
+          {
+            product.image && (
+              <img src={product.image} alt="" class="w-full object-contain" loading="lazy" decoding="async" />
+            )
+          }
+        </aside>
+      </div>
+    </div>
+  </section>
+</SubPage>

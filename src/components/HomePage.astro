@@ -4,9 +4,9 @@ import { getContent } from '../i18n'
 import Layout from '../layouts/Layout.astro'
 import Header from './Header.astro'
 import Solution from './Solution.astro'
+import CoreTechnology from './CoreTechnology.astro'
 import Hero from './Hero.astro'
 import Stats from './Stats.astro'
-import MajorProduct from './MajorProduct.astro'
 import News from './News.astro'
 import Footer from './Footer.astro'
 
@@ -18,19 +18,14 @@ const { locale } = Astro.props
 const t = getContent(locale)
 ---
 
-<Layout t={t}>
+<Layout t={t} pathname={Astro.url.pathname}>
   <Header t={t} />
   <main id="main">
     <Hero t={t} />
     <Stats t={t} />
     <Solution t={t} />
-    <MajorProduct t={t} />
-    <News
-      t={t}
-      limit={t.homepageNewsLimit}
-      label={t.sections.recentNews.label}
-      heading={t.sections.recentNews.heading}
-    />
+    <CoreTechnology t={t} />
+    <News t={t} limit={t.homepageNewsLimit} heading={t.sections.recentNews.heading} />
   </main>
   <Footer t={t} />
 </Layout>

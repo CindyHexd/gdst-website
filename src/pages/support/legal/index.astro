@@ -1,28 +1,5 @@
 ---
-import SubPage from '../../../components/SubPage.astro'
-import { getContent } from '../../../i18n'
-
-const t = getContent('zh')
-const { helpCenter: h } = t
+import SupportLegalPage from '../../../views/support/SupportLegalPage.astro'
 ---
 
-<SubPage t={t} label="HELP" title={h.legalTitle} intro={h.legalIntro} backHref="/support/" backLabel={t.ui.backToHelp}>
-  <section class="py-10 sm:py-12">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <article class="space-y-10 text-sm leading-relaxed text-slate-400">
-        {
-          h.legalSections.map((section) => (
-            <div class="space-y-4">
-              {section.heading && (
-                <h2 class="text-lg font-semibold text-white">{section.heading}</h2>
-              )}
-              {section.paragraphs.map((p) => (
-                <p>{p}</p>
-              ))}
-            </div>
-          ))
-        }
-      </article>
-    </div>
-  </section>
-</SubPage>
+<SupportLegalPage locale="zh" />

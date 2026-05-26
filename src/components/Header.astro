@@ -1,5 +1,6 @@
 ---
 import type { Content } from '../i18n/types'
+import { localeHref } from '../utils/localeHref'
 import { withBase } from '../utils/withBase'
 import LanguageToggle from './LanguageToggle.astro'
 
@@ -9,11 +10,12 @@ interface Props {
 
 const { t } = Astro.props
 const { company, navLinks } = t
+const href = (path: string) => localeHref(path, t.locale)
 ---
 
 <header class="glass sticky top-0 z-50">
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4">
-    <a href={withBase(t.homePath)} class="flex shrink-0 items-center rounded-lg bg-white px-2.5 py-1.5">
+    <a href={href('/')} class="flex shrink-0 items-center rounded-lg bg-white px-2.5 py-1.5">
       <img
         src={withBase('/logo.png')}
         alt={`${company.nameEn} ${company.shortName}`}
@@ -30,7 +32,7 @@ const { company, navLinks } = t
           link.children ? (
             <div class="nav-dropdown group relative">
               <a
-                href={withBase(link.href)}
+                href={href(link.href)}
                 class="inline-flex items-center gap-1 rounded-lg px-2.5 py-2 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
               >
                 {link.label}
@@ -47,7 +49,7 @@ const { company, navLinks } = t
                     link.children.map((child) => (
                       <li>
                         <a
-                          href={withBase(child.href)}
+                          href={href(child.href)}
                           class="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-brand-600"
                         >
                           {child.label}
@@ -57,7 +59,7 @@ const { company, navLinks } = t
                             {child.children.map((product) => (
                               <li>
                                 <a
-                                  href={withBase(product.href)}
+                                  href={href(product.href)}
                                   class="block rounded-lg px-2 py-1.5 text-xs leading-snug text-slate-600 hover:bg-slate-50 hover:text-brand-600"
                                 >
                                   {product.label}
@@ -74,7 +76,7 @@ const { company, navLinks } = t
             </div>
           ) : (
             <a
-              href={withBase(link.href)}
+              href={href(link.href)}
               class="rounded-lg px-2.5 py-2 text-sm text-slate-300 hover:bg-white/5 hover:text-white"
             >
               {link.label}
@@ -85,9 +87,9 @@ const { company, navLinks } = t
     </nav>
 
     <div class="flex shrink-0 items-center gap-2 sm:gap-3">
-      <LanguageToggle t={t} />
+      <LanguageToggle t={t} pathname={Astro.url.pathname} />
       <a
-        href={withBase('/about/#contact')}
+        href={href('/about/#contact')}
         class="hidden rounded-lg bg-brand-600 px-3 py-2 text-sm font-medium text-white hover:bg-brand-500 sm:inline-flex lg:px-4"
       >
         {t.ui.cta}
@@ -116,20 +118,20 @@ const { company, navLinks } = t
             navLinks.map((link) =>
               link.children ? (
                 <div class="mb-2">
-                  <a href={withBase(link.href)} class="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50">
+                  <a href={href(link.href)} class="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50">
                     {link.label}
                   </a>
                   <div class="mt-1 space-y-2 pl-2">
                     {
                       link.children.map((child) => (
                         <div>
-                          <a href={withBase(child.href)} class="block rounded-lg px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50">
+                          <a href={href(child.href)} class="block rounded-lg px-3 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50">
                             {child.label}
                           </a>
                           {child.children && (
                             <div class="mt-0.5 space-y-0.5 pl-2">
                               {child.children.map((product) => (
-                                <a href={withBase(product.href)} class="block rounded-lg px-3 py-1.5 text-xs text-slate-500 hover:bg-slate-50">
+                                <a href={href(product.href)} class="block rounded-lg px-3 py-1.5 text-xs text-slate-500 hover:bg-slate-50">
                                   {product.label}
                                 </a>
                               ))}
@@ -141,7 +143,7 @@ const { company, navLinks } = t
                   </div>
                 </div>
               ) : (
-                <a href={withBase(link.href)} class="block rounded-lg px-3 py-2.5 text-sm text-slate-700 hover:bg-slate-50">
+                <a href={href(link.href)} class="block rounded-lg px-3 py-2.5 text-sm text-slate-700 hover:bg-slate-50">
                   {link.label}
                 </a>
               ),

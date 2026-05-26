@@ -11,7 +11,16 @@ const year = new Date().getFullYear()
 
 <footer class="border-t border-white/8 py-8">
   <p class="mx-auto max-w-6xl px-4 text-center text-xs leading-relaxed text-slate-600 sm:px-6">
-    {t.legal.publicSecurity} 版权所有© {t.company.name} {t.legal.icp}
-    <span class="sr-only"> {year} {t.ui.rights}</span>
+    {
+      t.legal ? (
+        <>
+          {t.legal.publicSecurity} 版权所有© {t.company.name} {t.legal.icp}
+        </>
+      ) : (
+        <>
+          © {year} {t.company.name}. {t.ui.rights}
+        </>
+      )
+    }
   </p>
 </footer>

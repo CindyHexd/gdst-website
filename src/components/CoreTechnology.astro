@@ -1,0 +1,20 @@
+---
+import type { Content } from '../i18n/types'
+import SpecTable from './SpecTable.astro'
+
+interface Props {
+  t: Content
+}
+
+const { t } = Astro.props
+const { coreTechnology, sections } = t
+---
+
+<section id="core-technology" class="border-b border-white/8 py-10 sm:py-12">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="text-2xl font-bold text-white sm:text-3xl">{sections.coreTechnology.heading}</h2>
+    <div class="mt-8">
+      <SpecTable rows={coreTechnology.rows} />
+    </div>
+  </div>
+</section>

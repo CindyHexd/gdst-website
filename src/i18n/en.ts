@@ -19,7 +19,7 @@ export const en: Content = {
   homePath: '/en/',
 
   meta: {
-    title: 'GeoDeep Sensing | Beijing Zhongke Shenyuan Technology',
+    title: 'GDST',
     description:
       'GeoDeep Sensing develops nodal seismometers and geoscience big-data platforms for energy exploration, urban subsurface mapping, and intelligent monitoring.',
   },
@@ -35,7 +35,6 @@ export const en: Content = {
     founded: 'Est.',
     missionPrefix: 'Mission · ',
     viewMore: 'View more news',
-    learnMore: 'Learn more',
     download: 'Download',
     downloadZh: '中文',
     downloadEn: 'English',
@@ -49,15 +48,19 @@ export const en: Content = {
       'This is a placeholder news detail page. Add photos, agendas, meeting notes, and media assets when ready.',
     caseDetailPlaceholder:
       'Case study details coming soon. Add project background, technical approach, outcomes, and images here.',
+    newsHubIntro:
+      'Product milestones, industry conferences, customer engagement, and academic events.',
+    helpHubTitle: 'Help',
+    aboutPageTitle: 'About us',
   },
 
   company: {
-    name: 'Beijing GeoDeep Sensing Technology Co., Ltd.',
-    shortName: 'GeoDeep Sensing',
-    nameEn: 'GeoDeep Sensing',
-    tagline: 'Hardware & software united — exploring deep and shallow',
+    name: ' Geophysical Deep Sensing Technology Co., Ltd.',
+    shortName: 'GDST',
+    nameEn: 'GDST',
+    tagline: '',
     description:
-      'Backed by the Institute of Geology and Geophysics (CAS) and Peking University’s School of Earth and Space Sciences, we develop nodal seismometers, geoscience big-data platforms, and intelligent monitoring systems.',
+      '',
     address: 'Room N1-308, Jinyu Intelligent Manufacturing Workshop, Xisanqi, Haidian District, Beijing',
     phone: '010-83458087',
     email: 'service@geodeepsensing.com',
@@ -67,7 +70,7 @@ export const en: Content = {
   },
 
   navLinks: [
-    { href: '/en/', label: 'Home' },
+    { href: '/', label: 'Home' },
     {
       href: '/products/',
       label: 'Products',
@@ -102,7 +105,7 @@ export const en: Content = {
   ],
 
   hero: {
-    title: 'GeoDeep Sensing Technology Co., Ltd.',
+    title: 'Geophysical Deep Sensing Technology',
     slides: [
       {
         subtitle: 'Leader in autonomous exploration equipment for energy exploration',
@@ -125,15 +128,15 @@ export const en: Content = {
 
   stats: [
     { value: '200+', label: 'Users' },
-    { value: '300000+', label: 'Total seismic acquisition units delivered' },
+    { value: '300000+', label: 'Seismic acquisition units delivered' },
     { value: '100+', label: 'Service fields' },
-    { value: '50+', label: 'Proprietary IP assets' },
+    { value: '50+', label: 'Independent IPs' },
   ],
 
   solution: {
     items: [
-      'High-precision energy & mineral exploration',
-      'High-precision urban subsurface exploration',
+      'High-resolution energy & mineral exploration',
+      'High-resolution urban subsurface exploration',
       'Hydraulic fracturing & mine seismic monitoring',
       'Engineering disaster monitoring & early warning',
       'Industrial predictive maintenance monitoring',
@@ -143,11 +146,64 @@ export const en: Content = {
     ],
   },
 
+  coreTechnology: {
+    rows: [
+      {
+        label: 'DualSync™',
+        value: {
+          lead: 'Dual-mode satellite timing & time-keeping engine enabling microsecond-level precision in wide-area system synchronization for seismic acquisition.',
+          bullets: [
+            'Intermittent GNSS clock synchronization strategy: timing accuracy less than ± 5us, supports > 45 day battery life (not recommended for deep planting applications).',
+            'Configurable GNSS continuous mode: adopts GNSS satellite continuous timing strategy to maintain GNSS synchronization when deeply buried.',
+          ],
+        },
+      },
+      {
+        label: 'RapidScan™',
+        value: {
+          lead: 'Field Wireless Quality Control',
+          groups: [
+            {
+              heading: 'Integrated low-power BLE supports:',
+              bullets: [
+                'Field operation management',
+                'Device self-test',
+                'Wireless status monitoring',
+                'Single shot record retrieval',
+              ],
+            },
+            {
+              heading: 'Key Functions:',
+              bullets: [
+                'Device Discovery',
+                'Status Query',
+                'Self-Diagnostics',
+                'Real-time Waveform Monitoring',
+                'Precision Locating (with satellite positioning unit for buried equipment tracking)',
+              ],
+            },
+          ],
+        },
+      },
+      { label: 'iFlyScan™', 
+        value: {
+          lead: 'Long-Range UAV Patrol QC',
+          bullets: [
+            'Ground communication range ≥20m',
+            'Aerial communication range ≥100m',
+            'Supports manual, vehicle-based, and UAV-assisted inspection modes',
+          ],
+        },
+      },
+    ],
+  },
+
   sections: {
-    solution: { label: 'SOLUTION', heading: 'Solutions' },
-    majorProducts: { label: 'PRODUCTS', heading: 'Major products' },
-    news: { label: 'NEWS', heading: 'News' },
-    recentNews: { label: 'NEWS', heading: 'Recent news' },
+    solution: { heading: 'Solutions' },
+    coreTechnology: { heading: 'Core technology' },
+    majorProducts: { heading: 'Major products' },
+    news: { heading: 'News' },
+    recentNews: { heading: 'Recent news' },
   },
 
   homepageNewsLimit: 4,
@@ -195,20 +251,13 @@ export const en: Content = {
   productCenter: {
     title: 'Products',
     intro:
-      'ALLSEIS nodal seismic systems and wideband geophones for land and marine acquisition, with DualSync™, RapidScan™, iFlyScan™, and SeisData Management (SDM) software.',
-    platformTitle: 'Core platforms',
-    platformRows: [
-      { label: 'DualSync™', value: 'GNSS timing with μs-level node synchronization' },
-      { label: 'RapidScan™', value: 'BLE field QC — ~20 m ground, >100 m air' },
-      { label: 'iFlyScan™', value: 'UAV patrol for large-array management' },
-      { label: 'SDM', value: 'SEG-D / SEG-Y / Mini-SEED / SAC and QC workflows' },
-    ],
+      '',
     categories: [
       {
         id: 'seismic',
         title: 'Seismic acquisition',
         description:
-          'Cable-free single-, three-, and four-component nodal systems for high-density energy and urban subsurface projects.',
+          '',
         abbreviations: [
           'LF = Low Frequency',
           'C = Component',
@@ -219,92 +268,28 @@ export const en: Content = {
         id: 'sensors',
         title: 'Intelligent sensors',
         description:
-          'Active force-feedback wideband geophones for nodes or external strings, land and marine applications.',
+          '',
       },
       {
         id: 'maintenance',
         title: 'Predictive maintenance',
         description:
-          'Vibration monitoring, condition assessment, and fault prediction for industrial equipment and critical infrastructure.',
+          '',
       },
       {
         id: 'data',
         title: 'Data processing & analysis',
         description:
-          'Seismic and EM processing, QC, imaging, and interpretation integrated with our geoscience cloud platform.',
+          '',
       },
       {
         id: 'urban',
         title: 'Urban subsurface investigation',
         description:
-          'Fine mapping of urban subsurface structure from 0–500 m for planning, hazard assessment, and safe subsurface use.',
+          '',
       },
     ],
-    specTitle: 'Specifications',
-    applicationsTitle: 'Applications',
-    highlightsTitle: 'Highlights',
   },
-
-  products: [
-    {
-      name: 'ALLSEIS-1C Nodal Seismic Acquisition System',
-      subtitle: 'Single-component nodal seismic acquisition',
-      description:
-        'Nodal seismic acquisition equipment for energy, mineral, and engineering exploration, supporting high-density field deployment.',
-      highlights: ['Nodal acquisition', 'High-density deployment', 'Energy exploration'],
-      href: '/products/allseis-1c/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/49068950.png',
-    },
-    {
-      name: 'ALLSEIS-3C Three-component Seismic Acquisition Station',
-      subtitle: 'Three-component seismic acquisition station',
-      description:
-        'Integrated three-component equipment for fine urban subsurface exploration, structural surveys, and monitoring.',
-      highlights: ['Three-component', 'Integrated acquisition', 'Subsurface space'],
-      href: '/products/allseis-3c/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27446291.png',
-    },
-    {
-      name: 'ALLSEIS-4C LF Four-component Short-period Seismometer',
-      subtitle: 'Four-component short-period seismometer',
-      description:
-        'Four-component short-period seismometer for seismic monitoring, engineering monitoring, and intelligent sensing scenarios.',
-      highlights: ['Four-component', 'Short-period', 'Intelligent sensing'],
-      href: '/products/allseis-4clf/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/27047828.png',
-    },
-    {
-      name: 'I-Nodal All-in-one Nodal Seismic Acquisition System',
-      subtitle: 'All-in-one nodal seismic acquisition',
-      description:
-        'Cable-free autonomous seismic acquisition with independent channels and no cable connection, suited to large-scale high-density deployment.',
-      highlights: ['Cable-free', 'All-in-one', 'Large-scale use'],
-      href: '/products/i-nodal/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/42128135.png',
-    },
-    {
-      name: 'ALLSEIS-1C HR Nodal Seismic Acquisition System',
-      subtitle: 'Domestic-chip high-dynamic-range nodal system',
-      description:
-        '32-bit acquisition with 0.25 ms sampling and 150 dB full-scale dynamic range; continuous GNSS for deep burial and RFID asset tracking.',
-      highlights: ['Domestic chip', '0.25 ms sampling', '150 dB DR'],
-      href: '/products/allseis-1chr/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/52917172.png',
-    },
-  ],
-
-  secondaryProducts: [
-    {
-      name: '2 Hz active force-feedback omnidirectional wideband geophone',
-      href: '/products/2hz-wideband-geophone/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/55920300.png',
-    },
-    {
-      name: '1.25 Hz active force-feedback wideband land geophone',
-      href: '/products/125hz-land-geophone/',
-      image: 'https://img.wanwang.xin/contents/sitefiles2048/10243868/images/55951257.png',
-    },
-  ],
 
   cases: [
     {
@@ -312,68 +297,114 @@ export const en: Content = {
       excerpt:
         'CNOOC operation using 30,000 ALLSEIS-1C nodes — 301 km² loess plateau survey completed in 21 days.',
       href: '/cases/fugu-3d/',
+      body: [
+        'The survey area in Fugu County, northwest China, covers ~301 km² of typical loess plateau terrain with dense vegetation, elevations of 984–1,386 m, and 402 m of relief. The design called for 21,818 shots, 47,692 receiver points, and 40 m group interval.',
+        {
+          heading: 'Equipment deployed:',
+          bullets: [
+            {
+              parts: [
+                { type: 'link', label: 'ALLSEIS-1C', href: '/products/allseis-1c/' },
+                { type: 'text', value: ' — 30,000 channels' },
+              ],
+            },
+            'Standard data download cabinets — 4',
+            'Standard charging cabinets — 25',
+            'Download servers — 2',
+            'SDM server — 1',
+            'BoomBox-III — 21 units',
+            'UAV — 1',
+          ],
+        },
+        {
+          heading: 'Field efficiency:',
+          bullets: [
+            'Field crew — 65 personnel',
+            'Average daily deployment — ~2,500 channels',
+            'Average daily recovery — ~2,500 channels',
+            'Average daily UAV line QC — ~3,000 channels',
+            'Average daily raw data download — 9 TB',
+            'Average daily shots — 1,066',
+            'Project duration — 21 days',
+            'Bad channel rate — below 0.3%',
+          ],
+        },
+        'Acquisition ran from 20 May to 8 June 2023. Daily shot counts ramped up, peaking at 2,046 shots on 7 June. Overall efficiency and data quality met project requirements.',
+      ],
     },
     {
-      title: 'Urban subsurface fine-mapping project',
-      excerpt: 'Three-component acquisition and frequency imaging supported planning and subsurface safety.',
-      href: '/cases/urban-subsurface/',
-    },
-    {
-      title: 'Engineering hazard and mining seismic monitoring',
-      excerpt: 'Continuous monitoring and analytics for landslides, mining tremors, and fracturing scenarios.',
-      href: '/cases/hazard-mining-monitoring/',
-    },
-    {
-      title: 'Natural gas pipeline leak monitoring',
-      excerpt: 'Wideband sensing and analytics for along-pipeline anomaly detection and early warning.',
-      href: '/cases/pipeline-leak-monitoring/',
-    },
-    {
-      title: 'Industrial predictive maintenance',
-      excerpt: 'Vibration monitoring and fault prediction for critical equipment and infrastructure.',
-      href: '/cases/predictive-maintenance/',
-    },
-    {
-      title: 'Hydraulic fracturing and reservoir monitoring',
-      excerpt: 'Microseismic monitoring and reservoir dynamics for refined oil and gas development.',
-      href: '/cases/fracturing-reservoir/',
+      title: 'I-Nodal cable-free seismic acquisition system achieves large-scale deployment success',
+      excerpt:
+        'The I-Nodal nodal system reached industrial-scale production and deployment across Sinopec’s major exploration regions, marking a breakthrough for fully domestic land seismic acquisition equipment.',
+      href: '/cases/i-nodal-large-scale-application/',
+      body: [
+        '1. Technical background',
+        'As the world’s largest oil importer, China’s dependence on foreign oil and gas reached 69.8% and 45.3% in 2018, rising to 72% and 46% by 2021. National policy now calls for stronger domestic exploration to safeguard energy security. Exploration technology and equipment determine recoverable resources and project economics. At the 2020 Two Sessions, Sinopec Chairman Ma Yongsheng highlighted the need to localize major oil and gas equipment and reduce “stranglehold” supply-chain risks, especially for advanced geophysical instruments.',
+        'Land seismic acquisition systems are among the most critical geophysical tools in petroleum exploration. Because of demanding synchronization, harsh field conditions, and complex architectures, manufacturing has long been dominated by a few foreign vendors. China’s mainstream systems have been led by cable-based platforms such as Sercel 428, with 100k-channel-class systems emerging more recently. Domestic R&D efforts struggled to reach practical deployment until node-based architectures matured.',
+        'Since the early 2000s, cable-free “nodal” systems—exemplified by Geospace GSR, Fairfield ZLAND, and INOVA HAWK—have offered simpler architecture, unlimited channel count, and flexible deployment for high-density surveys. Offline “blind recording,” however, could not match cabled systems for real-time QC and data recovery, limiting adoption. Online autonomous acquisition with wireless QC became a strategic priority for closing the technology gap.',
+        '2. Development path',
+        'GDST began core nodal R&D in 2012 and introduced FLEXSEIS in 2014—the first domestic cable-free nodal system with real-time data recovery, widely used in microseismic and engineering applications.',
+        'From 2016 to 2018, with Sinopec support, the team co-developed a fully integrated cable-free system with Sinopec Geophysical. By December 2017, an 800-node prototype with field terminals and centralized charge/download racks was built. From February to July 2018, trials in multiple provinces and terrains compared results with Sercel 428XL and INOVA G3i HD, confirming data quality on par with leading cabled systems. The project passed acceptance in September 2018 and won Sinopec’s 2019 first prize for science and technology progress.',
+        'By late 2018, with support from Sinopec Shengli Petroleum Administration, engineering trial production reached 5,000 nodes and entered large 3D pilot projects—including salt-city trials, mixed node/cable surveys, and desert deployments. The fully integrated domestic system was formally named the I-Nodal nodal seismic acquisition system, a core part of Sinopec Geophysical’s I-technology family.',
+        '3. Field results',
+        {
+          parts: [
+            {
+              type: 'text',
+              value:
+                'From September to November 2019, under unified Sinopec planning, the ',
+            },
+            { type: 'link', label: 'I-Nodal', href: '/products/i-nodal/' },
+            {
+              type: 'text',
+              value:
+                ' system completed its first batch production of 31,000 units for the large-scale Shanghe 2020 3D hybrid survey. The project deployed 56,000 channels (31,000 I-Nodal nodes and 25,000 Sercel-508 cabled channels), covering about 300 km² full-fold area. Daily production averaged nearly 1,000 shots, 20% above the eastern China average at the time, finishing 14 days ahead of schedule. Bad traces were below 0.4%, well under the 3–5% typical for international nodal products.',
+            },
+          ],
+        },
+        'During COVID-19 disruptions in 2020, nodal acquisition proved especially resilient. By end of 2021, more than 85,000 I-Nodal units had been delivered to Sinopec, supporting 28 large 3D projects across North China, East China, Northwest, and Southwest. Over 2.3 million shots were acquired with data recovery above 99%, delivering strong economic and quality outcomes.',
+        'Large-scale I-Nodal deployment marked a zero-to-one breakthrough for fully domestic land seismic acquisition equipment. In May 2021, China Petrochemical News featured I-Nodal under the theme “nodal technology leads a new acquisition model.” The team continues next-generation I-Nodal development to support national goals for million-channel digital seismic acquisition by 2025.',
+      ],
     },
   ],
 
   news: [
     {
-      date: '2024-07-27',
-      title: 'GeoDeep Sensing joined the 2024 Engineering Geophysics Academic Conference',
-      excerpt: 'The company exchanged engineering geophysics technology applications with industry partners.',
-      tags: ['Exhibition', 'Hangzhou'],
+      date: '2025-04-21',
+      title: 'Conference | GeoDeep Sensing at the 3rd China Petroleum Geophysics Academic Conference',
+      excerpt:
+        'More than 1,000 experts from 160+ energy companies, institutes, and universities gathered in Hangzhou. GeoDeep Sensing showcased the ALLSEIS family of domestic seismic acquisition systems.',
+      tags: ['Conference', 'Hangzhou'],
       href: '/news/geophys-academic-2025/',
+      body: [
+        'Experts from across the energy sector met in Hangzhou under the theme of innovative, precise, efficient, intelligent, and green geophysical technology for new productivity in challenging oil and gas exploration.',
+        {
+          parts: [
+            {
+              type: 'text',
+              value:
+                'General Manager Lv Yongjun and CTO He Chuan led the team to present ALLSEIS domestic seismic acquisition equipment. Against the backdrop of U.S.–China tariffs, our domestically produced ',
+            },
+            { type: 'link', label: 'ALLSEIS-1C HR', href: '/products/allseis-1chr/' },
+            { type: 'text', value: ' nodal system drew strong interest from delegates.' },
+          ],
+        },
+        'GeoDeep Sensing remains committed to domestic seismic acquisition R&D, delivering advanced, efficient products for energy exploration worldwide.',
+      ],
     },
   ],
 
   helpCenter: {
-    hubIntro: 'FAQ, legal notice, and downloads to help you learn about our products and get support.',
-    faqIntro: 'Answers on product selection, technical support, and document downloads.',
+    hubIntro: '',
+    faqIntro: '',
     legalIntro: 'Terms of use, copyright, and disclaimers for this website.',
-    downloadsIntro: 'Product manuals, operation guides, and supporting software.',
+    downloadsIntro: 'Product manuals, how-to guides, and supporting softwares.',
     faqTitle: 'FAQ',
     faq: [
       {
-        question: 'How do I choose the right nodal seismic system?',
+        question: 'question1 (to do)',
         answer:
-          'Selection depends on survey goals, array scale, component requirements, and field conditions. Contact our team for tailored recommendations.',
-      },
-      {
-        question: 'Where can I download manuals and guides?',
-        answer: 'Visit Help → Downloads for product manuals, operation guides, and supporting software.',
-      },
-      {
-        question: 'How do I get technical support?',
-        answer: 'Call 010-83458087 or email service@geodeepsensing.com. We respond during business hours.',
-      },
-      {
-        question: 'Do you offer customized solutions?',
-        answer:
-          'Yes — integrated solutions from sensors and acquisition to geoscience data processing for energy, urban subsurface, and monitoring scenarios.',
+          'answer1',
       },
     ],
     legalTitle: 'Legal notice',
@@ -426,23 +457,26 @@ export const en: Content = {
     ],
     downloadsTitle: 'Downloads',
     manualsTitle: 'Product manuals',
-    guidesTitle: 'Operation guides',
-    softwareTitle: 'Supporting software',
+    guidesTitle: 'How-to guides',
+    softwareTitle: 'Supporting softwares',
     guides: [
-      { title: 'ALLSEIS field deployment guide', description: 'Station layout, QC checks, and troubleshooting.' },
-      { title: 'I-Nodal quick start', description: 'Configuration and startup for first-time deployment.' },
-      { title: 'Wideband geophone installation & maintenance', description: 'Coupling, calibration, and long-term care.' },
+      { title: 'guide1 (TODO)', description: 'guide1 descriptions' },
     ],
     software: [
-      { title: 'Acquisition & QC software', description: 'Field data download, trace preview, and quality assessment.' },
-      { title: 'Node configuration tool', description: 'Parameter setup, firmware updates, and status monitoring.' },
-      { title: 'Geoscience processing plugins', description: 'Tools that work with the Guokan cloud platform.' },
+      { title: 'SeisDataManagement (SDM)', 
+        description: '',
+        detail: 'TODO: translate'
+       },
+      { title: 'In-field QC App.', 
+        description: 'ALLSEIS-1C on-site quality control app for Android mobile.',
+        detail: 'TODO: translate'
+      },
     ],
   },
 
   aboutPage: {
     intro:
-      'Founded in 2020, Beijing GeoDeep Sensing Technology Co., Ltd. draws on research institutes including the Institute of Geology and Geophysics, Chinese Academy of Sciences, and the School of Earth and Space Sciences, Peking University. We focus on intelligent sensing R&D and manufacturing, multi-dimensional multi-source data acquisition and processing, and big-data decision support for energy and mineral resources, industrial predictive maintenance, and smart cities. We develop proprietary smart sensors, data-acquisition nodes, and application systems, and deliver value-added services across data acquisition, storage, analytics, visualization, and applications. Guided by integrity in practice and unity of knowledge and action, we help customers advance digital innovation and domestic core exploration equipment—contributing to localized deep-resource detection capabilities for land, sea, and space.',
+      'Founded in 2020, GDST draws on research institutes including the Institute of Geology and Geophysics, Chinese Academy of Sciences, and the School of Earth and Space Sciences, Peking University. We focus on intelligent sensing R&D and manufacturing, multi-dimensional multi-source data acquisition and processing, and big-data decision support for energy and mineral resources, industrial predictive maintenance, and smart cities. We develop proprietary smart sensors, data-acquisition nodes, and application systems, and deliver value-added services across data acquisition, storage, analytics, visualization, and applications. Guided by integrity in practice and unity of knowledge and action, we help customers advance digital innovation and domestic core exploration equipment—contributing to localized deep-resource detection capabilities for land, sea, and space.',
     honorsTitle: 'Honors & qualifications',
     qualificationsSubtitle: 'Qualifications',
     qualifications: [
@@ -457,36 +491,33 @@ export const en: Content = {
     ipSubtitle: 'Intellectual property',
     ipImage: '/certificates/知识产权叠放.png',
     intellectualProperty: [
-      '50+ proprietary IP assets',
-      'Patents on nodal seismic acquisition systems',
-      'Wideband geophone and signal-processing patents',
-      'Software copyrights for geoscience cloud platform',
+      '50 independent IPs (including those in application): 11 invention patents, 9 utility model patents, 5 design patents, 24 software copyrights.',
     ],
     contactTitle: 'Contact us',
     offices: [
       {
-        name: 'Beijing | China',
-        address: 'Room N1-308, Jinyu Intelligent Manufacturing Workshop, Xisanqi, Haidian, Beijing',
+        name: 'Beijing (China)',
+        address: 'Room N1-308, Jinyu Intelligent Manufacturing Factory, Xisanqi, Haidian, Beijing',
         phone: '+86 010-8345 8087',
         email: 'service@geodeepsensing.com',
       },
       {
-        name: 'R&D and test | China',
-        address: 'Zhongguancun Science City area, Haidian District, Beijing',
-        phone: '+86 010-8345 8087',
-        email: 'service@geodeepsensing.com',
-      },
-      {
-        name: 'Suzhou | China',
-        address: 'Room 102, Building 16, No. 158 Jinfeng Road, Suzhou High-tech Zone',
+        name: 'Suzhou (China)',
+        address: 'Room 102, Building 16, No. 158 Jinfeng Road, New District, Suzhou',
         phone: '+86 0512-6878 6291',
         email: 'service@geodeepsensing.com',
       },
       {
-        name: 'London | UK',
-        address: ['4th Floor, Silverstream House, 45 Fitzroy', 'Street, London W1T 6EB, United Kingdom'],
+        name: 'London (UK)',
+        address: '4th Floor, Silverstream House, 45 Fitzroy Street, Fitzrovia, London W1T 6EB, UK',
         phone: '+44 7975 829 456',
         email: 'service@geodeepsensing.com',
+      },
+      {
+        name: 'Bolivia (South America)',
+        address: 'Santa Cruz de la Sierra, Bolivia',
+        phone: '+591 7560 7385',
+        email: 'g.sordo@geodeepsensing.com',
       },
     ],
     careersTitle: 'Join us',
@@ -503,12 +534,12 @@ export const en: Content = {
         specialNote:
           'Candidates with 3+ years of hardware development experience, independent project design and debugging skills, solid analog/digital fundamentals, embedded processor and peripheral design, and common interface circuit experience may receive up to 20K.',
         requirements: [
-          'Bachelor’s or higher in electronics, automation, or computer science;',
-          'Familiar with digital and analog circuit design flows and EDA tools; able to complete schematics and PCB layout from logic design specs;',
-          'Able to write debug programs and test hardware to meet design requirements;',
-          'Proficient in reading English technical literature;',
-          'Strong ethics, teamwork, and dedication;',
-          'Eager to learn new skills and technologies.',
+          "Bachelor's or higher in electronics, automation, or computer science",
+          'Familiar with digital and analog circuit design flows and EDA tools; able to complete schematics and PCB layout from logic design specs',
+          'Able to write debug programs and test hardware to meet design requirements',
+          'Proficient in reading English technical literature',
+          'Strong ethics, teamwork, and dedication',
+          'Eager to learn new skills and technologies',
         ],
       },
       {
@@ -516,20 +547,15 @@ export const en: Content = {
         headcount: '2–3',
         salary: '8K–10K',
         requirements: [
-          'Bachelor’s or higher in electronics, automation, or computer science;',
-          '2–3 years of relevant experience;',
-          'Familiar with ARM/8051 embedded design flows and tools; able to develop low-level drivers;',
-          'Proficient in reading English technical literature;',
-          'Strong ethics, teamwork, and dedication;',
-          'Eager to learn new skills and technologies.',
+          "Bachelor's or higher in electronics, automation, or computer science",
+          '2–3 years of relevant experience',
+          'Familiar with ARM/8051 embedded design flows and tools; able to develop low-level drivers',
+          'Proficient in reading English technical literature',
+          'Strong ethics, teamwork, and dedication',
+          'Eager to learn new skills and technologies',
         ],
       },
     ],
-    careersEmailNote: 'Send your resume to service@geodeepsensing.com with the subject “Position – Your Name”.',
-  },
-
-  legal: {
-    publicSecurity: 'Beijing public security record 11010802038108',
-    icp: 'ICP record 2021017956',
+    careersEmailNote: "Send your resume to service@geodeepsensing.com with the subject 'Position – Your Name'.",
   },
 }

@@ -1,0 +1,33 @@
+---
+import SubPage from '../../components/SubPage.astro'
+import { getContent } from '../../i18n'
+import type { Locale } from '../../i18n/types'
+import { localeHref } from '../../utils/localeHref'
+
+interface Props {
+  locale: Locale
+}
+
+const { locale } = Astro.props
+const t = getContent(locale)
+const casesNav = t.navLinks.find((l) => l.href === '/cases/')
+---
+
+<SubPage t={t} title={casesNav?.label ?? 'Cases'} intro="">
+  <section class="py-10 sm:py-12">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <ul class="divide-y divide-white/8">
+        {
+          t.cases.map((item) => (
+            <li class="py-4 first:pt-0 last:pb-0">
+              <h2 class="text-lg font-semibold text-white">
+                <a href={localeHref(item.href, locale)} class="hover:text-brand-300">{item.title}</a>
+              </h2>
+              <p class="mt-2 text-sm leading-relaxed text-slate-400">{item.excerpt}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</SubPage>

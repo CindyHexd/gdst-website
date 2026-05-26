@@ -1,4 +1,5 @@
 import { getCatalogProducts } from '../data/productCatalog'
+import { localizePath } from '../utils/localePath'
 import type { Content, Locale } from './types'
 import { zh } from './zh'
 import { en } from './en'
@@ -16,7 +17,7 @@ export function getAlternateLocale(locale: Locale): Locale {
 }
 
 export function getLocalePath(locale: Locale): string {
-  return locale === 'zh' ? '/' : '/en/'
+  return localizePath('/', locale)
 }
 
 export function getAllProducts(t: Content) {

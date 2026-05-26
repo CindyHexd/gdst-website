@@ -1,12 +1,9 @@
 ---
-interface Row {
-  label: string
-  value: string
-}
+import type { SpecTableRow } from './specTableTypes'
 
 interface Props {
   title?: string
-  rows: Row[]
+  rows: SpecTableRow[]
 }
 
 const { title, rows } = Astro.props
@@ -24,7 +21,32 @@ const { title, rows } = Astro.props
         rows.map((row) => (
           <tr>
             <th scope="row">{row.label}</th>
-            <td>{row.value}</td>
+            <td>
+              {typeof row.value === 'string' ? (
+                row.value
+              ) : (
+                <>
+                  <p>{row.value.lead}</p>
+                  {row.value.groups?.map((group) => (
+                    <div class="mt-2">
+                      <p class="font-medium text-slate-700">{group.heading}</p>
+                      <ul class="mt-1 list-disc space-y-1 pl-4">
+                        {group.bullets.map((item) => (
+                          <li>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                  {row.value.bullets && row.value.bullets.length > 0 && (
+                    <ul class="mt-1.5 list-disc space-y-1 pl-4">
+                      {row.value.bullets.map((item) => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              )}
+            </td>
           </tr>
         ))
       }

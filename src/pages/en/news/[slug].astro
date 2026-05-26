@@ -1,0 +1,18 @@
+---
+import { getContent } from '../../../i18n'
+import NewsDetailPage from '../../../views/news/NewsDetailPage.astro'
+
+export function getStaticPaths() {
+  const t = getContent('en')
+  return t.news
+    .filter((item) => item.href)
+    .map((item) => ({
+      params: { slug: item.href!.split('/').filter(Boolean).at(-1) },
+      props: { item },
+    }))
+}
+
+const { item } = Astro.props
+---
+
+<NewsDetailPage locale="en" item={item} />

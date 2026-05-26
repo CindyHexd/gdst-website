@@ -1,11 +1,21 @@
+import type { SpecTableRow } from '../components/specTableTypes'
+
 export type Locale = 'zh' | 'en'
+
+export type { SpecTableRow, SpecTableValue } from '../components/specTableTypes'
 
 export type NewsBodyPart =
   | { type: 'text'; value: string }
   | { type: 'link'; label: string; href: string }
 
-/** 纯文本段落，或带内联链接的段落 */
-export type NewsBodyBlock = string | { parts: NewsBodyPart[] }
+/** 列表项：纯文本或带内联链接 */
+export type NewsBodyListItem = string | { parts: NewsBodyPart[] }
+
+/** 纯文本段落、带内联链接的段落，或带标题的列表 */
+export type NewsBodyBlock =
+  | string
+  | { parts: NewsBodyPart[] }
+  | { heading: string; bullets: NewsBodyListItem[] }
 
 export interface NavLinkChild {
   href: string
@@ -47,7 +57,6 @@ export interface Content {
     founded: string
     missionPrefix: string
     viewMore: string
-    learnMore: string
     download: string
     downloadZh: string
     downloadEn: string
@@ -59,6 +68,9 @@ export interface Content {
     preparing: string
     newsDetailPlaceholder: string
     caseDetailPlaceholder: string
+    newsHubIntro: string
+    helpHubTitle: string
+    aboutPageTitle: string
   }
 
   company: {
@@ -88,11 +100,16 @@ export interface Content {
     items: string[]
   }
 
+  coreTechnology: {
+    rows: SpecTableRow[]
+  }
+
   sections: {
-    solution: { label: string; heading: string }
-    majorProducts: { label: string; heading: string }
-    news: { label: string; heading: string }
-    recentNews: { label: string; heading: string }
+    solution: { heading: string }
+    coreTechnology: { heading: string }
+    majorProducts: { heading: string }
+    news: { heading: string }
+    recentNews: { heading: string }
   }
 
   homepageNewsLimit: number
@@ -106,33 +123,13 @@ export interface Content {
   productCenter: {
     title: string
     intro: string
-    platformTitle: string
-    platformRows: { label: string; value: string }[]
     categories: {
       id: string
       title: string
       description: string
       abbreviations?: string[]
     }[]
-    specTitle: string
-    applicationsTitle: string
-    highlightsTitle: string
   }
-
-  products: {
-    name: string
-    subtitle: string
-    description: string
-    highlights: string[]
-    href?: string
-    image?: string
-  }[]
-
-  secondaryProducts: {
-    name: string
-    href: string
-    image?: string
-  }[]
 
   cases: {
     title: string
@@ -194,7 +191,8 @@ export interface Content {
     careersEmailNote: string
   }
 
-  legal: {
+  /** China mainland filing lines; shown in footer on zh only */
+  legal?: {
     publicSecurity: string
     icp: string
   }

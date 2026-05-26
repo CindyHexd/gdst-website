@@ -1,24 +1,5 @@
 ---
-import SubPage from '../../../components/SubPage.astro'
-import { getContent } from '../../../i18n'
-
-const t = getContent('zh')
-const { helpCenter: h } = t
+import SupportFaqPage from '../../../views/support/SupportFaqPage.astro'
 ---
 
-<SubPage t={t} label="HELP" title={h.faqTitle} intro={h.faqIntro} backHref="/support/" backLabel={t.ui.backToHelp}>
-  <section class="py-10 sm:py-12">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <ul class="space-y-4">
-        {
-          h.faq.map((item) => (
-            <li class="card">
-              <h2 class="font-semibold text-white">{item.question}</h2>
-              <p class="mt-3 text-sm leading-relaxed text-slate-400">{item.answer}</p>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
-</SubPage>
+<SupportFaqPage locale="zh" />

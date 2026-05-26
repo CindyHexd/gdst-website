@@ -1,0 +1,29 @@
+---
+import SubPage from '../../components/SubPage.astro'
+import NewsBody from '../../components/NewsBody.astro'
+import { getContent } from '../../i18n'
+import type { Content, Locale } from '../../i18n/types'
+import { localeHref } from '../../utils/localeHref'
+
+interface Props {
+  locale: Locale
+  item: Content['cases'][number]
+}
+
+const { locale, item } = Astro.props
+const t = getContent(locale)
+const paragraphs = item.body ?? [t.ui.caseDetailPlaceholder]
+---
+
+<SubPage t={t} title={item.title} intro={item.excerpt}>
+  <section class="py-10 sm:py-12">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6">
+      <article class="space-y-5 leading-relaxed text-slate-300">
+        <NewsBody blocks={paragraphs} locale={locale} />
+        <a href={localeHref('/cases/', locale)} class="inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
+          {t.ui.backToCases}
+        </a>
+      </article>
+    </div>
+  </section>
+</SubPage>

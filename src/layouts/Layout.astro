@@ -1,15 +1,17 @@
 ---
 import '../styles/global.css'
 import type { Content } from '../i18n/types'
+import { alternateLocalePath } from '../utils/localePath'
 import { withBase } from '../utils/withBase'
 
 interface Props {
   t: Content
+  pathname?: string
 }
 
-const { t } = Astro.props
-const zhUrl = '/'
-const enUrl = '/en/'
+const { t, pathname = '/' } = Astro.props
+const zhUrl = withBase(alternateLocalePath(pathname, 'zh'))
+const enUrl = withBase(alternateLocalePath(pathname, 'en'))
 ---
 
 <!doctype html>

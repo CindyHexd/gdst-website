@@ -1,0 +1,16 @@
+---
+import { getContent } from '../../../i18n'
+import CaseDetailPage from '../../../views/cases/CaseDetailPage.astro'
+
+export function getStaticPaths() {
+  const t = getContent('en')
+  return t.cases.map((item) => ({
+    params: { slug: item.href.split('/').filter(Boolean).at(-1) },
+    props: { item },
+  }))
+}
+
+const { item } = Astro.props
+---
+
+<CaseDetailPage locale="en" item={item} />

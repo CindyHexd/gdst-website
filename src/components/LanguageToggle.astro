@@ -1,17 +1,21 @@
 ---
 import type { Content } from '../i18n/types'
+import { alternateLocalePath } from '../utils/localePath'
 import { withBase } from '../utils/withBase'
 
 interface Props {
   t: Content
+  pathname: string
 }
 
-const { t } = Astro.props
+const { t, pathname } = Astro.props
+const zhHref = withBase(alternateLocalePath(pathname, 'zh'))
+const enHref = withBase(alternateLocalePath(pathname, 'en'))
 ---
 
 <div class="lang-switch" role="group" aria-label={t.ui.langSwitchLabel}>
   <a
-    href={withBase('/')}
+    href={zhHref}
     class:list={['lang-switch__btn', { 'lang-switch__btn--active': t.locale === 'zh' }]}
     lang="zh-CN"
     hreflang="zh-CN"
@@ -20,7 +24,7 @@ const { t } = Astro.props
     中文
   </a>
   <a
-    href={withBase('/en/')}
+    href={enHref}
     class:list={['lang-switch__btn', { 'lang-switch__btn--active': t.locale === 'en' }]}
     lang="en"
     hreflang="en"

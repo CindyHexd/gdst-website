@@ -1,10 +1,6 @@
 ---
-import SubPage from '../../components/SubPage.astro'
-import NewsBody from '../../components/NewsBody.astro'
 import { getContent } from '../../i18n'
-import { withBase } from '../../utils/withBase'
-
-const t = getContent('zh')
+import CaseDetailPage from '../../views/cases/CaseDetailPage.astro'
 
 export function getStaticPaths() {
   const t = getContent('zh')
@@ -15,18 +11,6 @@ export function getStaticPaths() {
 }
 
 const { item } = Astro.props
-const paragraphs = item.body ?? [t.ui.caseDetailPlaceholder]
 ---
 
-<SubPage t={t} label="CASES" title={item.title} intro={item.excerpt}>
-  <section class="py-10 sm:py-12">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <article class="space-y-5 leading-relaxed text-slate-300">
-        <NewsBody blocks={paragraphs} />
-        <a href={withBase('/cases/')} class="inline-flex text-sm font-semibold text-brand-400 hover:text-brand-300">
-          {t.ui.backToCases}
-        </a>
-      </article>
-    </div>
-  </section>
-</SubPage>
+<CaseDetailPage locale="zh" item={item} />

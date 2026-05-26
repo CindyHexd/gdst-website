@@ -40,10 +40,6 @@ body {
   background: color-mix(in srgb, var(--color-brand-500) 35%, transparent);
 }
 
-.section-label {
-  @apply text-brand-400 text-sm font-semibold tracking-widest uppercase;
-}
-
 .glass {
   background: #ffffff;
   border-bottom: 1px solid #e2e8f0;
@@ -276,6 +272,29 @@ a.bg-brand-600,
 
 .spec-table tbody tr + tr {
   border-top: 1px solid #e2e8f0;
+}
+
+/* Homepage core technology — stronger contrast on the light table card */
+#core-technology .spec-table-wrap {
+  border-color: #94a3b8;
+  background-color: #f1f5f9;
+}
+
+#core-technology .spec-table tbody th[scope='row'] {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+#core-technology .spec-table tbody td {
+  color: #1e293b;
+}
+
+#core-technology .spec-table tbody tr + tr {
+  border-top-color: #94a3b8;
+}
+
+#core-technology .spec-table td .font-medium {
+  color: #0f172a;
 }
 
 .spec-table--comparison thead th,

@@ -28,9 +28,9 @@ function isSeismic(id: string, slug: string): boolean {
   return !id.startsWith('geophone')
 }
 
-/** All products listed on the downloads page, for product center + detail routes. */
+/** Products for product center + /products/[slug] routes (excludes downloads-only brochures). */
 export function getCatalogProducts(locale: 'zh' | 'en'): CatalogProduct[] {
-  return downloadsCatalog.map((item) => {
+  return downloadsCatalog.filter((item) => !item.downloadsOnly).map((item) => {
     const slug = resolveSlug(item.id, item.slug)
     const name = locale === 'zh' ? item.titleZh : item.titleEn
     return {
