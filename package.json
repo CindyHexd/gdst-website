@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "brochures:extract": "python3 scripts/extract_product_content.py"
+    "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^5.7.10"

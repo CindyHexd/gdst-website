@@ -318,27 +318,6 @@ a.bg-brand-600,
   color: #0f172a;
 }
 
-.spec-table--comparison thead th,
-.spec-table--comparison tbody th,
-.spec-table--comparison tbody td {
-  white-space: nowrap;
-}
-
-.spec-table--comparison thead th {
-  font-weight: 600;
-  color: #0f5f9f;
-  background: #f0f7ff;
-  border-bottom: 1px solid #dbe7f3;
-}
-
-.spec-table--comparison thead th:first-child {
-  text-align: center;
-}
-
-.spec-table--comparison tbody th[scope='row'] {
-  text-align: center;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-banner__title,
   .hero-banner__subtitle {

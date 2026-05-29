@@ -19,7 +19,3 @@ export function getProductContent(slug: string, locale: Locale): ProductContentD
   const alt: 'zh' | 'en' = locale === 'zh' ? 'en' : 'zh'
   return loadContent(slug, alt)
 }
-
-export function hasProductContent(slug: string, locale: Locale): boolean {
-  return getProductContent(slug, locale) !== undefined
-}
