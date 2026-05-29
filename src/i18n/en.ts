@@ -1,7 +1,8 @@
+import { geophysAcademic2025Photos } from '../data/newsConferencePhotos'
 import type { Content } from './types'
 
 const sensorLinks = [
-  { href: '/products/2hz-wideband-geophone/', label: '2 Hz Wideband Geophone' },
+  { href: '/products/2hz-broadband-geophone/', label: '2 Hz Broadband Geophone' },
   { href: '/products/125hz-land-geophone/', label: '1.25 Hz Land Geophone' },
 ]
 
@@ -21,7 +22,7 @@ export const en: Content = {
   meta: {
     title: 'GDST',
     description:
-      'GeoDeep Sensing develops nodal seismometers and geoscience big-data platforms for energy exploration, urban subsurface mapping, and intelligent monitoring.',
+      '',
   },
 
   ui: {
@@ -82,7 +83,7 @@ export const en: Content = {
         { href: '/products/#urban', label: 'Urban subsurface investigation' },
       ],
     },
-    { href: '/cases/', label: 'Cases' },
+    { href: '/cases/', label: 'Cases' }, // TODO: verify accuracy of translations for subpages
     { href: '/news/', label: 'News' },
     {
       href: '/support/',
@@ -295,7 +296,7 @@ export const en: Content = {
     {
       title: 'Fugu County 3D seismic survey',
       excerpt:
-        'CNOOC operation using 30,000 ALLSEIS-1C nodes — 301 km² loess plateau survey completed in 21 days.',
+        '',
       href: '/cases/fugu-3d/',
       body: [
         'The survey area in Fugu County, northwest China, covers ~301 km² of typical loess plateau terrain with dense vegetation, elevations of 984–1,386 m, and 402 m of relief. The design called for 21,818 shots, 47,692 receiver points, and 40 m group interval.',
@@ -335,18 +336,20 @@ export const en: Content = {
     {
       title: 'I-Nodal cable-free seismic acquisition system achieves large-scale deployment success',
       excerpt:
-        'The I-Nodal nodal system reached industrial-scale production and deployment across Sinopec’s major exploration regions, marking a breakthrough for fully domestic land seismic acquisition equipment.',
+        "",
       href: '/cases/i-nodal-large-scale-application/',
       body: [
-        '1. Technical background',
-        'As the world’s largest oil importer, China’s dependence on foreign oil and gas reached 69.8% and 45.3% in 2018, rising to 72% and 46% by 2021. National policy now calls for stronger domestic exploration to safeguard energy security. Exploration technology and equipment determine recoverable resources and project economics. At the 2020 Two Sessions, Sinopec Chairman Ma Yongsheng highlighted the need to localize major oil and gas equipment and reduce “stranglehold” supply-chain risks, especially for advanced geophysical instruments.',
-        'Land seismic acquisition systems are among the most critical geophysical tools in petroleum exploration. Because of demanding synchronization, harsh field conditions, and complex architectures, manufacturing has long been dominated by a few foreign vendors. China’s mainstream systems have been led by cable-based platforms such as Sercel 428, with 100k-channel-class systems emerging more recently. Domestic R&D efforts struggled to reach practical deployment until node-based architectures matured.',
-        'Since the early 2000s, cable-free “nodal” systems—exemplified by Geospace GSR, Fairfield ZLAND, and INOVA HAWK—have offered simpler architecture, unlimited channel count, and flexible deployment for high-density surveys. Offline “blind recording,” however, could not match cabled systems for real-time QC and data recovery, limiting adoption. Online autonomous acquisition with wireless QC became a strategic priority for closing the technology gap.',
-        '2. Development path',
+        { section: '1. Technical background' },
+        "As the world's largest oil importer, China's dependence on foreign oil and gas reached 69.8% and 45.3% in 2018, rising to 72% and 46% by 2021. National policy now calls for stronger domestic exploration to safeguard energy security. Exploration technology and equipment determine recoverable resources and project economics. At the 2020 Two Sessions, Sinopec Chairman Yongsheng Ma highlighted the need to localize major oil and gas equipment and reduce 'stranglehold' supply-chain risks, especially for advanced geophysical instruments.",
+        "Land seismic acquisition systems are among the most critical geophysical tools in petroleum exploration. Because of demanding synchronization, harsh field conditions, and complex architectures, manufacturing has long been dominated by a few foreign vendors. China's mainstream systems have been led by cable-based platforms such as Sercel 428, with 100k-channel-class systems emerging more recently. Domestic R&D efforts struggled to reach practical deployment until node-based architectures matured.",
+        { images: ['/cases/i-nodal/Screenshot 2026-05-28 at 17.06.26.jpeg'] },
+        "Since the early 2000s, cable-free 'nodal' systems—exemplified by Geospace GSR, Fairfield ZLAND, and INOVA HAWK—have offered simpler architecture, unlimited channel count, and flexible deployment for high-density surveys. Offline 'blind recording,' however, could not match cabled systems for real-time QC and data recovery, limiting adoption. Online autonomous acquisition with wireless QC became a strategic priority for closing the technology gap.",
+        { section: '2. Development path' },
         'GDST began core nodal R&D in 2012 and introduced FLEXSEIS in 2014—the first domestic cable-free nodal system with real-time data recovery, widely used in microseismic and engineering applications.',
-        'From 2016 to 2018, with Sinopec support, the team co-developed a fully integrated cable-free system with Sinopec Geophysical. By December 2017, an 800-node prototype with field terminals and centralized charge/download racks was built. From February to July 2018, trials in multiple provinces and terrains compared results with Sercel 428XL and INOVA G3i HD, confirming data quality on par with leading cabled systems. The project passed acceptance in September 2018 and won Sinopec’s 2019 first prize for science and technology progress.',
-        'By late 2018, with support from Sinopec Shengli Petroleum Administration, engineering trial production reached 5,000 nodes and entered large 3D pilot projects—including salt-city trials, mixed node/cable surveys, and desert deployments. The fully integrated domestic system was formally named the I-Nodal nodal seismic acquisition system, a core part of Sinopec Geophysical’s I-technology family.',
-        '3. Field results',
+        "From 2016 to 2018, with Sinopec support, the team co-developed a fully integrated cable-free system with Sinopec Geophysical. By December 2017, an 800-node prototype with field terminals and centralized charge/download racks was built. From February to July 2018, trials in multiple provinces and terrains compared results with Sercel 428XL and INOVA G3i HD, confirming data quality on par with leading cabled systems. The project passed acceptance in September 2018 and won Sinopec's 2019 first prize for science and technology progress.",
+        { images: ['/cases/i-nodal/Screenshot 2026-05-28 at 17.08.40.jpeg'] },
+        "By late 2018, with support from Sinopec Shengli Petroleum Administration, engineering trial production reached 5,000 nodes and entered large 3D pilot projects—including salt-city trials, mixed node/cable surveys, and desert deployments. The fully integrated domestic system was formally named the I-Nodal nodal seismic acquisition system, a core part of Sinopec Geophysical's I-technology family.",
+        { section: '3. Field results' },
         {
           parts: [
             {
@@ -362,8 +365,28 @@ export const en: Content = {
             },
           ],
         },
+        { images: ['/cases/i-nodal/Screenshot 2026-05-28 at 17.08.57.jpeg'] },
         'During COVID-19 disruptions in 2020, nodal acquisition proved especially resilient. By end of 2021, more than 85,000 I-Nodal units had been delivered to Sinopec, supporting 28 large 3D projects across North China, East China, Northwest, and Southwest. Over 2.3 million shots were acquired with data recovery above 99%, delivering strong economic and quality outcomes.',
-        'Large-scale I-Nodal deployment marked a zero-to-one breakthrough for fully domestic land seismic acquisition equipment. In May 2021, China Petrochemical News featured I-Nodal under the theme “nodal technology leads a new acquisition model.” The team continues next-generation I-Nodal development to support national goals for million-channel digital seismic acquisition by 2025.',
+        {
+          parts: [
+            {
+              type: 'text',
+              value:
+                'Large-scale I-Nodal deployment marked a zero-to-one breakthrough for fully domestic land seismic acquisition equipment. In May 2021, China Petrochemical News covered I-Nodal under the theme "nodal technology leads a new acquisition model" in a ',
+            },
+            {
+              type: 'link',
+              label: 'full-page feature report',
+              href: 'http://enews.sinopecnews.com.cn/zgshb/html/2021-05/17/content_8645978.htm?div=-1',
+            },
+            {
+              type: 'text',
+              value:
+                ", marking the centenary of the Party's founding. The team continues next-generation I-Nodal development to support national goals for million-channel digital seismic acquisition by 2025.",
+            },
+          ],
+        },
+        { images: ['/cases/i-nodal/Screenshot 2026-05-28 at 17.09.10.jpeg'] },
       ],
     },
   ],
@@ -371,9 +394,9 @@ export const en: Content = {
   news: [
     {
       date: '2025-04-21',
-      title: 'Conference | GeoDeep Sensing at the 3rd China Petroleum Geophysics Academic Conference',
+      title: 'Conference | GDST at the 3rd China Petroleum Geophysics Academic Conference',
       excerpt:
-        'More than 1,000 experts from 160+ energy companies, institutes, and universities gathered in Hangzhou. GeoDeep Sensing showcased the ALLSEIS family of domestic seismic acquisition systems.',
+        'More than 1,000 experts from 160+ energy companies, institutes, and universities gathered in Hangzhou. GDST showcased the ALLSEIS family of domestic seismic acquisition systems.',
       tags: ['Conference', 'Hangzhou'],
       href: '/news/geophys-academic-2025/',
       body: [
@@ -383,13 +406,14 @@ export const en: Content = {
             {
               type: 'text',
               value:
-                'General Manager Lv Yongjun and CTO He Chuan led the team to present ALLSEIS domestic seismic acquisition equipment. Against the backdrop of U.S.–China tariffs, our domestically produced ',
+                'General Manager Yongjun Lyu and CTO Chuan He led the team to present ALLSEIS domestic seismic acquisition equipment. Against the backdrop of U.S.–China tariffs, our domestically produced ',
             },
             { type: 'link', label: 'ALLSEIS-1C HR', href: '/products/allseis-1chr/' },
             { type: 'text', value: ' nodal system drew strong interest from delegates.' },
           ],
         },
-        'GeoDeep Sensing remains committed to domestic seismic acquisition R&D, delivering advanced, efficient products for energy exploration worldwide.',
+        'GDST remains committed to domestic seismic acquisition R&D, delivering advanced, efficient products for energy exploration worldwide. With over 300,000 nodes produced and delivered from 2019 to 2023, and nearly 100 large-scale 3D seismic acquisition projects over 100,000 channels (TODO: verify accuracy of translation), the ALLSEIS series seismic acquisition nodes have received unanimous praise from customers for their industry-leading performance and cost-effectiveness. GDST will continue to strengthen its innovation efforts, leveraging leading technology and high-quality services to make greater contributions to geophysical exploration in China and globally.',
+        { images: [...geophysAcademic2025Photos] },
       ],
     },
   ],
@@ -402,22 +426,22 @@ export const en: Content = {
     faqTitle: 'FAQ',
     faq: [
       {
-        question: 'question1 (to do)',
+        question: 'question1 (TODO: add)',
         answer:
-          'answer1',
+          'answer1 (TODO: add)',
       },
     ],
-    legalTitle: 'Legal notice',
+    legalTitle: 'Legal notice (TODO: verify accuracy of translations for this page)',
     legalSections: [
       {
         paragraphs: [
-          'Please read and agree to the following terms of use. These rules apply to all visitors. Beijing GeoDeep Sensing Technology Co., Ltd. may revise them at any time. If you do not agree, please stop using this website. We reserve the right to pursue legal action against misuse of site content.',
+          'Please read and agree to the following terms of use. These rules apply to all visitors. Beijing Geophysical Deep Sensing Technology Co., Ltd. may revise them at any time. If you do not agree, please stop using this website. We reserve the right to pursue legal action against misuse of site content.',
         ],
       },
       {
         heading: 'Copyright',
         paragraphs: [
-          'Beijing GeoDeep Sensing Technology Co., Ltd. owns or co-owns copyright in materials on this website. No content may be copied or mirrored on servers not operated by the company without prior written permission.',
+          'Beijing Geophysical Deep Sensing Technology Co., Ltd. owns or co-owns copyright in materials on this website. No content may be copied or mirrored on servers not operated by the company without prior written permission.',
           'Domain names, trademarks, text, audiovisual content, graphics, and images on this site are protected. Unauthorized use may violate the Copyright Law of the PRC and other applicable laws.',
         ],
       },
@@ -433,7 +457,7 @@ export const en: Content = {
       {
         heading: 'Copyright notice',
         paragraphs: [
-          'All materials are protected by copyright and owned by Beijing GeoDeep Sensing Technology Co., Ltd. (some images from CC0 sources, except cited third-party content). Commercial use without written permission is prohibited; limited personal download/print is allowed if unmodified and copyright notices are retained.',
+          'All materials are protected by copyright and owned by Beijing Geophysical Deep Sensing Technology Co., Ltd. (some images from CC0 sources, except cited third-party content). Commercial use without written permission is prohibited; limited personal download/print is allowed if unmodified and copyright notices are retained.',
         ],
       },
       {
@@ -451,7 +475,7 @@ export const en: Content = {
       {
         paragraphs: [
           'We are not liable for viruses encountered when using this site or third-party sites linked from it.',
-          'Beijing GeoDeep Sensing Technology Co., Ltd. reserves the right of final interpretation of this notice and use of this website.',
+          'Beijing Geophysical Deep Sensing Technology Co., Ltd. reserves the right of final interpretation of this notice and use of this website.',
         ],
       },
     ],
@@ -460,7 +484,7 @@ export const en: Content = {
     guidesTitle: 'How-to guides',
     softwareTitle: 'Supporting softwares',
     guides: [
-      { title: 'guide1 (TODO)', description: 'guide1 descriptions' },
+      { title: 'guide1 (TODO: add)', description: 'TODO: add', detail: 'TODO: add' },
     ],
     software: [
       { title: 'SeisDataManagement (SDM)', 

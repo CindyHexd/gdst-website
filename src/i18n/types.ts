@@ -11,10 +11,12 @@ export type NewsBodyPart =
 /** 列表项：纯文本或带内联链接 */
 export type NewsBodyListItem = string | { parts: NewsBodyPart[] }
 
-/** 纯文本段落、带内联链接的段落，或带标题的列表 */
+/** 纯文本段落、带内联链接的段落、章节标题、图片组，或带标题的列表 */
 export type NewsBodyBlock =
   | string
   | { parts: NewsBodyPart[] }
+  | { section: string }
+  | { images: string[] }
   | { heading: string; bullets: NewsBodyListItem[] }
 
 export interface NavLinkChild {
@@ -161,7 +163,7 @@ export interface Content {
     manualsTitle: string
     guidesTitle: string
     softwareTitle: string
-    guides: { title: string; description: string }[]
+    guides: { title: string; description: string; detail?: string }[]
     software: { title: string; description: string; detail?: string }[]
   }
 

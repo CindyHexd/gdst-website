@@ -1,0 +1,102 @@
+---
+import SpecTable from './SpecTable.astro'
+import type { ProductContentSection } from '../data/productContentTypes'
+import { withBase } from '../utils/withBase'
+
+interface Props {
+  sections: ProductContentSection[]
+}
+
+const { sections } = Astro.props
+---
+
+<div class="product-content space-y-10">
+  {
+    sections.map((section) => {
+      if (section.type === 'highlights') {
+        return (
+          <section>
+            {section.title && (
+              <h2 class="mb-4 text-lg font-semibold text-slate-800">{section.title}</h2>
+            )}
+            <ul class="list-disc space-y-2.5 pl-5 text-sm leading-relaxed text-slate-600">
+              {section.bullets.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            {
+              section.images && section.images.length > 0 && (
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+                  {section.images.map((src) => (
+                    <img
+                      src={withBase(encodeURI(src))}
+                      alt=""
+                      class="h-auto max-h-80 max-w-full rounded-lg border border-slate-200 object-contain sm:max-w-[280px]"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ))}
+                </div>
+              )
+            }
+          </section>
+        )
+      }
+
+      if (section.type === 'specs') {
+        return (
+          <section>
+            <div
+              class:list={[
+                section.image ? 'flex flex-col gap-6 lg:flex-row lg:items-start' : '',
+              ]}
+            >
+              <div class="min-w-0 flex-1">
+                <SpecTable title={section.title || undefined} rows={section.rows} preLine />
+              </div>
+              {
+                section.image && (
+                  <figure class="mx-auto w-fit shrink-0 self-start lg:mx-0">
+                    <img
+                      src={withBase(encodeURI(section.image))}
+                      alt=""
+                      class:list={[
+                        'block h-auto w-auto rounded-lg border border-slate-200 object-contain',
+                        section.imageSize === 'sm'
+                          ? 'max-h-56 max-w-[280px]'
+                          : 'max-h-96 max-w-full',
+                      ]}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </figure>
+                )
+              }
+            </div>
+            {
+              section.imageBelow && (
+                <figure class="mx-auto mt-6 w-fit">
+                  <img
+                    src={withBase(encodeURI(section.imageBelow))}
+                    alt=""
+                    class="block h-auto max-h-68 w-auto max-w-full rounded-lg border border-slate-200 object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </figure>
+              )
+            }
+          </section>
+        )
+      }
+
+      return (
+        <section class="space-y-2 border-t border-slate-200 pt-6">
+          {section.items.map((item) => (
+            <p class="text-xs leading-relaxed text-slate-500">{item}</p>
+          ))}
+        </section>
+      )
+    })
+  }
+</div>

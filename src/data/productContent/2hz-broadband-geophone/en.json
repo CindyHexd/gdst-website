@@ -1,0 +1,172 @@
+{
+  "pdf": "2Hz宽频检波器_EN_20250617.pdf",
+  "sections": [
+    {
+      "type": "highlights",
+      "title": "Product Highlights",
+      "bullets": [
+        "Customized for China Oilfield Services Limited (COSL), Geophysical Acquisition and Surveying Division;",
+        "Broadband (2Hz~190Hz) active force feedback Omni-Directional geophone with negative impedance compensation;",
+        "Unique design provides ideal vector fidelity response for multi-component, high resolution ocean bottom/downhole seismic data recording and monitoring;",
+        "Slight degree of background circuit noise (2uVrms@2~190Hz) for active force feedback sensor mode, providing ≥120dB instant dynamic range, which matches with most seismic acquisition systems;",
+        "Low distortion (<0.1 % horizontal), low power consumption (<10mW), high sensitivity level (80V/m/s);",
+        "Work in either active force feedback mode (Bandwidth 2~190Hz) or normal geophone mode (Bandwidth 15~190Hz), which is controlled by SW pin."
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Pin Definition",
+      "rows": [
+        {
+          "label": "1",
+          "value": "SW\nMode control input, +2.5V for active mode, GND for normal mode"
+        },
+        {
+          "label": "2",
+          "value": "OUT-\nDifferential signal output"
+        },
+        {
+          "label": "3",
+          "value": "OUT+\nDifferential signal output"
+        },
+        {
+          "label": "4",
+          "value": "GND\nPower & signal ground"
+        },
+        {
+          "label": "5",
+          "value": "-2.5V\nNegative power supply"
+        },
+        {
+          "label": "6",
+          "value": "+2.5V\nPositive power supply"
+        }
+      ],
+      "image": "/product/检波器/Screenshot 2026-05-29 at 11.36.59.jpeg",
+      "imageSize": "sm"
+    },
+    {
+      "type": "specs",
+      "title": "Specifications (Active Mode)",
+      "rows": [
+        {
+          "label": "Equivalent Natural Frequency",
+          "value": "2Hz±10%"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "80V/m/s ± 10%"
+        },
+        {
+          "label": "Spurious Frequency",
+          "value": "> 190Hz"
+        },
+        {
+          "label": "Output Resistance",
+          "value": "2000 Ω"
+        },
+        {
+          "label": "Distortion",
+          "value": "<0.1 % horizontal, \n<0.4% vertical and pins-down"
+        },
+        {
+          "label": "Maximum tilt angle",
+          "value": "0°~360°"
+        },
+        {
+          "label": "Equivalent Output noise",
+          "value": "2uVrms@2~190Hz"
+        },
+        {
+          "label": "Dynamic Range",
+          "value": "120dB"
+        },
+        {
+          "label": "Power Supply",
+          "value": "±2.5VDC"
+        },
+        {
+          "label": "Power Consumption",
+          "value": "≤10mW"
+        },
+        {
+          "label": "Diameter",
+          "value": "26.7mm"
+        },
+        {
+          "label": "Height",
+          "value": "42mm"
+        },
+        {
+          "label": "Weight",
+          "value": "110g"
+        },
+        {
+          "label": "Operating temperature",
+          "value": "-40 to 100 °C"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Specifications (Normal Mode)",
+      "rows": [
+        {
+          "label": "Natural Frequency",
+          "value": "15Hz ± 4%"
+        },
+        {
+          "label": "Spurious Frequency",
+          "value": "> 190Hz"
+        },
+        {
+          "label": "Open-circuit Damping",
+          "value": "0.35 (-4% ~ +7%)"
+        },
+        {
+          "label": "Damping with 6.2kΩ shunt resistor",
+          "value": "0.707 (-4% ~ +7%)"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "70V/m/s (-8% ~ +4%)"
+        },
+        {
+          "label": "Sensitivity with 6.2kΩ shunt resistor",
+          "value": "56V/m/s (-8% ~ +4%)"
+        },
+        {
+          "label": "Coil Resistance",
+          "value": "1500 Ω ± 4%"
+        },
+        {
+          "label": "Distortion",
+          "value": "<0.1 % horizontal, \n<0.4% vertical and pins-down"
+        },
+        {
+          "label": "Maximum tilt angle",
+          "value": "0°~360°"
+        },
+        {
+          "label": "Moving mass",
+          "value": "9.7g"
+        },
+        {
+          "label": "Maximum coil excursion",
+          "value": "2mm (p.p.)"
+        },
+        {
+          "label": "Operating temperature",
+          "value": "-40 to 100 °C"
+        }
+      ]
+    },
+    {
+      "type": "notes",
+      "title": "",
+      "items": [
+        "* All parameters are specified at 22 °C (71.6 °F) in Upright position, unless otherwise specified."
+      ]
+    }
+  ]
+}

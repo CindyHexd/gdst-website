@@ -4,9 +4,11 @@ import type { SpecTableRow } from './specTableTypes'
 interface Props {
   title?: string
   rows: SpecTableRow[]
+  /** Preserve line breaks in string cell values */
+  preLine?: boolean
 }
 
-const { title, rows } = Astro.props
+const { title, rows, preLine = false } = Astro.props
 ---
 
 {
@@ -23,7 +25,11 @@ const { title, rows } = Astro.props
             <th scope="row">{row.label}</th>
             <td>
               {typeof row.value === 'string' ? (
-                row.value
+                preLine ? (
+                  <span class="whitespace-pre-line">{row.value}</span>
+                ) : (
+                  row.value
+                )
               ) : (
                 <>
                   <p>{row.value.lead}</p>

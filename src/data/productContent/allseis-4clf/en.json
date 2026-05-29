@@ -1,0 +1,295 @@
+{
+  "pdf": "ALLSEIS-4CLF_EN_20250617.pdf",
+  "excerpt": "Built for High Resolution, High Efficiency, and High Reliability Seismic Acquisition with Less Operational Cost and Environmental Impact",
+  "sections": [
+    {
+      "type": "highlights",
+      "title": "Product Highlights",
+      "bullets": [
+        "Four-component broadband seismometer for passive and active-source seismic acquisition;",
+        "Orthogonal 3-component broadband active force feedback geophone with negative impedance compensation (A series: 0.2Hz/B series: 1Hz) + 10Hz high-sensitivity vertical geophone (18Hz/60Hz/100Hz optional);",
+        "Four channels of 24-bit Δ-Σ ADC, configurable preamplifier gain and sample rate;",
+        "Highly sensitive GNSS module equipped with active high-gain patch antenna supports Beidou, GPS, and GLONASS;",
+        "TNC external active GNSS antenna connector for deep planting and underwater deployments;",
+        "BLE module together with visual LEDs supports on-site configuration, proximity, and real-time data transmission;",
+        "Intelligent battery management unit supports automatic switchover between internal battery and external 12V DC power supply;",
+        "High-strength plastic enclosure, waterproof (IP68) and corrosion resistant;",
+        "Compact volume (14D x 17H cm) and lightweight (2.9kg) for convenient field transportation and deployment."
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "General Features",
+      "rows": [
+        {
+          "label": "Sensor",
+          "value": "Orthogonal 3-component broadband force-feedback geophone (0.2Hz/1Hz) + 10Hz high-sensitivity vertical geophone"
+        },
+        {
+          "label": "Digitalization",
+          "value": "4-channel 24-bit Δ-Σ ADC with GNSS disciplined clock"
+        },
+        {
+          "label": "Storage Capacity",
+          "value": "32G/64G (2ms sampling, four channels 45/90 days continuous recording)"
+        },
+        {
+          "label": "Battery Life",
+          "value": "Internal 130Wh lithium-ion battery pack, over 800 hours (33 days) continuous recording\nSupports expansion of external Li-ion battery unit or solar panel power supply"
+        },
+        {
+          "label": "Timing Accuracy",
+          "value": "±10μs (continuous GNSS disciplined)\n±1ms (within 1 hour without GNSS signal)\n(External active GNSS antenna optional)"
+        },
+        {
+          "label": "Working Mode",
+          "value": "Autonomy with wireless on-site QC inspection"
+        },
+        {
+          "label": "LED Status Indicator",
+          "value": "Nodal health, GNSS synchronization status, Wireless data harvesting status"
+        },
+        {
+          "label": "Data Harvest",
+          "value": "Infield: Wireless Download Unit\nIndoor: Centralized Data Download Rack"
+        },
+        {
+          "label": "Weight",
+          "value": "2.9kg"
+        },
+        {
+          "label": "Size",
+          "value": "Diameter 14cm, Height 17cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-40°C ~ +70°C"
+        },
+        {
+          "label": "Waterproof",
+          "value": "3 meters of water depth, 48 hours without leakage"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Acquisition Specifications",
+      "rows": [
+        {
+          "label": "ADC Resolution",
+          "value": "24-bit high resolution"
+        },
+        {
+          "label": "Sample Rates",
+          "value": "0.5ms, 1ms, 2ms, 4ms, 10ms"
+        },
+        {
+          "label": "Gain Accuracy",
+          "value": "0.1%"
+        },
+        {
+          "label": "Full Scale Input Signal",
+          "value": "±2.5Vp-p"
+        },
+        {
+          "label": "Instantaneous DR",
+          "value": "125dB @ 2ms (typical value)"
+        },
+        {
+          "label": "Equivalent Input Noise",
+          "value": "1μV @ 2ms (typical value)"
+        },
+        {
+          "label": "Anti-alias Filter",
+          "value": "Linear filter, 86.6% of Nyquist -3dB bandwidth"
+        },
+        {
+          "label": "Common Mode Rejection",
+          "value": ">95dB"
+        },
+        {
+          "label": "Stopband Attenuation",
+          "value": ">105dB @ Nyquist"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "0.2Hz Low Frequency Geophone",
+      "rows": [
+        {
+          "label": "Bandwidth",
+          "value": "0.2Hz (5s) ~ 240Hz"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "200V/m/s (±10%)"
+        },
+        {
+          "label": "Tilt",
+          "value": "±5°"
+        },
+        {
+          "label": "Amplitude Consistency",
+          "value": "<5%"
+        },
+        {
+          "label": "Phase Consistency",
+          "value": "<0.1s"
+        },
+        {
+          "label": "Lateral Suppression",
+          "value": "<0.1%"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "1Hz Low Frequency Geophone",
+      "rows": [
+        {
+          "label": "Bandwidth",
+          "value": "1Hz (1s) ~ 240Hz"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "200V/m/s (±10%)"
+        },
+        {
+          "label": "Tilt",
+          "value": "±5°"
+        },
+        {
+          "label": "Amplitude Consistency",
+          "value": "<5%"
+        },
+        {
+          "label": "Phase Consistency",
+          "value": "<0.1s"
+        },
+        {
+          "label": "Lateral Suppression",
+          "value": "<0.1%"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "External Rechargeable Battery Unit",
+      "rows": [
+        {
+          "label": "Capacity",
+          "value": "195Whr (Nominal Capacity)"
+        },
+        {
+          "label": "Charging Time",
+          "value": "12 hours"
+        },
+        {
+          "label": "Charging Temperature",
+          "value": "0°C ~ +40°C"
+        },
+        {
+          "label": "Discharging Temperature",
+          "value": "-40°C ~ +70°C"
+        },
+        {
+          "label": "Size",
+          "value": "11.4 x 11.4 x 8.2cm"
+        },
+        {
+          "label": "Weight",
+          "value": "1.2kg"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "4G Remote Transmission Unit",
+      "rows": [
+        {
+          "label": "Protocol Support",
+          "value": "GSM/GPRS/EDGE\nWCDMA R99/Rel9DC-HSDPA+\nCDMA2000@1x, 1xEV-DO rA\nLTE Cat4"
+        },
+        {
+          "label": "Power Consumption",
+          "value": "Data transmission state: 800mW\nOnline standby state: 10mW"
+        },
+        {
+          "label": "Battery Capacity",
+          "value": "195Wh (Nominal Capacity)"
+        },
+        {
+          "label": "Weight",
+          "value": "1.2kg"
+        },
+        {
+          "label": "Size",
+          "value": "11.4 x 11.4 x 8.2cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-40°C ~ +70°C"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Stackable Charging Unit",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "12"
+        },
+        {
+          "label": "Charging Time",
+          "value": "8 hours"
+        },
+        {
+          "label": "Charging Power",
+          "value": "350W"
+        },
+        {
+          "label": "External Dimensions (W x H x D)",
+          "value": "48.3cm x 44.5cm x 45.5cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C ~ +40°C"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Stackable Data Download Unit",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "9"
+        },
+        {
+          "label": "Slot Download Rate",
+          "value": "600MB/min."
+        },
+        {
+          "label": "Full Download Rate",
+          "value": "5.4GB/min."
+        },
+        {
+          "label": "External Dimensions (W x H x D)",
+          "value": "48.3cm x 44.5cm x 45.5cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C ~ +40°C"
+        }
+      ]
+    },
+    {
+      "type": "notes",
+      "items": [
+        "The width and thickness of the stacked charging unit and data download unit meet the installation requirements of a standard 19-inch rack."
+      ]
+    }
+  ]
+}

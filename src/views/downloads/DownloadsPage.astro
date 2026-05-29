@@ -80,7 +80,13 @@ const isZh = locale === 'zh'
               <li class="card">
                 <h3 class="font-semibold text-white">{item.title}</h3>
                 <p class="mt-2 text-sm text-slate-400">{item.description}</p>
-                <p class="mt-3 text-xs text-slate-500">{t.ui.preparing}</p>
+                {
+                  item.detail ? (
+                    <p class="mt-3 text-sm leading-relaxed text-slate-400">{item.detail}</p>
+                  ) : (
+                    <p class="mt-3 text-xs text-slate-500">{t.ui.preparing}</p>
+                  )
+                }
               </li>
             ))
           }

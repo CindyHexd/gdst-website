@@ -11,11 +11,11 @@ export interface CatalogProduct {
   image?: string
 }
 
-const SENSOR_SLUGS = new Set(['1hz-land-geophone', '2hz-wideband-geophone'])
+const SENSOR_SLUGS = new Set(['1hz-land-geophone', '2hz-broadband-geophone'])
 
 const SLUG_ALIASES: Record<string, string> = {
   'geophone-1hz': '1hz-land-geophone',
-  'geophone-2hz': '2hz-wideband-geophone',
+  'geophone-2hz': '2hz-broadband-geophone',
 }
 
 function resolveSlug(catalogId: string, existing?: string): string {

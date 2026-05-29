@@ -1,0 +1,275 @@
+{
+  "pdf": "ALLSEIS-OB4C_EN_202601.pdf",
+  "excerpt": "ALLSEIS-OB4C is the premier choice for E&P companies and service providers in search of cutting-edge subsurface imaging technology. Our nodes are carefully designed to offer exceptional efficiency and environmental sustainability, catering to a wide range of survey needs from shallow waters to depths of 1,000 meters.",
+  "sections": [
+    {
+      "type": "highlights",
+      "title": "Product Highlights",
+      "bullets": [
+        "Standard 3-component 14Hz high sensitivity omnidirectional geophone + 3Hz high sensitivity hydrophone, with an option for a 3Hz AlfSeis® omnidirectional geophone, providing exceptional sensing capabilities for submarine full wave field seismic acquisition;",
+        "4-channel 24-bit Δ-Σ ADC converter with configurable sampling rate and preamplifier gain, offering comparable acquisition parameters to leading international products;",
+        "Built-in high precision thermostatic crystal (OCXO) for timing accuracy within ±2ms over 90 days;",
+        "Built-in test signal generator for on-site system diagnostics, including noise levels, dynamic range, geophone characteristics, etc.;",
+        "Large capacity rechargeable lithium battery supporting 90 days of continuous recording (2,160 hours);",
+        "Multiple data output formats supported, including SEG-D, SEG-Y, Mini-SEED, SAC, etc.;",
+        "Internal electronic tag for efficient asset and inventory management;",
+        "Compact and lightweight design (29D × 14H cm, 13.8kg in air, 7kg in water) for easy transportation and deployment."
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "General Features",
+      "rows": [
+        {
+          "label": "Sensor",
+          "value": "3-component 14Hz omnidirectional high sensitivity geophone (Gimbal)\nOptional 3Hz active force feedback omnidirectional broadband geophone"
+        },
+        {
+          "label": "Hydrophone",
+          "value": "3.4Hz broadband high sensitivity hydrophone"
+        },
+        {
+          "label": "Digitalization",
+          "value": "4-channel 24-bit Simultaneous-Sampling,\nDelta-Sigma ADC"
+        },
+        {
+          "label": "Storage capacity",
+          "value": "64GB"
+        },
+        {
+          "label": "Battery Life",
+          "value": "Internal rechargeable Li-ion battery (750Wh)\nOver 2160 hours (90 days) continuous recording"
+        },
+        {
+          "label": "Timing Accuracy",
+          "value": "+/- 1μs (continuous GNSS disciplined)\n+/- 2ms (OCXO within 90 days)"
+        },
+        {
+          "label": "Automated Tests",
+          "value": "Internal testing signal generator for function and performance self-inspection"
+        },
+        {
+          "label": "LED Status Indicator",
+          "value": "OBN health, GNSS time synchronization status"
+        },
+        {
+          "label": "Data Harvest",
+          "value": "Data downloading/battery charging rack"
+        },
+        {
+          "label": "Weight",
+          "value": "13.8kg (in air), 7kg (in water)"
+        },
+        {
+          "label": "Size",
+          "value": "Diameter: 29cm × Height: 14cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-10°C ~ +45°C"
+        },
+        {
+          "label": "Operating Depth",
+          "value": "0~1000m"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Acquisition Specifications",
+      "rows": [
+        {
+          "label": "ADC Resolution",
+          "value": "24-bit"
+        },
+        {
+          "label": "Sampling Interval",
+          "value": "0.5ms, 1ms, 2ms, 4ms"
+        },
+        {
+          "label": "Preamplifier Gain",
+          "value": "x1, x4, x16 (0dB, 12dB, 24dB)"
+        },
+        {
+          "label": "Gain Accuracy",
+          "value": "0.1%"
+        },
+        {
+          "label": "Full Scale Input Signal",
+          "value": "±2.5Vp-p @ x1 gain\n±625mVp-p @ x4 gain\n±156mVp-p @ x16 gain"
+        },
+        {
+          "label": "Instantaneous DR (1ms, typical value)",
+          "value": "125dB @ x1 gain"
+        },
+        {
+          "label": "Full Scale DR",
+          "value": "145dB"
+        },
+        {
+          "label": "Equivalent Input Noise (typical value)",
+          "value": "1μV @ x1 gain\n0.25μV @ x4 gain"
+        },
+        {
+          "label": "Harmonic Distortion",
+          "value": "-120dB @ 31.5Hz"
+        },
+        {
+          "label": "Frequency Response",
+          "value": "0Hz ~ 866Hz @ 0.5ms (-3dB)\n0Hz ~ 800Hz @ 0.5ms (-0.1dB)"
+        },
+        {
+          "label": "Anti-alias Filter",
+          "value": "Linear filter, 86.6% of Nyquist -3dB bandwidth"
+        },
+        {
+          "label": "Stopband Attenuation",
+          "value": ">120dB @ Nyquist"
+        },
+        {
+          "label": "Common Mode Rejection",
+          "value": ">100dB"
+        },
+        {
+          "label": "Inter Channel Rejection",
+          "value": ">100dB"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "14Hz Omni-directional Geophone",
+      "rows": [
+        {
+          "label": "Natural Frequency",
+          "value": "14Hz"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "80V/m/s"
+        },
+        {
+          "label": "Spurious",
+          "value": ">190Hz"
+        },
+        {
+          "label": "Harmonic Distortion",
+          "value": "≤0.1% horizontal, <0.4% vertical"
+        },
+        {
+          "label": "Coil Resistance",
+          "value": "3500Ω"
+        },
+        {
+          "label": "Tilt",
+          "value": "0°~360°"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "3Hz Omni-directional Wideband Geophone",
+      "rows": [
+        {
+          "label": "Natural Frequency",
+          "value": "3Hz"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "80V/m/s"
+        },
+        {
+          "label": "Spurious",
+          "value": ">190Hz"
+        },
+        {
+          "label": "Distortion",
+          "value": "<0.1% horizontal, <0.4% vertical"
+        },
+        {
+          "label": "Tilt",
+          "value": "0°~360°"
+        },
+        {
+          "label": "Equivalent Input Noise",
+          "value": "1μVrms@3~190Hz"
+        },
+        {
+          "label": "Full Scale DR",
+          "value": "120dB"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "High Sensitivity Hydrophone",
+      "rows": [
+        {
+          "label": "Frequency Response",
+          "value": "3.4Hz@-3dB"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "8.9V/bar"
+        },
+        {
+          "label": "Working Depth",
+          "value": "≤1000m"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-10°C ~ +50°C"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Stackable Charging/Downloading Unit",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "3"
+        },
+        {
+          "label": "Charging Time",
+          "value": "10 hours"
+        },
+        {
+          "label": "Charging Power",
+          "value": "350W"
+        },
+        {
+          "label": "Unit Charging Power",
+          "value": "100W"
+        },
+        {
+          "label": "Full Download Rate",
+          "value": "2GB/min."
+        },
+        {
+          "label": "Unit Download Rate",
+          "value": "0.66GB/min."
+        },
+        {
+          "label": "Interface",
+          "value": "1G Ethernet"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C ~ +40°C"
+        },
+        {
+          "label": "Size",
+          "value": "1U"
+        }
+      ]
+    },
+    {
+      "type": "notes",
+      "title": "",
+      "items": [
+        "* Specifications or information subject to change without notice"
+      ]
+    }
+  ]
+}

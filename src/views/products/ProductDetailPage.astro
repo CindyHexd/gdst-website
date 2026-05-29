@@ -1,9 +1,9 @@
 ---
 import SubPage from '../../components/SubPage.astro'
-import ProductPdfBody from '../../components/ProductPdfBody.astro'
+import ProductContentBody from '../../components/ProductContentBody.astro'
 import type { CatalogProduct } from '../../data/productCatalog'
 import { downloadFileUrl, downloadSaveAs, getDownloadItemBySlug } from '../../data/downloadsCatalog'
-import { getProductPdf } from '../../data/productPdf'
+import { getProductContent } from '../../data/productContent'
 import { getContent } from '../../i18n'
 import type { Locale } from '../../i18n/types'
 import { withBase } from '../../utils/withBase'
@@ -15,33 +15,32 @@ interface Props {
 
 const { locale, product } = Astro.props
 const t = getContent(locale)
-const pdf = getProductPdf(product.slug)
+const content = getProductContent(product.slug, locale)
 const downloads = getDownloadItemBySlug(product.slug)
 ---
 
 <SubPage
   t={t}
   title={product.name}
-  intro=""
+  intro={content?.excerpt ?? ''}
   backHref="/products/"
   backLabel={t.ui.backToProducts}
 >
   <section class="py-10 sm:py-12">
     <div class="mx-auto max-w-6xl px-4 sm:px-6">
-      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px]">
-        <article class="space-y-8">
+      <article class="space-y-8">
           {
-            pdf ? (
-              <ProductPdfBody pages={pdf.pages} />
+            content && content.sections.length > 0 ? (
+              <ProductContentBody sections={content.sections} />
             ) : (
-              <p class="text-sm text-slate-400">{t.ui.preparing}</p>
+              <p class="text-sm text-slate-500">{t.ui.preparing}</p>
             )
           }
 
           {
             downloads && (downloads.cn || downloads.en) && (
-              <div class="border-t border-slate-800 pt-8">
-                <h2 class="text-lg font-semibold text-white">{t.helpCenter.manualsTitle}</h2>
+              <div class="border-t border-slate-200 pt-8">
+                <h2 class="text-lg font-semibold text-slate-800">{t.helpCenter.manualsTitle}</h2>
                 <div class="download-actions mt-4 grid max-w-xs grid-cols-2 gap-x-6">
                   <div class="text-right">
                     {
@@ -73,16 +72,7 @@ const downloads = getDownloadItemBySlug(product.slug)
               </div>
             )
           }
-        </article>
-
-        <aside class="card lg:sticky lg:top-24 lg:self-start">
-          {
-            product.image && (
-              <img src={product.image} alt="" class="w-full object-contain" loading="lazy" decoding="async" />
-            )
-          }
-        </aside>
-      </div>
+      </article>
     </div>
   </section>
 </SubPage>

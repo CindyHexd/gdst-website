@@ -131,22 +131,22 @@ export const downloadsCatalog: DownloadItem[] = [
     id: 'i-nodal-2',
     slug: 'i-nodal',
     titleZh: 'I-Nodal-2 节点式全内置地震采集系统',
-    titleEn: 'I-Nodal-2 All-in-one Nodal Seismic System',
+    titleEn: 'I-Nodal Cableless Seismic Acquisition System',
     cn: 'I-nodal-2_CN-20240401_20240425.pdf',
     en: 'I-Nodal-2_EN_20240529.pdf',
   },
   {
     id: 'geophone-1hz',
     slug: '1hz-land-geophone',
-    titleZh: '1 Hz 有源力反馈式宽频陆地检波器',
-    titleEn: '1 Hz Active Force-feedback Wideband Land Geophone',
+    titleZh: '1Hz 有源力反馈式宽频陆地检波器',
+    titleEn: '1Hz Broadband Land Geophone',
     cn: '1Hz陆地宽频检波器-202511220.pdf',
   },
   {
     id: 'geophone-2hz',
-    slug: '2hz-wideband-geophone',
+    slug: '2hz-broadband-geophone',
     titleZh: '2Hz 有源力反馈式全向宽频检波器',
-    titleEn: '2 Hz Active Force-feedback Wideband Geophone',
+    titleEn: '2Hz Broadband Omni-Directional Geophone',
     cn: '2Hz宽频检波器_CN-20240401_20240425-20240522_20240820.pdf',
     en: '2Hz宽频检波器_EN_20250617.pdf',
   },
@@ -170,7 +170,7 @@ export function downloadSaveAs(item: DownloadItem, locale: 'cn' | 'en'): string 
 
 const SLUG_TO_ID: Record<string, string> = {
   '1hz-land-geophone': 'geophone-1hz',
-  '2hz-wideband-geophone': 'geophone-2hz',
+  '2hz-broadband-geophone': 'geophone-2hz',
 }
 
 export function getDownloadItemBySlug(slug: string): DownloadItem | undefined {

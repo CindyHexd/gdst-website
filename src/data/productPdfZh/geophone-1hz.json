@@ -1,7 +1,0 @@
-{
-  "pdf": "1Hz陆地宽频检波器-202511220.pdf",
-  "pages": [
-    "Ø陆用有源力反馈式宽频高灵敏度检波器，有效频带宽度1Hz~240Hz，在保持标准检波器中、高频性能的同时，显著提高对深层、超深层目标的探测能力；Ø灵敏度高达130V/m/s，真正实现高灵敏度单检对检波器串（6串2并）的等效替代；Ø输出信号幅度±4.90V，等效输出电噪声水平3.2uVrms@1~240Hz，动态范围≥120dB，与主流地震采集设备相匹配；Ø先进的生产制造与检验工艺，保证检波器有效频段内的大规模生产一致性；Ø有源力反馈宽频检波器（频带宽度1~240Hz）与无源普通检波器（频带宽度10~240Hz）双工作模式，可通过管脚控制切换；Ø低失真（ ≤ 0.1%）、低功耗（ ≤ 10mW），体积重量不大于、抗跌落能力不低于主流动圈式检波器。\nBuilt for High Resolution, High Efficiency, and High Reliability Seismic Acquisition \nwith Less Operational Cost and Environmental Impact \n中科深源科技有限公司\n   \n北京市\n海淀区西三旗建材城中路\n27\n号金隅智造工场\nN1\n栋中科智汇工场\n308\n室\nhttp:// www.geodeepsensing.com    email: service@geodeepsensing.com \n1 SW 连接+2.5V进入力反馈模式连接GND进入无源模式2 OUT- 差分输出信号负端3 OUT+差分输出信号正端4 GND电源与信号地5 -2.5V-2.5V正电源6 +2.5V+2.5V负电源\n1Hz\n有源力反馈式宽频陆地检波器\n*除非另行说明，以上参数均为22 °C (71.6 °F)环境温度下，检波器垂直姿态的测量结果.\n自然频率10Hz±4%假频>240Hz开路阻尼0.48(±4%)闭路阻尼（20K）0.707(±4%)开路灵敏度85.8V/m/s(±4%)闭路灵敏度（20K）80V/m/s(±4%)线圈电阻1800Ω±4%失真度<0.1%悬体质量11.8g最大悬体位移2mm工作温度范围-40to100°C\n等效自然频率1Hz±10%灵敏度130V/m/s±10%假频>240Hz输出阻抗2000Ω失真度<0.1%等效输出噪声3.2uVrms@1~240Hz动态范围120dB供电电源±2.5VDC功耗≤10mW直径26.7mm高度42mm重量110g工作温度范围-40to100°C\n",
-    "Built for High Resolution, High Efficiency, and High Reliability Seismic Acquisition \nwith Less Operational Cost and Environmental Impact \n中科深源科技有限公司\n   \n北京市\n海淀区西三旗建材城中路\n27\n号金隅智造工场\nN1\n栋中科智汇工场\n308\n室\nhttp:// www.geodeepsensing.com    email: service@geodeepsensing.com \n1Hz\n有源力反馈式宽频陆地检波器\nSensitivity response @22°C1Hz Force-feedback Mode\nPhase response @22°C1Hz Force-feedback Mode\n"
-  ]
-}

@@ -1,0 +1,255 @@
+{
+  "pdf": "ALLSEIS-3C_EN_20250617.pdf",
+  "excerpt": "Built for High Resolution, High Efficiency, and High Reliability Seismic Acquisition with Less Operational Cost and Environmental Impact",
+  "sections": [
+    {
+      "type": "highlights",
+      "title": "Product Highlights",
+      "bullets": [
+        "The most compact 3C node on the market with internal orthogonal high-sensitivity geophones (5Hz or 10Hz);",
+        "Three channels of 24-bit Δ-Σ ADC with configurable preamplifier gain and sampling rate;",
+        "Highly sensitive GNSS module equipped with active patch antenna supports GPS, Beidou, and GLONASS;",
+        "Built-in test signal generator supports on-site full signal chain function and performance self-inspection and diagnosis, including system noise, real-time dynamic range, geophone impedance, natural frequency, sensitivity, damping, distortion, etc.;",
+        "Built-in BLE module together with LEDs for on-site configuration and proximity, supports vehicle (20 meters) or UAV (100 meters) patrol;",
+        "Industrial Android handheld tablet supports working status verification after deployment, including battery usage, environmental temperature, tilting, GNSS status, real-time seismic waveform, etc.;",
+        "P&R (Place & Record) mode for rapid and convenient field deployment, supporting automatic GNSS position matching with line and point number;",
+        "High-strength engineering plastic enclosure for enhanced drop resistance, waterproof (IP68), flame retardant (5VA), ultraviolet aging (F1)."
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "General Features",
+      "rows": [
+        {
+          "label": "Sensor",
+          "value": "3-component orthogonal 5Hz high-sensitivity geophone (10Hz optional)"
+        },
+        {
+          "label": "Digitalization",
+          "value": "3x 24-bit Δ-Σ ADC with GNSS disciplined clock"
+        },
+        {
+          "label": "Storage Capacity",
+          "value": "32G (2ms sampling, 45 days continuous recording)\n64G optional"
+        },
+        {
+          "label": "Node Autonomy",
+          "value": "Internal 69Wh/80Wh lithium-ion battery pack\nsupports 28/33 days continuous recording"
+        },
+        {
+          "label": "Timing Accuracy",
+          "value": "±10μs (continuous GNSS disciplined)\n±1ms (within 1 hour without GNSS signal)\n(External active GNSS antenna optional)"
+        },
+        {
+          "label": "Working Mode",
+          "value": "Autonomy with wireless on-site QC inspection, support UAV patrol"
+        },
+        {
+          "label": "LED Indicator",
+          "value": "Nodal health, GNSS synchronization status, Wireless data harvesting status"
+        },
+        {
+          "label": "Automated Tests",
+          "value": "Internal testing signal generator for function and performance self-inspection and diagnosis"
+        },
+        {
+          "label": "Data Harvest",
+          "value": "Infield: Wireless/Portable download cable\nIndoor: Data download/battery charging unit"
+        },
+        {
+          "label": "Infield Management",
+          "value": "Handheld Android tablet"
+        },
+        {
+          "label": "Weight",
+          "value": "1.8 kg incl. internal battery and 3-C geophones"
+        },
+        {
+          "label": "Size",
+          "value": "Diameter: 12cm\nHeight: 16cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-40°C ~ +70°C"
+        },
+        {
+          "label": "Waterproof",
+          "value": "IP68"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Acquisition Specifications",
+      "rows": [
+        {
+          "label": "ADC Resolution",
+          "value": "24-bit"
+        },
+        {
+          "label": "Sample Interval",
+          "value": "0.5ms, 1ms, 2ms, 4ms, 10ms"
+        },
+        {
+          "label": "Preamplifier Gain",
+          "value": "x1, x2, x4 (0dB, 6dB, 12dB)"
+        },
+        {
+          "label": "Gain Accuracy",
+          "value": "0.25%"
+        },
+        {
+          "label": "Full Scale Input Signal",
+          "value": "±2.5Vp-p @ 0dB"
+        },
+        {
+          "label": "Instantaneous DR @2ms (typical value)",
+          "value": "125dB @ 0dB"
+        },
+        {
+          "label": "Equivalent Input Noise @2ms (typical value)",
+          "value": "1μVrms @ 0dB"
+        },
+        {
+          "label": "Harmonic Distortion",
+          "value": "-120dB @ 31.5Hz"
+        },
+        {
+          "label": "Frequency Response",
+          "value": "0Hz ~ 866Hz @ 0.5ms (-3dB)\n0Hz ~ 800Hz @ 0.5ms (-0.1dB)"
+        },
+        {
+          "label": "Anti-alias Filter",
+          "value": "Linear filter, 86.6% of Nyquist -3dB bandwidth"
+        },
+        {
+          "label": "Stopband Attenuation",
+          "value": ">105dB @ Nyquist"
+        },
+        {
+          "label": "Common Mode Rejection",
+          "value": ">95dB"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "5Hz High Sensitivity Geophone (SM5)",
+      "rows": [
+        {
+          "label": "Natural Frequency",
+          "value": "5Hz ± 7.5%"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "80V/m/s ± 7.5% @ 0.6 damping\n76.5V/m/s ± 7.5% @ 0.7 damping"
+        },
+        {
+          "label": "Open-circuit Damping",
+          "value": "0.6"
+        },
+        {
+          "label": "Spurious",
+          "value": ">150Hz"
+        },
+        {
+          "label": "Harmonic Distortion",
+          "value": "0.1% @ 0.7 V/in/s p-p (12Hz)"
+        },
+        {
+          "label": "Coil Resistance",
+          "value": "1850Ω ± 5%"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "10Hz High Sensitivity Geophone (SM24HS)",
+      "rows": [
+        {
+          "label": "Natural Frequency",
+          "value": "10Hz ± 3.5%"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "85.8V/m/s ± 5% @ 0.475 damping\n78.8V/m/s ± 5% @ 0.7 damping"
+        },
+        {
+          "label": "Open-circuit Damping",
+          "value": "0.475"
+        },
+        {
+          "label": "Spurious",
+          "value": ">240Hz"
+        },
+        {
+          "label": "Harmonic Distortion",
+          "value": "0.1% @ 0.7 V/in/s p-p (12Hz)"
+        },
+        {
+          "label": "Coil Resistance",
+          "value": "1800Ω ± 5%"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Stackable Charging Unit",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "12"
+        },
+        {
+          "label": "Charging Time",
+          "value": "4 hours"
+        },
+        {
+          "label": "Charging Power",
+          "value": "350W"
+        },
+        {
+          "label": "External Dimensions (W x H x D)",
+          "value": "48.3cm x 44.5cm x 45.5cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C ~ +40°C"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Stackable Data Download Unit",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "9"
+        },
+        {
+          "label": "Slot Download Rate",
+          "value": "600MB/min."
+        },
+        {
+          "label": "Full Download Rate",
+          "value": "5.4GB/min."
+        },
+        {
+          "label": "External Dimensions (W x H x D)",
+          "value": "48.3cm x 44.5cm x 45.5cm"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C ~ +40°C"
+        }
+      ]
+    },
+    {
+      "type": "notes",
+      "items": [
+        "Unless otherwise stated, the above parameters are measured at 22°C (71.6°F) ambient temperature in the vertical/horizontal attitude of the geophone.",
+        "The width and thickness of the stackable charging unit and the data download unit meet the installation requirements of standard 19-inch rack."
+      ]
+    }
+  ]
+}

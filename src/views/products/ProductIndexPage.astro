@@ -4,6 +4,7 @@ import { getCatalogProducts } from '../../data/productCatalog'
 import { getContent } from '../../i18n'
 import type { Locale } from '../../i18n/types'
 import { localeHref } from '../../utils/localeHref'
+import { withBase } from '../../utils/withBase'
 
 interface Props {
   locale: Locale
@@ -49,7 +50,7 @@ const sensorProducts = catalog.filter((p) => p.category === 'sensors')
                         <li class="card flex flex-col">
                           {product.image && (
                             <img
-                              src={product.image}
+                              src={withBase(product.image.startsWith('/') ? product.image : `/${product.image}`)}
                               alt=""
                               class="mb-4 h-40 w-full object-contain"
                               loading="lazy"

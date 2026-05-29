@@ -1,6 +1,7 @@
 ---
 import type { Locale, NewsBodyBlock } from '../i18n/types'
 import { localeHref } from '../utils/localeHref'
+import { withBase } from '../utils/withBase'
 
 interface Props {
   blocks: NewsBodyBlock[]
@@ -8,6 +9,10 @@ interface Props {
 }
 
 const { blocks, locale } = Astro.props
+
+function bodyLinkHref(href: string): string {
+  return /^https?:\/\//i.test(href) ? href : localeHref(href, locale)
+}
 ---
 
 {
@@ -20,12 +25,41 @@ const { blocks, locale } = Astro.props
           part.type === 'text' ? (
             part.value
           ) : (
-            <a href={localeHref(part.href, locale)} class="font-semibold text-brand-400 hover:text-brand-300">
+            <a
+              href={bodyLinkHref(part.href)}
+              class="font-semibold text-brand-400 hover:text-brand-300"
+              target={/^https?:\/\//i.test(part.href) ? '_blank' : undefined}
+              rel={/^https?:\/\//i.test(part.href) ? 'noopener noreferrer' : undefined}
+            >
               {part.label}
             </a>
           ),
         )}
       </p>
+    ) : 'section' in block ? (
+      <h2 class="case-section-title">{block.section}</h2>
+    ) : 'images' in block ? (
+      <div
+        class:list={[
+          'grid gap-4',
+          block.images.length === 1 ? 'grid-cols-1 justify-items-center' : 'sm:grid-cols-2',
+        ]}
+      >
+        {block.images.map((src) => (
+          <img
+            src={withBase(encodeURI(src))}
+            alt=""
+            class:list={[
+              'rounded-lg border border-white/10',
+              block.images.length === 1
+                ? 'w-full max-w-3xl object-contain'
+                : 'w-full object-cover',
+            ]}
+            loading="lazy"
+            decoding="async"
+          />
+        ))}
+      </div>
     ) : (
       <div>
         <p class="font-medium text-slate-300">{block.heading}</p>
@@ -39,7 +73,12 @@ const { blocks, locale } = Astro.props
                   part.type === 'text' ? (
                     part.value
                   ) : (
-                    <a href={localeHref(part.href, locale)} class="font-semibold text-brand-400 hover:text-brand-300">
+                    <a
+                      href={bodyLinkHref(part.href)}
+                      class="font-semibold text-brand-400 hover:text-brand-300"
+                      target={/^https?:\/\//i.test(part.href) ? '_blank' : undefined}
+                      rel={/^https?:\/\//i.test(part.href) ? 'noopener noreferrer' : undefined}
+                    >
                       {part.label}
                     </a>
                   ),

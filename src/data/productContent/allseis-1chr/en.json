@@ -1,0 +1,302 @@
+{
+  "pdf": "ALLSEIS-1CHR_EN_20250617.pdf",
+  "excerpt": "Built for High Resolution, High Efficiency, and High Reliability Seismic Acquisition with Less Operational Cost and Environmental Impact",
+  "sections": [
+    {
+      "type": "highlights",
+      "title": "Product Highlights",
+      "bullets": [
+        "All-in-one seismic acquisition nodal system with built-in 5Hz (5Hz~150Hz) or 10Hz (10Hz~240Hz) high-sensitivity geophone, optional KCK version for external geophone string;",
+        "32-bit Δ-Σ ADC converter for high-resolution, high-dynamic-range seismic signal recording, with configurable sample rate and preamplifier gain;",
+        "Highly sensitive GNSS module equipped with active high-gain patch antenna supports GPS, Beidou, and GLONASS;",
+        "Low power intermittent GNSS clock synchronization strategy with timing accuracy better than ±10μs, supports continuous recording for up to 800 hours (deep burial not recommended);",
+        "Configurable continuous GNSS clock synchronization strategy, with timing accuracy less than ±1μs, supports deep planting applications (typically 1m buried depth in sand);",
+        "Built-in test signal generator supports on-site full signal chain function and performance self-inspection and diagnosis, including system noise, real-time dynamic range, geophone impedance, natural frequency, sensitivity, damping, distortion, etc.;",
+        "BLE wireless module together with visual LEDs for on-site configuration and proximity. Ground communication distance ≥20m, air communication distance ≥100m, supports vehicle or UAV patrol;",
+        "Industrial Android tablet supports node status verification after deployment, including battery autonomy, environmental temperature, tilting, ambient noise, real-time seismic waveform, etc.;",
+        "P&R (Place & Record) mode for rapid and convenient in-field deployment, supporting automatic position matching with line and point number;",
+        "Waterproof (IP68), flame retardant (5VA), ultraviolet aging (F1);",
+        "Built-in electronic tag (RFID) for efficient asset management;",
+        "Compact volume (9.8L x 10.8W x 11H cm) and light weight (750g), supports acquisition under -55°C."
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "General Features",
+      "rows": [
+        {
+          "label": "Sensor",
+          "value": "Internal 5Hz high-sensitivity geophone\nInternal 10Hz high-sensitivity geophone\nOptional KCK version for external string"
+        },
+        {
+          "label": "Digitalization",
+          "value": "32-bit Δ-Σ ADC"
+        },
+        {
+          "label": "Storage Capacity",
+          "value": "16GB (32GB optional)"
+        },
+        {
+          "label": "Battery Life",
+          "value": "Internal rechargeable Li-Ion battery (52Wh)\nsupports 800 hours continuous recording"
+        },
+        {
+          "label": "Timing Accuracy",
+          "value": "+/- 10μs (continuous GNSS disciplined)\n+/- 1ms (within 1 hour without GNSS signal)"
+        },
+        {
+          "label": "Automated Test",
+          "value": "Internal testing signal generator for function and performance self-inspection"
+        },
+        {
+          "label": "Working Mode",
+          "value": "Autonomy with wireless on-site QC inspection, support UAV patrol"
+        },
+        {
+          "label": "LED Status Indicator",
+          "value": "Nodal health, GNSS synchronization status, Wireless data harvesting status"
+        },
+        {
+          "label": "Data Harvest",
+          "value": "Charging/Data download rack"
+        },
+        {
+          "label": "Infield Management",
+          "value": "Industrial handheld Android tablet"
+        },
+        {
+          "label": "Weight",
+          "value": "750g (excl. spike), 800g (incl. spike)"
+        },
+        {
+          "label": "External Size",
+          "value": "9.8L x 10.8W x 11H cm (excl. spike)"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "-40°C ~ +70°C"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Acquisition Specifications",
+      "rows": [
+        {
+          "label": "ADC Resolution",
+          "value": "32-bit"
+        },
+        {
+          "label": "Sample Interval",
+          "value": "0.25ms, 0.5ms, 1ms, 2ms, 4ms"
+        },
+        {
+          "label": "Preamplifier Gain",
+          "value": "x1, x2, x4, x8, x16, x32, x64 (0dB, 6dB, 12dB, 18dB, 24dB, 30dB, 36dB)"
+        },
+        {
+          "label": "Input Impedance",
+          "value": "40KΩ || 22nF (5Hz geophone)\n20KΩ || 22nF (10Hz geophone)"
+        },
+        {
+          "label": "Gain Accuracy",
+          "value": "0.1%"
+        },
+        {
+          "label": "Full Scale Input Signal",
+          "value": "±2.5Vp-p @ x1 gain\n±625mVp-p @ x4 gain\n±156mVp-p @ x16 gain\n±39mVp-p @ x64 gain"
+        },
+        {
+          "label": "Instantaneous DR @4ms (typical value)",
+          "value": "130dB @ x1 gain\n128dB @ x4 gain\n123dB @ x16 gain\n114dB @ x64 gain"
+        },
+        {
+          "label": "Full Scale DR",
+          "value": "150dB"
+        },
+        {
+          "label": "Equivalent Input Noise @4ms (typical value)",
+          "value": "0.50μV @ x1 gain\n0.15μV @ x4 gain\n0.08μV @ x16 gain\n0.07μV @ x64 gain"
+        },
+        {
+          "label": "Harmonic Distortion",
+          "value": "-120dB @ 31.5Hz"
+        },
+        {
+          "label": "Frequency Response @0.25ms",
+          "value": "0Hz ~ 1652Hz (-3dB)"
+        },
+        {
+          "label": "Anti-alias Filter",
+          "value": "Linear or minimum phase filter, 82.6% of Nyquist -3dB bandwidth"
+        },
+        {
+          "label": "DC-blocking filter",
+          "value": "0.1 ~ 10Hz"
+        },
+        {
+          "label": "Stopband Attenuation",
+          "value": ">130dB @ Nyquist"
+        },
+        {
+          "label": "Common Mode Rejection",
+          "value": ">120dB"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "10Hz High Sensitivity Geophone",
+      "rows": [
+        {
+          "label": "Natural Frequency",
+          "value": "10Hz"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "85.8V/m/s"
+        },
+        {
+          "label": "Spurious",
+          "value": ">240Hz"
+        },
+        {
+          "label": "Distortion",
+          "value": "≤0.1%"
+        },
+        {
+          "label": "Coil Resistance",
+          "value": "1800Ω"
+        },
+        {
+          "label": "Tilt",
+          "value": "±20°"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "5Hz High Sensitivity Geophone",
+      "rows": [
+        {
+          "label": "Natural Frequency",
+          "value": "5Hz"
+        },
+        {
+          "label": "Sensitivity",
+          "value": "80V/m/s"
+        },
+        {
+          "label": "Spurious",
+          "value": ">150Hz"
+        },
+        {
+          "label": "Distortion",
+          "value": "≤0.1%"
+        },
+        {
+          "label": "Coil Resistance",
+          "value": "1850Ω"
+        },
+        {
+          "label": "Tilt",
+          "value": "±10°"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Charging Rack",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "32"
+        },
+        {
+          "label": "Charging Time",
+          "value": "3.5 hours"
+        },
+        {
+          "label": "Charging Power",
+          "value": "700W"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C to +40°C"
+        },
+        {
+          "label": "Size",
+          "value": "194x64x38cm"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Data Download Rack",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "32"
+        },
+        {
+          "label": "Unit Download Rate",
+          "value": "0.6GB/min."
+        },
+        {
+          "label": "Full Download Rate",
+          "value": "18GB/min."
+        },
+        {
+          "label": "Interface",
+          "value": "10G SFP+"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C to +40°C"
+        },
+        {
+          "label": "Size",
+          "value": "194x64x38cm"
+        }
+      ]
+    },
+    {
+      "type": "specs",
+      "title": "Desktop Data Download/Charging Rack",
+      "rows": [
+        {
+          "label": "Slots",
+          "value": "14"
+        },
+        {
+          "label": "Unit Download Rate",
+          "value": "0.6GB/min."
+        },
+        {
+          "label": "Full Download Rate",
+          "value": "8GB/min."
+        },
+        {
+          "label": "Interface",
+          "value": "2.5G Ethernet"
+        },
+        {
+          "label": "Charging Time",
+          "value": "3.5 hours"
+        },
+        {
+          "label": "Charging Power",
+          "value": "350W"
+        },
+        {
+          "label": "Operating Temperature",
+          "value": "0°C to +40°C"
+        },
+        {
+          "label": "Size",
+          "value": "94x64x38cm"
+        }
+      ]
+    }
+  ]
+}
